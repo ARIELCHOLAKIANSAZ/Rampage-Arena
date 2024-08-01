@@ -8,6 +8,9 @@ public class ThirdPersonMovement : MonoBehaviour
     public float speed;
     public float turnSmoothTime;
     float turnSmoothVelocity;
+    private float verticalVelocity;
+    public float grav;
+    public float jumpForce;
 
     void Update()
     {
@@ -20,7 +23,25 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            moveDir.y = verticalVelocity;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
         }
+
+        if (controller.isGrounded)
+        {
+            verticalVelocity = -grav * Time.deltaTime;
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                verticalVelocity = jumpForce;
+            }
+            
+        }
+        else
+        {
+            verticalVelocity -= grav;
+        }
+
+        Vector3 moveHigh = new Vector3(0, verticalVelocity, 0);
+        controller.Move(moveHigh * Time.deltaTime);
     }
 }
