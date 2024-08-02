@@ -11,6 +11,8 @@ public class ThirdPersonMovement : MonoBehaviour
     public float jumpForce;
     public float airSpeed;
     public float jumps;
+    public Animator ani;
+
 
     void Update()
     {
@@ -26,12 +28,17 @@ public class ThirdPersonMovement : MonoBehaviour
             if (controller.isGrounded)
             {
                 controller.Move(moveDir.normalized * speed * Time.deltaTime);
+                ani.SetBool("Walk", true);
             }
             else
             {
                 controller.Move(moveDir.normalized * airSpeed * Time.deltaTime);
             }
             
+        }
+        else
+        {
+            ani.SetBool("Walk", false);
         }
         
         Vector3 moveHigh = new Vector3(0, verticalVelocity, 0);
