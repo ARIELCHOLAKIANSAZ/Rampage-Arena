@@ -55,7 +55,6 @@ public class ThirdPersonMovement : MonoBehaviour
             verticalVelocity = jumpForce;
             jumps--;
             ani.SetBool("Jump", true);
-            print("boingy");
         }
         else
         {
