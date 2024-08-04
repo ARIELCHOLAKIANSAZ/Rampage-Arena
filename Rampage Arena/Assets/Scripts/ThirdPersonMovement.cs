@@ -51,9 +51,11 @@ public class ThirdPersonMovement : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Space) && jumps > 0)
             {
+            
             verticalVelocity = jumpForce;
             jumps--;
             ani.SetBool("Jump", true);
+            print("boingy");
         }
         else
         {
@@ -61,7 +63,7 @@ public class ThirdPersonMovement : MonoBehaviour
         }
 
 
-        if (controller.isGrounded)
+        if (controller.isGrounded && Input.GetKeyDown(KeyCode.Space) == false)
         {
             verticalVelocity = -grav * Time.deltaTime;
             jumps = 2;
