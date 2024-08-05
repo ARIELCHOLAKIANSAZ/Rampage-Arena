@@ -72,7 +72,7 @@ public class ThirdPersonMovement : MonoBehaviour
         else if (-2 < verticalVelocity && verticalVelocity < 3)
         {
             verticalVelocity -= grav / 1.3f;
-            ani.SetBool("Ground", false);
+            
         }
         else
         {
