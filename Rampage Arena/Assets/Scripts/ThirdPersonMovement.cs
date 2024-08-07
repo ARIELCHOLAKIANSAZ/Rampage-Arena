@@ -7,14 +7,15 @@ public class ThirdPersonMovement : MonoBehaviour
     public CharacterController controller;
     public float speed;
     public float verticalVelocity;
-    public float grav;
+    public float grav = 0.5f;
     public float jumpForce;
     public float airSpeed;
     public float jumps;
     public Animator ani;
-    public float turnSmoothTime;
+    public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
     public bool locked = false;
+    public bool gravAffect = true;
 
 
     void Update()
@@ -65,17 +66,16 @@ public class ThirdPersonMovement : MonoBehaviour
 
         if (controller.isGrounded && Input.GetKeyDown(KeyCode.Space) == false)
         {
-            verticalVelocity = -grav * Time.deltaTime;
             jumps = 2;
             ani.SetBool("Ground", true);
 
         }
-        else if (-2 < verticalVelocity && verticalVelocity < 3)
+        else if (-2 < verticalVelocity && verticalVelocity < 3 && gravAffect)
         {
             verticalVelocity -= grav / 1.3f;
             
         }
-        else
+        else if (gravAffect)
         {
             verticalVelocity -= grav;
             ani.SetBool("Ground", false);
