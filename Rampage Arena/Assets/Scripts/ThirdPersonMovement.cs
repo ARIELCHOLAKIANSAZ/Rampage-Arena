@@ -14,6 +14,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public Animator ani;
     public float turnSmoothTime;
     float turnSmoothVelocity;
+    public bool locked = false;
 
 
     void Update()
@@ -23,7 +24,7 @@ public class ThirdPersonMovement : MonoBehaviour
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
 
-        if (direction.magnitude >= 0.1f)
+        if (direction.magnitude >= 0.1f && locked == false)
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
@@ -49,7 +50,7 @@ public class ThirdPersonMovement : MonoBehaviour
         Vector3 moveHigh = new Vector3(0, verticalVelocity, 0);
         controller.Move(moveHigh * Time.deltaTime);
         
-        if (Input.GetKeyDown(KeyCode.Space) && jumps > 0)
+        if (Input.GetKeyDown(KeyCode.Space) && jumps > 0 && locked == false)
             {
             
             verticalVelocity = jumpForce;
