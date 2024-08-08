@@ -44,7 +44,7 @@ public class AttacksManager : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                StartCoroutine(RightNormal());
+                StartCoroutine(BackNormal());
             }
 
         }
@@ -127,6 +127,26 @@ public class AttacksManager : MonoBehaviour
                 p.percen += 4;
             }
             yield return new WaitForSeconds(0.6f);
+            lcked = false;
+            m.locked = false;
+            m.gravAffect = true;
+        }
+
+        IEnumerator BackNormal()
+        {
+            ThirdPersonMovement m = dada.GetComponent<ThirdPersonMovement>();
+            lcked = true;
+            m.locked = true;
+            m.gravAffect = false;
+            ani.SetTrigger("BackNormal");
+            Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[1].position, attackRanges[1], enemyLayers);
+            yield return new WaitForSeconds(0.1f);
+            foreach (Collider enemy in hitEnemies)
+            {
+                HealthManager p = enemy.GetComponent<HealthManager>();
+                p.percen += 2.8f;
+            }
+            yield return new WaitForSeconds(0.3f);
             lcked = false;
             m.locked = false;
             m.gravAffect = true;
