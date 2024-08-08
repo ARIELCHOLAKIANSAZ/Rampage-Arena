@@ -11,7 +11,7 @@ public class AttacksManager : MonoBehaviour
     public Transform[] attackPoints;
     public float[] attackRanges;
     public LayerMask enemyLayers;
-    float kadoosh = 0;
+    bool kadoosh = false;
 
 
     void Update()
@@ -60,7 +60,7 @@ public class AttacksManager : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                StartCoroutine(RightNormal());
+                StartCoroutine(DownNormal());
             }
         }
         else if (lcked == false)
@@ -119,8 +119,8 @@ public class AttacksManager : MonoBehaviour
             m.locked = true;
             m.gravAffect = false;
             ani.SetTrigger("NeutralNormal");
-            Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[0].position, attackRanges[0], enemyLayers);
             yield return new WaitForSeconds(0.2f);
+            Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[0].position, attackRanges[0], enemyLayers);
             foreach (Collider enemy in hitEnemies)
             {
                 HealthManager p = enemy.GetComponent<HealthManager>();
@@ -139,8 +139,8 @@ public class AttacksManager : MonoBehaviour
             m.locked = true;
             m.gravAffect = false;
             ani.SetTrigger("BackNormal");
-            Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[1].position, attackRanges[1], enemyLayers);
             yield return new WaitForSeconds(0.1f);
+            Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[1].position, attackRanges[1], enemyLayers);
             foreach (Collider enemy in hitEnemies)
             {
                 HealthManager p = enemy.GetComponent<HealthManager>();
@@ -151,5 +151,31 @@ public class AttacksManager : MonoBehaviour
             m.locked = false;
             m.gravAffect = true;
         }
+
+        IEnumerator DownNormal()
+        {
+            ThirdPersonMovement m = dada.GetComponent<ThirdPersonMovement>();
+            lcked = true;
+            m.locked = true;
+            m.gravAffect = false;
+            ani.SetTrigger("DownNormal");
+            yield return new WaitForSeconds(0.1f);
+            kadoosh = true;
+            yield return new WaitForSeconds(0.3f);
+            kadoosh = false;
+            lcked = false;
+            m.locked = false;
+            m.gravAffect = true;
+        }
+        if (kadoosh)
+        {
+            Collider[] hitEnemies = Physics.OverlapBox(attackPoints[4].position, new Vector3(3, 1, 3), Quaternion.identity, enemyLayers);
+            foreach (Collider enemy in hitEnemies)
+            {
+                HealthManager p = enemy.GetComponent<HealthManager>();
+                p.percen += 0.1f;
+            }
+        }
     }
+    
 }
