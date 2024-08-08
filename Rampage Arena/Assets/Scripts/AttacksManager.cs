@@ -118,7 +118,7 @@ public class AttacksManager : MonoBehaviour
             lcked = true;
             m.locked = true;
             m.gravAffect = false;
-            ani.SetTrigger("ForwardNormal");
+            ani.SetTrigger("NeutralNormal");
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[0].position, attackRanges[0], enemyLayers);
             yield return new WaitForSeconds(0.2f);
             foreach (Collider enemy in hitEnemies)
