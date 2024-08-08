@@ -80,6 +80,10 @@ public class ThirdPersonMovement : MonoBehaviour
             verticalVelocity -= grav;
             ani.SetBool("Ground", false);
         }
+        else
+        {
+            verticalVelocity = 0;
+        }
 
 
         
