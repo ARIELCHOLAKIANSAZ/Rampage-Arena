@@ -52,7 +52,7 @@ public class AttacksManager : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                StartCoroutine(RightNormal());
+                StartCoroutine(UpNormal());
             }
 
         }
@@ -158,7 +158,7 @@ public class AttacksManager : MonoBehaviour
             lcked = true;
             m.locked = true;
             m.gravAffect = false;
-            ani.SetTrigger("DownNormal");
+            ani.SetBool("DownNormal", true);
             yield return new WaitForSeconds(0.1f);
             kadoosh = true;
             yield return new WaitForSeconds(0.3f);
@@ -166,15 +166,35 @@ public class AttacksManager : MonoBehaviour
             lcked = false;
             m.locked = false;
             m.gravAffect = true;
+            ani.SetBool("DownNormal", false);
         }
         if (kadoosh)
         {
-            Collider[] hitEnemies = Physics.OverlapBox(attackPoints[4].position, new Vector3(3, 1, 3), Quaternion.identity, enemyLayers);
+            Collider[] hitEnemies = Physics.OverlapBox(attackPoints[4].position, new Vector3(2.5f, 1, 2.5f), Quaternion.identity, enemyLayers);
             foreach (Collider enemy in hitEnemies)
             {
                 HealthManager p = enemy.GetComponent<HealthManager>();
                 p.percen += 0.1f;
             }
+        }
+        IEnumerator UpNormal()
+        {
+            ThirdPersonMovement m = dada.GetComponent<ThirdPersonMovement>();
+            lcked = true;
+            m.locked = true;
+            m.verticalVelocity = 0;
+            ani.SetTrigger("UpNormal");
+            yield return new WaitForSeconds(0.1f);
+            Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[5].position, attackRanges[5], enemyLayers);
+            foreach (Collider enemy in hitEnemies)
+            {
+                HealthManager p = enemy.GetComponent<HealthManager>();
+                p.percen += 3.2f;
+            }
+            yield return new WaitForSeconds(0.3f);
+            lcked = false;
+            m.locked = false;
+            m.gravAffect = true;
         }
     }
     
