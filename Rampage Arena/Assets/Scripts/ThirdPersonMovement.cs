@@ -15,6 +15,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
     public bool locked = false;
+    public bool jlock = false;
     public bool gravAffect = true;
 
 
@@ -51,7 +52,7 @@ public class ThirdPersonMovement : MonoBehaviour
         Vector3 moveHigh = new Vector3(0, verticalVelocity, 0);
         controller.Move(moveHigh * Time.deltaTime);
         
-        if (Input.GetKeyDown(KeyCode.Space) && jumps > 0 && locked == false)
+        if (Input.GetKeyDown(KeyCode.Space) && jumps > 0 && jlock == false)
             {
             
             verticalVelocity = jumpForce;
@@ -67,13 +68,14 @@ public class ThirdPersonMovement : MonoBehaviour
         if (controller.isGrounded && Input.GetKeyDown(KeyCode.Space) == false)
         {
             jumps = 2;
+            verticalVelocity = 0;
             ani.SetBool("Ground", true);
 
         }
         else if (-2 < verticalVelocity && verticalVelocity < 3 && gravAffect)
         {
             verticalVelocity -= grav / 1.3f;
-            
+
         }
         else if (gravAffect)
         {

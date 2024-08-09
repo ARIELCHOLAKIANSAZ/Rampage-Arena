@@ -16,7 +16,22 @@ public class AttacksManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.W) && lcked == false)
+        if (Input.GetKey(KeyCode.LeftShift) && lcked == false)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                StartCoroutine(UpNormal());
+            }
+
+        }
+        else if (Input.GetKey(KeyCode.LeftControl) && lcked == false)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                StartCoroutine(DownNormal());
+            }
+        }
+        else if (Input.GetKey(KeyCode.W) && lcked == false)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -48,21 +63,6 @@ public class AttacksManager : MonoBehaviour
             }
 
         }
-        else if (Input.GetKey(KeyCode.LeftShift) && lcked == false)
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                StartCoroutine(UpNormal());
-            }
-
-        }
-        else if (Input.GetKey(KeyCode.LeftControl) && lcked == false)
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                StartCoroutine(DownNormal());
-            }
-        }
         else if (lcked == false)
         {
             if (Input.GetMouseButtonDown(0))
@@ -77,7 +77,7 @@ public class AttacksManager : MonoBehaviour
             ThirdPersonMovement m = dada.GetComponent<ThirdPersonMovement>();
             lcked = true;
             m.locked = true;
-            m.gravAffect = false;
+            m.jlock = true;
             ani.SetTrigger("LeftNormal");
             yield return new WaitForSeconds(0.1f);
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[3].position, attackRanges[3], enemyLayers);
@@ -87,17 +87,17 @@ public class AttacksManager : MonoBehaviour
                 p.percen += 2.4f;
             }
             yield return new WaitForSeconds(0.3f);
+            m.jlock = false;
             lcked = false;
             m.locked = false;
-            m.gravAffect = true;
         }
 
         IEnumerator RightNormal()
         {
             ThirdPersonMovement m = dada.GetComponent<ThirdPersonMovement>();
             lcked = true;
+            m.jlock = true;
             m.locked = true;
-            m.gravAffect = false;
             ani.SetTrigger("RightNormal");
             yield return new WaitForSeconds(0.1f);
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[2].position, attackRanges[2], enemyLayers);
@@ -108,14 +108,15 @@ public class AttacksManager : MonoBehaviour
             }
             yield return new WaitForSeconds(0.3f);
             lcked = false;
+            m.jlock = false;
             m.locked = false;
-            m.gravAffect = true;
         }
 
         IEnumerator NeutralNormal()
         {
             ThirdPersonMovement m = dada.GetComponent<ThirdPersonMovement>();
             lcked = true;
+            m.jlock = true;
             m.locked = true;
             m.gravAffect = false;
             ani.SetTrigger("NeutralNormal");
@@ -128,6 +129,7 @@ public class AttacksManager : MonoBehaviour
             }
             yield return new WaitForSeconds(0.6f);
             lcked = false;
+            m.jlock = false;
             m.locked = false;
             m.gravAffect = true;
         }
@@ -136,8 +138,8 @@ public class AttacksManager : MonoBehaviour
         {
             ThirdPersonMovement m = dada.GetComponent<ThirdPersonMovement>();
             lcked = true;
+            m.jlock = true;
             m.locked = true;
-            m.gravAffect = false;
             ani.SetTrigger("BackNormal");
             yield return new WaitForSeconds(0.1f);
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[1].position, attackRanges[1], enemyLayers);
@@ -148,14 +150,15 @@ public class AttacksManager : MonoBehaviour
             }
             yield return new WaitForSeconds(0.3f);
             lcked = false;
+            m.jlock = false;
             m.locked = false;
-            m.gravAffect = true;
         }
 
         IEnumerator DownNormal()
         {
             ThirdPersonMovement m = dada.GetComponent<ThirdPersonMovement>();
             lcked = true;
+            m.jlock = true;
             m.locked = true;
             m.gravAffect = false;
             ani.SetBool("DownNormal", true);
@@ -165,6 +168,7 @@ public class AttacksManager : MonoBehaviour
             kadoosh = false;
             lcked = false;
             m.locked = false;
+            m.jlock = false;
             m.gravAffect = true;
             ani.SetBool("DownNormal", false);
         }
@@ -181,8 +185,12 @@ public class AttacksManager : MonoBehaviour
         {
             ThirdPersonMovement m = dada.GetComponent<ThirdPersonMovement>();
             lcked = true;
+            m.jlock = true;
             m.locked = true;
-            m.verticalVelocity = 0;
+            if (m.controller.isGrounded == false)
+            {
+            m.verticalVelocity += 8;
+            }
             ani.SetTrigger("UpNormal");
             yield return new WaitForSeconds(0.1f);
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[5].position, attackRanges[5], enemyLayers);
@@ -194,6 +202,7 @@ public class AttacksManager : MonoBehaviour
             yield return new WaitForSeconds(0.3f);
             lcked = false;
             m.locked = false;
+            m.jlock = false;
             m.gravAffect = true;
         }
     }
