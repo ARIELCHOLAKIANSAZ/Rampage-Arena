@@ -35,7 +35,7 @@ public class AttacksManager : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                StartCoroutine(NeutralNormal());
+                StartCoroutine(ForwardNormal());
             }
 
         }
@@ -79,14 +79,14 @@ public class AttacksManager : MonoBehaviour
             m.locked = true;
             m.jlock = true;
             ani.SetTrigger("LeftNormal");
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.3f);
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[3].position, attackRanges[3], enemyLayers);
             foreach (Collider enemy in hitEnemies)
             {
                 HealthManager p = enemy.GetComponent<HealthManager>();
                 p.percen += 2.4f;
             }
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.1f);
             m.jlock = false;
             lcked = false;
             m.locked = false;
@@ -200,6 +200,26 @@ public class AttacksManager : MonoBehaviour
                 p.percen += 3.2f;
             }
             yield return new WaitForSeconds(0.3f);
+            lcked = false;
+            m.locked = false;
+            m.jlock = false;
+            m.gravAffect = true;
+        }
+        IEnumerator ForwardNormal()
+        {
+            ThirdPersonMovement m = dada.GetComponent<ThirdPersonMovement>();
+            lcked = true;
+            m.jlock = true;
+            m.locked = true;
+            ani.SetTrigger("ForwardNormal");
+            yield return new WaitForSeconds(0.1f);
+            Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[0].position, 1.5f, enemyLayers);
+            foreach (Collider enemy in hitEnemies)
+            {
+                HealthManager p = enemy.GetComponent<HealthManager>();
+                p.percen += 1.7f;
+            }
+            yield return new WaitForSeconds(0.2f);
             lcked = false;
             m.locked = false;
             m.jlock = false;
