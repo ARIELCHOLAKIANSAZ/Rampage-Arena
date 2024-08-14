@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Alteruna;
 
 public class AttacksManager : MonoBehaviour
 {
@@ -12,10 +13,17 @@ public class AttacksManager : MonoBehaviour
     public float[] attackRanges;
     public LayerMask enemyLayers;
     bool kadoosh = false;
+    private Alteruna.Avatar ava;
 
-
+    void Awake()
+    {
+        ava = GetComponent<Alteruna.Avatar>();
+        if (!ava.IsMe) return;
+    }
     void Update()
     {
+        if (!ava.IsMe) return;
+
         if (Input.GetKey(KeyCode.LeftShift) && lcked == false)
         {
             if (Input.GetMouseButtonDown(0))

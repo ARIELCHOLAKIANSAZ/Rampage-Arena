@@ -17,10 +17,17 @@ public class ThirdPersonMovement : MonoBehaviour
     public bool locked = false;
     public bool jlock = false;
     public bool gravAffect = true;
+    private Alteruna.Avatar ava;
 
-
+    void Awake()
+    {
+        ava = GetComponent<Alteruna.Avatar>();
+        if (!ava.IsMe) return;
+    }
     void Update()
     {
+        if (!ava.IsMe) return;
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
