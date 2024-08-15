@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: 6687349054438152358}
   - component: {fileID: 6687349054438152359}
   - component: {fileID: 6364893156093135168}
+  - component: {fileID: 6867566777713556993}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -179,6 +180,8 @@ MonoBehaviour:
   locked: 0
   jlock: 0
   gravAffect: 1
+  cam: {fileID: 0}
+  player: {fileID: 6687349054438152354}
 --- !u!114 &6687349054438152358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,6 +253,40 @@ MonoBehaviour:
   OnUnpossessed:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6867566777713556993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6687349054438152354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1312809854, guid: 0ae8d181602a00248a82f64a684a1c88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Multiplayer: {fileID: 0}
+  _uidString: c74a2a1c-86a8-46c1-9134-37f658f6944c
+  BucketBehaviors:
+  - Name: Min
+    NetLOD: 0
+    Frequency: -1
+  - Name: Low
+    NetLOD: 1
+    Frequency: 0
+  - Name: Mid
+    NetLOD: 2
+    Frequency: 0
+  - Name: High
+    NetLOD: 3
+    Frequency: 0
+  - Name: Max
+    NetLOD: 4
+    Frequency: 120
+  Reliability: 2
+  UseGlobalPosition: 0
+  refreshRate: 30
+  SyncedAxes: 63
 --- !u!1 &6687349054955904899
 GameObject:
   m_ObjectHideFlags: 0
