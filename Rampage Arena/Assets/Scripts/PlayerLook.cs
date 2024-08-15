@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class PlayerLook : MonoBehaviour
 {
-    private Cinemachine.CinemachineVirtualCamera cam;
-    void Start()
-    {
-        cam = GetComponent<Cinemachine.CinemachineVirtualCamera>();
-    }
+    public GameObject cam;
+    public GameObject player;
+    private Alteruna.Avatar ava;
+    public Cinemachine.CinemachineFreeLook vcam;
 
-    public void LockIn(GameObject gemobj)
+    void Awake()
     {
-        cam.Follow = gemobj.transform;
-        cam.LookAt = gemobj.transform;
+        ava = GetComponent<Alteruna.Avatar>();
+        if (!ava.IsMe) return;
+    }
+    void Update()
+    {
+        if (!ava.IsMe) return;
+        cam = GameObject.Find("Third Person Camera");
+        vcam = cam.GetComponent<Cinemachine.CinemachineFreeLook>();
+        vcam.Follow = player.transform;
+        vcam.LookAt = player.transform;
     }
 
 }

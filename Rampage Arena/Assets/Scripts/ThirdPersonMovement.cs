@@ -18,7 +18,6 @@ public class ThirdPersonMovement : MonoBehaviour
     public bool jlock = false;
     public bool gravAffect = true;
     private Alteruna.Avatar ava;
-    public GameObject player;
 
     void Awake()
     {
@@ -28,9 +27,6 @@ public class ThirdPersonMovement : MonoBehaviour
     void Update()
     {
         if (!ava.IsMe) return;
-
-        PlayerLook look = GetComponent<PlayerLook>();
-        look.LockIn(player);    
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
