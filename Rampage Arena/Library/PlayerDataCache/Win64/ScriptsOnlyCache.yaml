@@ -8,6 +8,7 @@ ScriptsOnlyBuild:
     - Alteruna.TransformSynchronizable
     Assembly-CSharp.dll:
     - Alteruna.EnsureEventSystem
+    - Alteruna.MapDescriptions
     - Alteruna.RoomMenu
     - AttacksManager
     - HealthManager
@@ -92,7 +93,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.SpriteState
   methodsToPreserve: []
   sceneClasses:
-    Assets/Scenes/SampleScene.unity:
+    Assets/Scenes/Battle.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -132,67 +133,69 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
+      Script: {instanceID: 1582}
+    - Class: 114
       Script: {instanceID: 1584}
     - Class: 114
-      Script: {instanceID: 1586}
+      Script: {instanceID: 1588}
     - Class: 114
-      Script: {instanceID: 1590}
+      Script: {instanceID: 1674}
     - Class: 114
-      Script: {instanceID: 1662}
+      Script: {instanceID: 1936}
     - Class: 114
-      Script: {instanceID: 1926}
+      Script: {instanceID: 2290}
     - Class: 114
-      Script: {instanceID: 2280}
+      Script: {instanceID: 2324}
     - Class: 114
-      Script: {instanceID: 2314}
+      Script: {instanceID: 2554}
     - Class: 114
-      Script: {instanceID: 2544}
-    - Class: 114
-      Script: {instanceID: 2548}
-    - Class: 114
-      Script: {instanceID: 2552}
+      Script: {instanceID: 2558}
     - Class: 114
       Script: {instanceID: 2562}
     - Class: 114
-      Script: {instanceID: 2690}
+      Script: {instanceID: 2572}
     - Class: 114
-      Script: {instanceID: 2878}
+      Script: {instanceID: 2700}
     - Class: 114
-      Script: {instanceID: 3036}
+      Script: {instanceID: 2838}
     - Class: 114
-      Script: {instanceID: 3204}
+      Script: {instanceID: 2888}
     - Class: 114
-      Script: {instanceID: 3294}
+      Script: {instanceID: 3046}
     - Class: 114
-      Script: {instanceID: 3414}
+      Script: {instanceID: 3214}
     - Class: 114
-      Script: {instanceID: 3610}
+      Script: {instanceID: 3304}
     - Class: 114
-      Script: {instanceID: 3900}
+      Script: {instanceID: 3422}
     - Class: 114
-      Script: {instanceID: 3918}
+      Script: {instanceID: 3618}
     - Class: 114
-      Script: {instanceID: 4068}
+      Script: {instanceID: 3908}
     - Class: 114
-      Script: {instanceID: 4320}
+      Script: {instanceID: 3926}
     - Class: 114
-      Script: {instanceID: 4508}
+      Script: {instanceID: 4076}
     - Class: 114
-      Script: {instanceID: 4832}
+      Script: {instanceID: 4328}
     - Class: 114
-      Script: {instanceID: 5066}
+      Script: {instanceID: 4514}
     - Class: 114
-      Script: {instanceID: 5242}
+      Script: {instanceID: 4838}
     - Class: 114
-      Script: {instanceID: 5426}
+      Script: {instanceID: 5072}
     - Class: 114
-      Script: {instanceID: 5456}
+      Script: {instanceID: 5248}
     - Class: 114
-      Script: {instanceID: 5492}
+      Script: {instanceID: 5432}
     - Class: 114
-      Script: {instanceID: 6638}
+      Script: {instanceID: 5462}
     - Class: 114
-      Script: {instanceID: 6762}
+      Script: {instanceID: 5498}
+    - Class: 114
+      Script: {instanceID: 6644}
+    - Class: 114
+      Script: {instanceID: 6768}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1308,5 +1311,5 @@ ScriptsOnlyBuild:
     className: PercentageDisplayManager
   platform: 19
   scenePathNames:
-  - Assets/Scenes/SampleScene.unity
+  - Assets/Scenes/Battle.unity
   playerPath: C:/Users/48464009/Downloads/Rampage Arena.exe
