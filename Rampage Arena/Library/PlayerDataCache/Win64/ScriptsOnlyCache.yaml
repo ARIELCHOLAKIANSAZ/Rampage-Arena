@@ -11,9 +11,13 @@ ScriptsOnlyBuild:
     - Alteruna.MapDescriptions
     - Alteruna.RoomMenu
     - AttacksManager
+    - ButtonGameManagerLinker
+    - GameManager
     - HealthManager
     - PercentageDisplayManager
     - PlayerLook
+    - PlayerManager
+    - SceneBus
     - ThirdPersonMovement
     Cinemachine.dll:
     - Cinemachine.CinemachineBrain
@@ -47,6 +51,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.ContentSizeFitter
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.InputField
     - UnityEngine.UI.Mask
     - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Scrollbar
@@ -67,7 +72,9 @@ ScriptsOnlyBuild:
     - Cinemachine.CinemachineVirtualCameraBase/TransitionParams
     - Cinemachine.LensSettings
     UnityEngine.CoreModule:
+    - UnityEngine.Events.ArgumentCache
     - UnityEngine.Events.PersistentCallGroup
+    - UnityEngine.Events.PersistentListenerMode
     - UnityEngine.Events.UnityEvent`1[Alteruna.Multiplayer]
     - UnityEngine.Events.UnityEvent`1[Alteruna.User]
     - UnityEngine.Events.UnityEvent`2[Alteruna.Multiplayer,Alteruna.Endpoint]
@@ -86,12 +93,33 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Button/ButtonClickedEvent
     - UnityEngine.UI.ColorBlock
     - UnityEngine.UI.FontData
+    - UnityEngine.UI.InputField/EndEditEvent
+    - UnityEngine.UI.InputField/OnChangeEvent
+    - UnityEngine.UI.InputField/SubmitEvent
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
     - UnityEngine.UI.Navigation
     - UnityEngine.UI.ScrollRect/ScrollRectEvent
     - UnityEngine.UI.Scrollbar/ScrollEvent
     - UnityEngine.UI.SpriteState
-  methodsToPreserve: []
+  methodsToPreserve:
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerManager
+    methodName: ChooseNumber
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerManager
+    methodName: ChooseNumber
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerManager
+    methodName: ChooseNumber
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerManager
+    methodName: ChooseNumber
+  - assembly: Assembly-CSharp
+    fullTypeName: PlayerManager
+    methodName: CharChosen
+  - assembly: Assembly-CSharp
+    fullTypeName: ButtonGameManagerLinker
+    methodName: nextScene
   sceneClasses:
     Assets/Scenes/Battle.unity:
     - Class: 1
@@ -133,57 +161,57 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1582}
-    - Class: 114
       Script: {instanceID: 1584}
     - Class: 114
-      Script: {instanceID: 1588}
+      Script: {instanceID: 1586}
     - Class: 114
-      Script: {instanceID: 1674}
+      Script: {instanceID: 1590}
     - Class: 114
-      Script: {instanceID: 1936}
+      Script: {instanceID: 1662}
     - Class: 114
-      Script: {instanceID: 2290}
+      Script: {instanceID: 1928}
     - Class: 114
-      Script: {instanceID: 2324}
+      Script: {instanceID: 2282}
+    - Class: 114
+      Script: {instanceID: 2316}
+    - Class: 114
+      Script: {instanceID: 2546}
+    - Class: 114
+      Script: {instanceID: 2550}
     - Class: 114
       Script: {instanceID: 2554}
     - Class: 114
-      Script: {instanceID: 2558}
+      Script: {instanceID: 2564}
     - Class: 114
-      Script: {instanceID: 2562}
+      Script: {instanceID: 2692}
     - Class: 114
-      Script: {instanceID: 2572}
+      Script: {instanceID: 2830}
     - Class: 114
-      Script: {instanceID: 2700}
+      Script: {instanceID: 2880}
     - Class: 114
-      Script: {instanceID: 2838}
+      Script: {instanceID: 3038}
     - Class: 114
-      Script: {instanceID: 2888}
+      Script: {instanceID: 3206}
     - Class: 114
-      Script: {instanceID: 3046}
+      Script: {instanceID: 3296}
     - Class: 114
-      Script: {instanceID: 3214}
+      Script: {instanceID: 3416}
     - Class: 114
-      Script: {instanceID: 3304}
+      Script: {instanceID: 3612}
     - Class: 114
-      Script: {instanceID: 3422}
+      Script: {instanceID: 3902}
     - Class: 114
-      Script: {instanceID: 3618}
+      Script: {instanceID: 3920}
     - Class: 114
-      Script: {instanceID: 3908}
+      Script: {instanceID: 4070}
     - Class: 114
-      Script: {instanceID: 3926}
+      Script: {instanceID: 4322}
     - Class: 114
-      Script: {instanceID: 4076}
+      Script: {instanceID: 4512}
     - Class: 114
-      Script: {instanceID: 4328}
+      Script: {instanceID: 4836}
     - Class: 114
-      Script: {instanceID: 4514}
-    - Class: 114
-      Script: {instanceID: 4838}
-    - Class: 114
-      Script: {instanceID: 5072}
+      Script: {instanceID: 5070}
     - Class: 114
       Script: {instanceID: 5248}
     - Class: 114
@@ -205,6 +233,221 @@ ScriptsOnlyBuild:
     - Class: 137
       Script: {instanceID: 0}
     - Class: 143
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 258
+      Script: {instanceID: 0}
+    - Class: 850595691
+      Script: {instanceID: 0}
+    Assets/Scenes/CharSelec.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1584}
+    - Class: 114
+      Script: {instanceID: 1586}
+    - Class: 114
+      Script: {instanceID: 1590}
+    - Class: 114
+      Script: {instanceID: 1662}
+    - Class: 114
+      Script: {instanceID: 2550}
+    - Class: 114
+      Script: {instanceID: 2554}
+    - Class: 114
+      Script: {instanceID: 3296}
+    - Class: 114
+      Script: {instanceID: 3612}
+    - Class: 114
+      Script: {instanceID: 3902}
+    - Class: 114
+      Script: {instanceID: 4070}
+    - Class: 114
+      Script: {instanceID: 4836}
+    - Class: 114
+      Script: {instanceID: 5070}
+    - Class: 114
+      Script: {instanceID: 5432}
+    - Class: 114
+      Script: {instanceID: 5498}
+    - Class: 114
+      Script: {instanceID: 21930}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 137
+      Script: {instanceID: 0}
+    - Class: 143
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 258
+      Script: {instanceID: 0}
+    - Class: 850595691
+      Script: {instanceID: 0}
+    Assets/Scenes/Menu.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1586}
+    - Class: 114
+      Script: {instanceID: 1590}
+    - Class: 114
+      Script: {instanceID: 1662}
+    - Class: 114
+      Script: {instanceID: 3296}
+    - Class: 114
+      Script: {instanceID: 3612}
+    - Class: 114
+      Script: {instanceID: 3902}
+    - Class: 114
+      Script: {instanceID: 4368}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 258
+      Script: {instanceID: 0}
+    - Class: 850595691
+      Script: {instanceID: 0}
+    Assets/Scenes/RoomMenu.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1586}
+    - Class: 114
+      Script: {instanceID: 1590}
+    - Class: 114
+      Script: {instanceID: 1662}
+    - Class: 114
+      Script: {instanceID: 1874}
+    - Class: 114
+      Script: {instanceID: 2282}
+    - Class: 114
+      Script: {instanceID: 2564}
+    - Class: 114
+      Script: {instanceID: 2692}
+    - Class: 114
+      Script: {instanceID: 3296}
+    - Class: 114
+      Script: {instanceID: 3612}
+    - Class: 114
+      Script: {instanceID: 3682}
+    - Class: 114
+      Script: {instanceID: 3902}
+    - Class: 114
+      Script: {instanceID: 3920}
+    - Class: 114
+      Script: {instanceID: 4070}
+    - Class: 114
+      Script: {instanceID: 4322}
+    - Class: 114
+      Script: {instanceID: 4512}
+    - Class: 114
+      Script: {instanceID: 5224}
+    - Class: 114
+      Script: {instanceID: 5248}
+    - Class: 114
+      Script: {instanceID: 5462}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -325,6 +568,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: LayoutElement
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SceneBus
   - hash:
       serializedVersion: 2
       Hash: c32615721ea44884c68c32d4d373cb00
@@ -861,6 +1110,12 @@ ScriptsOnlyBuild:
     className: RoomBrowserRow
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameManager
+  - hash:
+      serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -1063,6 +1318,12 @@ ScriptsOnlyBuild:
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
     className: CinemachineTrackedDolly
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ButtonGameManagerLinker
   - hash:
       serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
@@ -1309,7 +1570,16 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PercentageDisplayManager
+  - hash:
+      serializedVersion: 2
+      Hash: ba257d6bc003cbadca47d70a604716b3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerManager
   platform: 19
   scenePathNames:
   - Assets/Scenes/Battle.unity
+  - Assets/Scenes/CharSelec.unity
+  - Assets/Scenes/Menu.unity
+  - Assets/Scenes/RoomMenu.unity
   playerPath: C:/Users/48464009/Downloads/Rampage Arena.exe
