@@ -20,6 +20,15 @@ public class PlayerManager : MonoBehaviour
 
     public void ChooseNumber(int num)
     {
+        if (playerNumber != 0)
+        {
+            btnList[playerNumber - 1].SetActive(true);
+            if (chosenCharacters[playerNumber -1] != null)
+            {
+            charName[playerNumber - 1].text = "";
+            chosenCharacters[playerNumber - 1] = null;
+            }
+        }
         playerNumber = num;
         btnList[num-1].SetActive(false);
     }
