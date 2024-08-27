@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Alteruna;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : AttributesSync
 {
     public int playerNumber;
-    public GameObject[] chosenCharacters;
+    [SynchronizableField] public GameObject[] chosenCharacters;
     public GameObject[] charList;
     public GameObject[] btnList;
-    public Text[] charName;
+    [SynchronizableField] public Text[] charName;
+
 
     public void CharChosen(int num)
     {
