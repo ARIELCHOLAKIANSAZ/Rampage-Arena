@@ -14,6 +14,7 @@ namespace Alteruna
 		[SerializeField] private GameObject ContentContainer;
 		[SerializeField] private Button StartButton;
 		[SerializeField] private Button LeaveButton;
+		[SerializeField] public InputField NameHolder;
 
 		public bool ShowUserCount = false;
 
