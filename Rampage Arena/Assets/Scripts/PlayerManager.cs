@@ -7,10 +7,11 @@ using Alteruna;
 public class PlayerManager : AttributesSync
 {
     public int playerNumber;
-    [SynchronizableField] public GameObject[] chosenCharacters;
+    public GameObject[] chosenCharacters;
     public GameObject[] charList;
     public GameObject[] btnList;
-    [SynchronizableField] public Text[] charName;
+    public Text[] charName;
+    [SynchronizableField] public float[] playerList;
 
 
     public void CharChosen(int num)
@@ -24,7 +25,7 @@ public class PlayerManager : AttributesSync
     {
         if (playerNumber != 0)
         {
-            btnList[playerNumber - 1].SetActive(true);
+            BroadcastRemoteMethod("setActive", btnList[playerNumber-1], true);
             if (chosenCharacters[playerNumber -1] != null)
             {
             charName[playerNumber - 1].text = "";
@@ -32,6 +33,40 @@ public class PlayerManager : AttributesSync
             }
         }
         playerNumber = num;
-        btnList[num-1].SetActive(false);
+        BroadcastRemoteMethod("setActive", btnList[num-1], false);
+    }
+
+    public void gameStart()
+    {
+        BroadcastRemoteMethod("playerDivide");
+        if(playerList[0] != null && chosenCharacters[0] == null)
+        {
+            return;
+        }
+        if(playerList[1] != null && chosenCharacters[1] == null)
+        {
+            return;
+        }
+        if(playerList[2] != null && chosenCharacters[2] == null)
+        {
+            return;
+        }
+        if(playerList[3] != null && chosenCharacters[3] == null)
+        {
+            return;
+        }
+        GameManager.Instance.ChangeScene("Battle");
+    }
+
+    [SynchronizableMethod]
+    public void playerDivide()
+    {
+        playerList[playerNumber - 1] = UserId;
+    }
+
+    [SynchronizableMethod]
+    public void setActive(GameObject objtc, bool tof)
+    {
+        objtc.SetActive(tof);
     }
 }
