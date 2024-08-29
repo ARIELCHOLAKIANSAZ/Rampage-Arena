@@ -29,6 +29,7 @@ public class GameManager : AttributesSync
 
     public void ChangeScene(string sceneName)
     {
+        Debug.Log("ChangeScene Called");
         Multiplayer.LoadScene(sceneName);
     }
     public void ChangeSceneSingle(string sceneName)

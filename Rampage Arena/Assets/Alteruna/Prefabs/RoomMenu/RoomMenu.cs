@@ -334,5 +334,10 @@ namespace Alteruna
 				Lan = lan;
 			}
 		}
+		public void setPlayerName()
+        {
+			Multiplayer.SetUsername(NameHolder.text);
+        }
+
 	}
 }

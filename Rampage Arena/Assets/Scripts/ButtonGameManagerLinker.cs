@@ -7,6 +7,13 @@ public class ButtonGameManagerLinker : AttributesSync
 {
     public void nextScene()
     {
-        GameManager.Instance.ChangeScene("CharSelec");
+        BroadcastRemoteMethod("changingScene");
     }
+    [SynchronizableMethod]
+    public void changingScene()
+    {
+        Debug.Log("NextScene called");
+        GameManager.Instance.ChangeSceneSingle("CharSelec");
+    }
+
 }
