@@ -3,70 +3,80 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Alteruna;
+using Microsoft.Win32;
 
 public class PlayerManager : AttributesSync
 {
     public int playerNumber;
-    public GameObject[] chosenCharacters;
+    public GameObject chosenCharacter;
+    [SynchronizableField] public float[] chosenCharacters = { 3, 3, 3, 3 };
     public GameObject[] charList;
     public GameObject[] btnList;
     public Text[] charName;
-    [SynchronizableField] public float[] playerList;
+    [SynchronizableField] public bool[] activePlayerList = { false, false, false, false };
 
+    void Update()
+    {
+        Debug.Log("0");
+        if (!activePlayerList[0] && !activePlayerList[1] && !activePlayerList[2] && !activePlayerList[3])
+        {
+            btnList[4].SetActive(false);
+            Debug.Log("1");
+        }
+        else if (activePlayerList[0] && chosenCharacters[0] == 3)
+        {
+            btnList[4].SetActive(false);
+            Debug.Log("2");
+        }
+        else if (activePlayerList[1] && chosenCharacters[1] == 3)
+        {
+            btnList[4].SetActive(false);
+            Debug.Log("3");
+        }
+        else if (activePlayerList[2] && chosenCharacters[2] == 3)
+        {
+            btnList[4].SetActive(false);
+            Debug.Log("4");
+        }
+        else if (activePlayerList[3] && chosenCharacters[3] == 3)
+        {
+            btnList[4].SetActive(false);
+            Debug.Log("5");
+        }
+        else btnList[4].SetActive(true);
+        Debug.Log("w");
+    }
 
     public void CharChosen(int num)
     {
         if (playerNumber == 0) return;
         charName[playerNumber-1].text = charList[num].name;
-        chosenCharacters[playerNumber - 1] = charList[num];
+        chosenCharacter = charList[num];
+        chosenCharacters[playerNumber - 1] = num;
     }
 
     public void ChooseNumber(int num)
     {
         if (playerNumber != 0)
         {
-            BroadcastRemoteMethod("setActive", btnList[playerNumber-1], true);
-            if (chosenCharacters[playerNumber -1] != null)
+            btnList[playerNumber-1].SetActive(true);
+            activePlayerList[playerNumber - 1] = false;
+            if (chosenCharacters[playerNumber -1] != 3)
             {
-            charName[playerNumber - 1].text = "";
-            chosenCharacters[playerNumber - 1] = null;
+                charName[playerNumber - 1].text = "";
+                chosenCharacter = null;
+                chosenCharacters[playerNumber - 1] = 3;
             }
         }
         playerNumber = num;
-        BroadcastRemoteMethod("setActive", btnList[num-1], false);
+        btnList[num-1].SetActive(false);
+        activePlayerList[playerNumber - 1] = true;
     }
 
     public void gameStart()
     {
-        BroadcastRemoteMethod("playerDivide");
-        if(playerList[0] != null && chosenCharacters[0] == null)
-        {
-            return;
-        }
-        if(playerList[1] != null && chosenCharacters[1] == null)
-        {
-            return;
-        }
-        if(playerList[2] != null && chosenCharacters[2] == null)
-        {
-            return;
-        }
-        if(playerList[3] != null && chosenCharacters[3] == null)
-        {
-            return;
-        }
         GameManager.Instance.ChangeScene("Battle");
     }
 
-    [SynchronizableMethod]
-    public void playerDivide()
-    {
-        playerList[playerNumber - 1] = UserId;
-    }
 
-    [SynchronizableMethod]
-    public void setActive(GameObject objtc, bool tof)
-    {
-        objtc.SetActive(tof);
-    }
 }

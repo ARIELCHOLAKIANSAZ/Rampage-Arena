@@ -29,9 +29,10 @@ public class GameManager : AttributesSync
 
     public void ChangeScene(string sceneName)
     {
-        Debug.Log("ChangeScene Called");
-        Multiplayer.LoadScene(sceneName);
+        BroadcastRemoteMethod(sceneName);
     }
+
+    [SynchronizableMethod]
     public void ChangeSceneSingle(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
