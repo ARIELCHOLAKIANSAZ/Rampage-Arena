@@ -75,8 +75,13 @@ public class PlayerManager : AttributesSync
 
     public void gameStart()
     {
-        GameManager.Instance.ChangeScene("Battle");
+        BroadcastRemoteMethod("toBattle");
     }
 
+    [SynchronizableMethod]
+    public void toBattle()
+    {
+        GameManager.Instance.ChangeSceneSingle("Battle");
+    }
 
 }
