@@ -15,6 +15,7 @@ public class PlayerManager : AttributesSync
     public Text[] charName;
     [SynchronizableField] public bool[] activePlayerList = { false, false, false, false };
 
+
     void Update()
     {
         Debug.Log("0");
