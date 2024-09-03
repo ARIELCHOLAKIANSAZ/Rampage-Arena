@@ -19,6 +19,26 @@ public class AttacksManager : MonoBehaviour
     {
         ava = GetComponent<Alteruna.Avatar>();
         if (!ava.IsMe) return;
+        PlayerManager p = GetComponent<PlayerManager>();
+        int LayerTeam = 0;
+        if (p.playerNumber == 1)
+        {
+            LayerTeam = LayerMask.NameToLayer("Team1");
+        }
+        else if (p.playerNumber == 2)
+        {
+            LayerTeam = LayerMask.NameToLayer("Team2");
+        }
+        else if (p.playerNumber == 3)
+        {
+            LayerTeam = LayerMask.NameToLayer("Team3");
+        }
+        else if (p.playerNumber == 4)
+        {
+            LayerTeam = LayerMask.NameToLayer("Team4");
+        }
+        gameObject.layer = LayerTeam;
+        enemyLayers = -LayerTeam;
     }
     void Update()
     {
@@ -93,6 +113,12 @@ public class AttacksManager : MonoBehaviour
             {
                 HealthManager p = enemy.GetComponent<HealthManager>();
                 p.percen += 2.4f;
+                Rigidbody rb = enemy.GetComponent<Rigidbody>();
+                if (rb != null)
+                {
+                    Vector3 direction = enemy.transform.position - transform.position;
+                    rb.AddForce(direction.normalized * p.percen / 2, ForceMode.Impulse);
+                }
             }
             yield return new WaitForSeconds(0.1f);
             m.jlock = false;
@@ -113,6 +139,12 @@ public class AttacksManager : MonoBehaviour
             {
                 HealthManager p = enemy.GetComponent<HealthManager>();
                 p.percen += 2.4f;
+                Rigidbody rb = enemy.GetComponent<Rigidbody>();
+                if (rb != null)
+                {
+                    Vector3 direction = enemy.transform.position - transform.position;
+                    rb.AddForce(direction.normalized * p.percen / 2, ForceMode.Impulse);
+                }
             }
             yield return new WaitForSeconds(0.3f);
             lcked = false;
@@ -134,6 +166,12 @@ public class AttacksManager : MonoBehaviour
             {
                 HealthManager p = enemy.GetComponent<HealthManager>();
                 p.percen += 4;
+                Rigidbody rb = enemy.GetComponent<Rigidbody>();
+                if (rb != null)
+                {
+                    Vector3 direction = enemy.transform.position - transform.position;
+                    rb.AddForce(new Vector3(0, 5, 0) * p.percen / 2, ForceMode.Impulse);
+                }
             }
             yield return new WaitForSeconds(0.6f);
             lcked = false;
@@ -155,6 +193,12 @@ public class AttacksManager : MonoBehaviour
             {
                 HealthManager p = enemy.GetComponent<HealthManager>();
                 p.percen += 2.8f;
+                Rigidbody rb = enemy.GetComponent<Rigidbody>();
+                if (rb != null)
+                {
+                    Vector3 direction = enemy.transform.position - transform.position;
+                    rb.AddForce(direction.normalized * p.percen / 2, ForceMode.Impulse);
+                }
             }
             yield return new WaitForSeconds(0.3f);
             lcked = false;
@@ -187,6 +231,12 @@ public class AttacksManager : MonoBehaviour
             {
                 HealthManager p = enemy.GetComponent<HealthManager>();
                 p.percen += 0.1f;
+                Rigidbody rb = enemy.GetComponent<Rigidbody>();
+                if (rb != null)
+                {
+                    Vector3 direction = enemy.transform.position - transform.position;
+                    rb.AddForce(direction.normalized * p.percen / 5, ForceMode.Impulse);
+                }
             }
         }
         IEnumerator UpNormal()
@@ -206,6 +256,12 @@ public class AttacksManager : MonoBehaviour
             {
                 HealthManager p = enemy.GetComponent<HealthManager>();
                 p.percen += 3.2f;
+                Rigidbody rb = enemy.GetComponent<Rigidbody>();
+                if (rb != null)
+                {
+                    Vector3 direction = enemy.transform.position - transform.position;
+                    rb.AddForce(direction.normalized * p.percen / 2, ForceMode.Impulse);
+                }
             }
             yield return new WaitForSeconds(0.3f);
             lcked = false;
@@ -226,6 +282,12 @@ public class AttacksManager : MonoBehaviour
             {
                 HealthManager p = enemy.GetComponent<HealthManager>();
                 p.percen += 1.7f;
+                Rigidbody rb = enemy.GetComponent<Rigidbody>();
+                if(rb != null)
+                {
+                    Vector3 direction = enemy.transform.position - transform.position;
+                    rb.AddForce(direction.normalized * p.percen / 2, ForceMode.Impulse);
+                }
             }
             yield return new WaitForSeconds(0.2f);
             lcked = false;

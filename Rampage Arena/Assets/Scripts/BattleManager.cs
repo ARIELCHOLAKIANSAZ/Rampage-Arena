@@ -12,7 +12,23 @@ public class BattleManager : AttributesSync
     {
         if (SceneManager.GetActiveScene().name == "Battle")
         {
-            Multiplayer.SpawnAvatar(GameObject.Find("SPAWNPOINT").transform.position);
+            PlayerManager p = GetComponent<PlayerManager>();
+            if (p.playerNumber == 1)
+            {
+                Multiplayer.SpawnAvatar(GameObject.Find("SPAWNPOINT1").transform.position);
+            }
+            else if (p.playerNumber == 2)
+            {
+                Multiplayer.SpawnAvatar(GameObject.Find("SPAWNPOINT2").transform.position);
+            }
+            else if (p.playerNumber == 3)
+            {
+                Multiplayer.SpawnAvatar(GameObject.Find("SPAWNPOINT3").transform.position);
+            } 
+            else if (p.playerNumber == 4)
+            {
+                Multiplayer.SpawnAvatar(GameObject.Find("SPAWNPOINT4").transform.position);
+            }
         }
     }
 
