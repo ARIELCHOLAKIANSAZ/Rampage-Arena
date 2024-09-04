@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Alteruna;
 
-public class ThirdPersonMovement : MonoBehaviour
+public class ThirdPersonMovement : AttributesSync
 {
     public CharacterController controller;
     public float speed;
@@ -11,7 +12,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public float jumpForce;
     public float airSpeed;
     public float jumps;
-    public Animator ani;
+    public AnimationSynchronizable ani;
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
     public bool locked = false;
@@ -41,7 +42,7 @@ public class ThirdPersonMovement : MonoBehaviour
             if (controller.isGrounded)
             {
                 controller.Move(moveDir.normalized * speed * Time.deltaTime);
-                ani.SetBool("Walk", true);
+                ani.Animator.SetBool("Walk", true);
             }
             else
             {
@@ -51,7 +52,7 @@ public class ThirdPersonMovement : MonoBehaviour
         }
         else
         { 
-            ani.SetBool("Walk", false);
+            ani.Animator.SetBool("Walk", false);
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, Camera.main.transform.eulerAngles.y, transform.rotation.eulerAngles.z);
         }
         
@@ -63,11 +64,11 @@ public class ThirdPersonMovement : MonoBehaviour
             
             verticalVelocity = jumpForce;
             jumps--;
-            ani.SetBool("Jump", true);
+            ani.Animator.SetBool("Jump", true);
         }
         else
         {
-            ani.SetBool("Jump", false);
+            ani.Animator.SetBool("Jump", false);
         }
 
 
@@ -75,7 +76,7 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             jumps = 2;
             verticalVelocity = 0;
-            ani.SetBool("Ground", true);
+            ani.Animator.SetBool("Ground", true);
 
         }
         else if (-2 < verticalVelocity && verticalVelocity < 3 && gravAffect)
@@ -86,7 +87,7 @@ public class ThirdPersonMovement : MonoBehaviour
         else if (gravAffect)
         {
             verticalVelocity -= grav;
-            ani.SetBool("Ground", false);
+            ani.Animator.SetBool("Ground", false);
         }
         else
         {

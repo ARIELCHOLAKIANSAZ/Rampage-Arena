@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Alteruna;
 
-public class AttacksManager : MonoBehaviour
+public class AttacksManager : AttributesSync
 {
     public CharacterController con;
-    public Animator ani;
+    public AnimationSynchronizable ani;
     public GameObject dada;
     public bool lcked = false;
     public Transform[] attackPoints;
@@ -19,7 +19,7 @@ public class AttacksManager : MonoBehaviour
     {
         ava = GetComponent<Alteruna.Avatar>();
         if (!ava.IsMe) return;
-        PlayerManager p = GetComponent<PlayerManager>();
+        PlayerManager p = GameObject.Find("PLAYERMANAGER").GetComponent<PlayerManager>();
         int LayerTeam = 0;
         if (p.playerNumber == 1)
         {
@@ -106,7 +106,7 @@ public class AttacksManager : MonoBehaviour
             lcked = true;
             m.locked = true;
             m.jlock = true;
-            ani.SetTrigger("LeftNormal");
+            ani.Animator.SetTrigger("LeftNormal");
             yield return new WaitForSeconds(0.3f);
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[3].position, attackRanges[3], enemyLayers);
             foreach (Collider enemy in hitEnemies)
@@ -132,7 +132,7 @@ public class AttacksManager : MonoBehaviour
             lcked = true;
             m.jlock = true;
             m.locked = true;
-            ani.SetTrigger("RightNormal");
+            ani.Animator.SetTrigger("RightNormal");
             yield return new WaitForSeconds(0.1f);
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[2].position, attackRanges[2], enemyLayers);
             foreach (Collider enemy in hitEnemies)
@@ -159,7 +159,7 @@ public class AttacksManager : MonoBehaviour
             m.jlock = true;
             m.locked = true;
             m.gravAffect = false;
-            ani.SetTrigger("NeutralNormal");
+            ani.Animator.SetTrigger("NeutralNormal");
             yield return new WaitForSeconds(0.2f);
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[0].position, attackRanges[0], enemyLayers);
             foreach (Collider enemy in hitEnemies)
@@ -186,7 +186,7 @@ public class AttacksManager : MonoBehaviour
             lcked = true;
             m.jlock = true;
             m.locked = true;
-            ani.SetTrigger("BackNormal");
+            ani.Animator.SetTrigger("BackNormal");
             yield return new WaitForSeconds(0.1f);
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[1].position, attackRanges[1], enemyLayers);
             foreach (Collider enemy in hitEnemies)
@@ -213,7 +213,7 @@ public class AttacksManager : MonoBehaviour
             m.jlock = true;
             m.locked = true;
             m.gravAffect = false;
-            ani.SetBool("DownNormal", true);
+            ani.Animator.SetBool("DownNormal", true);
             yield return new WaitForSeconds(0.1f);
             kadoosh = true;
             yield return new WaitForSeconds(0.3f);
@@ -222,7 +222,7 @@ public class AttacksManager : MonoBehaviour
             m.locked = false;
             m.jlock = false;
             m.gravAffect = true;
-            ani.SetBool("DownNormal", false);
+            ani.Animator.SetBool("DownNormal", false);
         }
         if (kadoosh)
         {
@@ -249,7 +249,7 @@ public class AttacksManager : MonoBehaviour
             {
             m.verticalVelocity += 8;
             }
-            ani.SetTrigger("UpNormal");
+            ani.Animator.SetTrigger("UpNormal");
             yield return new WaitForSeconds(0.1f);
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[5].position, attackRanges[5], enemyLayers);
             foreach (Collider enemy in hitEnemies)
@@ -275,7 +275,7 @@ public class AttacksManager : MonoBehaviour
             lcked = true;
             m.jlock = true;
             m.locked = true;
-            ani.SetTrigger("ForwardNormal");
+            ani.Animator.SetTrigger("ForwardNormal");
             yield return new WaitForSeconds(0.1f);
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[0].position, 1.5f, enemyLayers);
             foreach (Collider enemy in hitEnemies)

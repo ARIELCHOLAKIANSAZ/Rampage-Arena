@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Alteruna;
 using Microsoft.Win32;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : AttributesSync
 {
@@ -15,37 +16,47 @@ public class PlayerManager : AttributesSync
     public Text[] charName;
     [SynchronizableField] public bool[] activePlayerList = { false, false, false, false };
 
+    public static PlayerManager Instance;
 
+    void Awake()
+    {
+        if(Instance != this && Instance != null)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+
+        DontDestroyOnLoad(this);
+    }
     void Update()
     {
-        Debug.Log("0");
+        if(SceneManager.GetActiveScene().name == "CharSelec")
+        {
         if (!activePlayerList[0] && !activePlayerList[1] && !activePlayerList[2] && !activePlayerList[3])
         {
             btnList[4].SetActive(false);
-            Debug.Log("1");
         }
         else if (activePlayerList[0] && chosenCharacters[0] == 3)
         {
             btnList[4].SetActive(false);
-            Debug.Log("2");
         }
         else if (activePlayerList[1] && chosenCharacters[1] == 3)
         {
             btnList[4].SetActive(false);
-            Debug.Log("3");
         }
         else if (activePlayerList[2] && chosenCharacters[2] == 3)
         {
             btnList[4].SetActive(false);
-            Debug.Log("4");
         }
         else if (activePlayerList[3] && chosenCharacters[3] == 3)
         {
             btnList[4].SetActive(false);
-            Debug.Log("5");
         }
         else btnList[4].SetActive(true);
-        Debug.Log("w");
+        }
     }
 
     public void CharChosen(int num)

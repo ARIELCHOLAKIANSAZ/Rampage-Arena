@@ -6,33 +6,30 @@ using Alteruna;
 
 public class BattleManager : AttributesSync
 {
-    // Start is called before the first frame update
+        Vector3 sp = new Vector3 (0, 0, 0);
     void Start()
-
-    {
-        if (SceneManager.GetActiveScene().name == "Battle")
+    {  
+        int p = GameObject.Find("PLAYERMANAGER").GetComponent<PlayerManager>().playerNumber;
+        Debug.Log(p);
+        if (p == 1)
         {
-            PlayerManager p = GetComponent<PlayerManager>();
-            if (p.playerNumber == 1)
-            {
-                Multiplayer.SpawnAvatar(GameObject.Find("SPAWNPOINT1").transform.position);
-            }
-            else if (p.playerNumber == 2)
-            {
-                Multiplayer.SpawnAvatar(GameObject.Find("SPAWNPOINT2").transform.position);
-            }
-            else if (p.playerNumber == 3)
-            {
-                Multiplayer.SpawnAvatar(GameObject.Find("SPAWNPOINT3").transform.position);
-            } 
-            else if (p.playerNumber == 4)
-            {
-                Multiplayer.SpawnAvatar(GameObject.Find("SPAWNPOINT4").transform.position);
-            }
+            sp = GameObject.Find("SPAWNPOINT1").transform.position;
         }
+        else if (p == 2)
+        {
+            sp = GameObject.Find("SPAWNPOINT2").transform.position;
+        }
+        else if (p == 3)
+        {
+            sp = GameObject.Find("SPAWNPOINT3").transform.position;
+        } 
+        else if (p == 4)
+        {
+            sp = GameObject.Find("SPAWNPOINT4").transform.position;
+        }
+            Multiplayer.SpawnAvatar(sp);
     }
 
-    // Update is called once per frame
     void Update()
     {
         

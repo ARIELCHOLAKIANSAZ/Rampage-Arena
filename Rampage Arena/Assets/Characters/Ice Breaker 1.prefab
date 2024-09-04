@@ -294,14 +294,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb78ed5d1de2adb4a8321987ee37103c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Multiplayer: {fileID: 0}
+  _uidString: 181ffb7d-c43b-455b-a2cb-5af0f0d98478
+  Reliability: 1
+  LocalMethodBehavior: 1
   controller: {fileID: 5893682761856168588}
   speed: 10
   verticalVelocity: 0
-  grav: 0.5
+  grav: 0.15
   jumpForce: 13
   airSpeed: 8
   jumps: 0
-  ani: {fileID: 2452873716930092292}
+  ani: {fileID: 6062636581587030301}
   turnSmoothTime: 0.1
   locked: 0
   jlock: 0
@@ -333,8 +337,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbcfd934406f3334fbbd45b038f73981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Multiplayer: {fileID: 0}
+  _uidString: fe9379f0-b142-4f2d-93cf-8b12a770212a
+  Reliability: 1
+  LocalMethodBehavior: 1
   con: {fileID: 5893682761856168588}
-  ani: {fileID: 2452873716930092292}
+  ani: {fileID: 6062636581587030301}
   dada: {fileID: 5893682761856168586}
   lcked: 0
   attackPoints:
@@ -407,7 +415,7 @@ MonoBehaviour:
   - Name: Max
     NetLOD: 4
     Frequency: 120
-  Reliability: 2
+  Reliability: 1
   UseGlobalPosition: 0
   refreshRate: 30
   SyncedAxes: 63
@@ -1751,7 +1759,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Multiplayer: {fileID: 0}
   _uidString: 1540712e-572c-4117-9fac-ad440cbc7b4a
-  Reliability: 2
+  Reliability: 1
   LocalMethodBehavior: 1
   Animator: {fileID: 0}
 --- !u!1 &5893682761908748504
