@@ -83,8 +83,11 @@ public class KnockbackHandler : AttributesSync
     }
     public void Knockback(Vector3 direction)
     {
+        Debug.Log("knockedbacked");
         knockbackCounter = time;
         Vector3 moveDir = (direction * force);
+        Debug.Log("force = " + force.ToString());
         cont.Move(moveDir);
+        Debug.Log("movedired");
     }
 }

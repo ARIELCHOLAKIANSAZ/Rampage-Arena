@@ -6,8 +6,8 @@ using Alteruna;
 
 public class BattleManager : AttributesSync
 {
-        Vector3 sp = new Vector3 (0, 0, 0);
-    void Start()
+        public Vector3 sp = new Vector3 (0, 0, 0);
+    public void Start()
     {  
         int p = GameObject.Find("PLAYERMANAGER").GetComponent<PlayerManager>().playerNumber;
         if (p == 1)

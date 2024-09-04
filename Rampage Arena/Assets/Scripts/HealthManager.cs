@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Alteruna;
 
-public class HealthManager : MonoBehaviour
+public class HealthManager : AttributesSync
 {
-    public float percen = 0;
+    [SynchronizableField] public float percen = 0;
     float percenLast = 0;
     public PercentageDisplayManager display;
     public int guy;
