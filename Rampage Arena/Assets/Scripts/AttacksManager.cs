@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Alteruna;
+using JetBrains.Annotations;
 
 public class AttacksManager : AttributesSync
 {
@@ -113,12 +114,15 @@ public class AttacksManager : AttributesSync
             {
                 HealthManager p = enemy.GetComponent<HealthManager>();
                 p.percen += 2.4f;
-                Rigidbody rb = enemy.GetComponent<Rigidbody>();
-                if (rb != null)
-                {
-                    Vector3 direction = enemy.transform.position - transform.position;
-                    rb.AddForce(direction.normalized * p.percen / 2, ForceMode.Impulse);
-                }
+                KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
+                kn.mainx = transform.position.x;
+                kn.mainy = transform.position.y;
+                kn.mainz = transform.position.z;
+                kn.force = p.percen/2;
+                if(enemy.gameObject.layer == 9) kn.hit1 = true;
+                if(enemy.gameObject.layer == 11) kn.hit2 = true;
+                if(enemy.gameObject.layer == 12) kn.hit3 = true;
+                if(enemy.gameObject.layer == 13) kn.hit4 = true;
             }
             yield return new WaitForSeconds(0.1f);
             m.jlock = false;
@@ -139,12 +143,15 @@ public class AttacksManager : AttributesSync
             {
                 HealthManager p = enemy.GetComponent<HealthManager>();
                 p.percen += 2.4f;
-                Rigidbody rb = enemy.GetComponent<Rigidbody>();
-                if (rb != null)
-                {
-                    Vector3 direction = enemy.transform.position - transform.position;
-                    rb.AddForce(direction.normalized * p.percen / 2, ForceMode.Impulse);
-                }
+                KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
+                kn.mainx = transform.position.x;
+                kn.mainy = transform.position.y;
+                kn.mainz = transform.position.z;
+                kn.force = p.percen/2;
+                if(enemy.gameObject.layer == 9) kn.hit1 = true;
+                if(enemy.gameObject.layer == 11) kn.hit2 = true;
+                if(enemy.gameObject.layer == 12) kn.hit3 = true;
+                if(enemy.gameObject.layer == 13) kn.hit4 = true;
             }
             yield return new WaitForSeconds(0.3f);
             lcked = false;
@@ -160,19 +167,26 @@ public class AttacksManager : AttributesSync
             m.locked = true;
             m.gravAffect = false;
             ani.Animator.SetTrigger("NeutralNormal");
+            Debug.Log("preforeach");
             yield return new WaitForSeconds(0.2f);
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[0].position, attackRanges[0], enemyLayers);
             foreach (Collider enemy in hitEnemies)
             {
+                Debug.Log("inforeach");
                 HealthManager p = enemy.GetComponent<HealthManager>();
                 p.percen += 4;
-                Rigidbody rb = enemy.GetComponent<Rigidbody>();
-                if (rb != null)
-                {
-                    Vector3 direction = enemy.transform.position - transform.position;
-                    rb.AddForce(new Vector3(0, 5, 0) * p.percen / 2, ForceMode.Impulse);
-                }
+                KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
+                kn.mainx = transform.position.x;
+                kn.mainy = transform.position.y;
+                kn.mainz = transform.position.z;
+                kn.force = p.percen/2;
+                if(enemy.gameObject.layer == 9) kn.hit1 = true;
+                if(enemy.gameObject.layer == 11) kn.hit2 = true;
+                if(enemy.gameObject.layer == 12) kn.hit3 = true;
+                if(enemy.gameObject.layer == 13) kn.hit4 = true;
+                Debug.Log("postknock");
             }
+            Debug.Log("postforeach");
             yield return new WaitForSeconds(0.6f);
             lcked = false;
             m.jlock = false;
@@ -193,12 +207,15 @@ public class AttacksManager : AttributesSync
             {
                 HealthManager p = enemy.GetComponent<HealthManager>();
                 p.percen += 2.8f;
-                Rigidbody rb = enemy.GetComponent<Rigidbody>();
-                if (rb != null)
-                {
-                    Vector3 direction = enemy.transform.position - transform.position;
-                    rb.AddForce(direction.normalized * p.percen / 2, ForceMode.Impulse);
-                }
+                KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
+                kn.mainx = transform.position.x;
+                kn.mainy = transform.position.y;
+                kn.mainz = transform.position.z;
+                kn.force = p.percen/2;
+                if(enemy.gameObject.layer == 9) kn.hit1 = true;
+                if(enemy.gameObject.layer == 11) kn.hit2 = true;
+                if(enemy.gameObject.layer == 12) kn.hit3 = true;
+                if(enemy.gameObject.layer == 13) kn.hit4 = true;
             }
             yield return new WaitForSeconds(0.3f);
             lcked = false;
@@ -232,11 +249,15 @@ public class AttacksManager : AttributesSync
                 HealthManager p = enemy.GetComponent<HealthManager>();
                 p.percen += 0.1f;
                 Rigidbody rb = enemy.GetComponent<Rigidbody>();
-                if (rb != null)
-                {
-                    Vector3 direction = enemy.transform.position - transform.position;
-                    rb.AddForce(direction.normalized * p.percen / 5, ForceMode.Impulse);
-                }
+                KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
+                kn.mainx = transform.position.x;
+                kn.mainy = transform.position.y;
+                kn.mainz = transform.position.z;
+                kn.force = p.percen/5;
+                if(enemy.gameObject.layer == 9) kn.hit1 = true;
+                if(enemy.gameObject.layer == 11) kn.hit2 = true;
+                if(enemy.gameObject.layer == 12) kn.hit3 = true;
+                if(enemy.gameObject.layer == 13) kn.hit4 = true;
             }
         }
         IEnumerator UpNormal()
@@ -256,12 +277,15 @@ public class AttacksManager : AttributesSync
             {
                 HealthManager p = enemy.GetComponent<HealthManager>();
                 p.percen += 3.2f;
-                Rigidbody rb = enemy.GetComponent<Rigidbody>();
-                if (rb != null)
-                {
-                    Vector3 direction = enemy.transform.position - transform.position;
-                    rb.AddForce(direction.normalized * p.percen / 2, ForceMode.Impulse);
-                }
+                KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
+                kn.mainx = transform.position.x;
+                kn.mainy = transform.position.y;
+                kn.mainz = transform.position.z;
+                kn.force = p.percen/2;
+                if(enemy.gameObject.layer == 9) kn.hit1 = true;
+                if(enemy.gameObject.layer == 11) kn.hit2 = true;
+                if(enemy.gameObject.layer == 12) kn.hit3 = true;
+                if(enemy.gameObject.layer == 13) kn.hit4 = true;
             }
             yield return new WaitForSeconds(0.3f);
             lcked = false;
@@ -280,14 +304,17 @@ public class AttacksManager : AttributesSync
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[0].position, 1.5f, enemyLayers);
             foreach (Collider enemy in hitEnemies)
             {
-                HealthManager p = enemy.GetComponent<HealthManager>();
+                HealthManager p = enemy.GetComponentInParent<HealthManager>();
                 p.percen += 1.7f;
-                Rigidbody rb = enemy.GetComponent<Rigidbody>();
-                if(rb != null)
-                {
-                    Vector3 direction = enemy.transform.position - transform.position;
-                    rb.AddForce(direction.normalized * p.percen / 2, ForceMode.Impulse);
-                }
+                KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
+                kn.mainx = transform.position.x;
+                kn.mainy = transform.position.y;
+                kn.mainz = transform.position.z;
+                kn.force = p.percen/2;
+                if(enemy.gameObject.layer == 9) kn.hit1 = true;
+                if(enemy.gameObject.layer == 11) kn.hit2 = true;
+                if(enemy.gameObject.layer == 12) kn.hit3 = true;
+                if(enemy.gameObject.layer == 13) kn.hit4 = true;
             }
             yield return new WaitForSeconds(0.2f);
             lcked = false;
@@ -295,6 +322,6 @@ public class AttacksManager : AttributesSync
             m.jlock = false;
             m.gravAffect = true;
         }
-    }
     
+    }
 }

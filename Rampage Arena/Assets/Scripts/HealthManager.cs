@@ -9,11 +9,4 @@ public class HealthManager : MonoBehaviour
     public PercentageDisplayManager display;
     public int guy;
 
-    void Update()
-    {
-        if (percenLast != percen)
-        {
-            display.PercenUpdate(percen, guy);
-        }
-    }
 }

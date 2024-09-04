@@ -81,12 +81,12 @@ public class ThirdPersonMovement : AttributesSync
         }
         else if (-2 < verticalVelocity && verticalVelocity < 3 && gravAffect)
         {
-            verticalVelocity -= grav / 1.3f;
+            verticalVelocity += grav / 1.4f;
 
         }
         else if (gravAffect)
         {
-            verticalVelocity -= grav;
+            verticalVelocity += grav;
             ani.Animator.SetBool("Ground", false);
         }
         else

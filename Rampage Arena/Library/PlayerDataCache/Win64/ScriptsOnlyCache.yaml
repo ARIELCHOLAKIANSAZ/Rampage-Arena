@@ -8,10 +8,6 @@ ScriptsOnlyBuild:
     - Alteruna.EnableSynchronizable
     - Alteruna.Multiplayer
     - Alteruna.TransformSynchronizable
-    Alteruna.TrinityEditor.dll:
-    - Alteruna.AvatarEditor
-    - Alteruna.TransformSynchronizableCommonEditor
-    - Alteruna.UniqueIDEditor
     Assembly-CSharp.dll:
     - Alteruna.EnsureEventSystem
     - Alteruna.MapDescriptions
@@ -21,6 +17,7 @@ ScriptsOnlyBuild:
     - ButtonGameManagerLinker
     - GameManager
     - HealthManager
+    - KnockbackHandler
     - NameChooser
     - PercentageDisplayManager
     - PlayerLook
@@ -280,6 +277,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5438}
     - Class: 114
       Script: {instanceID: 5504}
+    - Class: 114
+      Script: {instanceID: 32258}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -452,6 +451,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5468}
     - Class: 114
       Script: {instanceID: 5504}
+    - Class: 114
+      Script: {instanceID: 32258}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1599,6 +1600,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PercentageDisplayManager
+  - hash:
+      serializedVersion: 2
+      Hash: ed98ca8a2d518200d045d115c26ae297
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: KnockbackHandler
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu.unity
