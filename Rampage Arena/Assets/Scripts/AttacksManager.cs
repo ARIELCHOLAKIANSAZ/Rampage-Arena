@@ -16,12 +16,23 @@ public class AttacksManager : AttributesSync
     bool kadoosh = false;
     private Alteruna.Avatar ava;
 
-    void Awake()
+    void Start()
     {
+        Debug.Log("callbackping");
         ava = GetComponent<Alteruna.Avatar>();
-        if (!ava.IsMe) return;
+        if (!ava.IsMe)
+        {
+            Debug.Log("ava isnt me"); return;
+        }
+        else
+        {
+        Debug.Log("ava is me st");
+        }
+        Debug.Log("callbackping");
         PlayerManager p = GameObject.Find("PLAYERMANAGER").GetComponent<PlayerManager>();
+        Debug.Log("callbackping");
         int LayerTeam = 0;
+        Debug.Log("callbackping");
         if (p.playerNumber == 1)
         {
             LayerTeam = LayerMask.NameToLayer("Team1");
@@ -32,18 +43,23 @@ public class AttacksManager : AttributesSync
         }
         else if (p.playerNumber == 3)
         {
+        Debug.Log("callbackping");
             LayerTeam = LayerMask.NameToLayer("Team3");
+        Debug.Log("callbackping");
         }
         else if (p.playerNumber == 4)
         {
             LayerTeam = LayerMask.NameToLayer("Team4");
         }
+        Debug.Log("layer prechange " + gameObject.layer.ToString());
         gameObject.layer = LayerTeam;
-        enemyLayers = -LayerTeam;
+        Debug.Log("layer postchange " + gameObject.layer.ToString());
+        enemyLayers &= ~(1 << LayerTeam);
     }
     void Update()
     {
         if (!ava.IsMe) return;
+        Debug.Log("ava is me");
 
         if (Input.GetKey(KeyCode.LeftShift) && lcked == false)
         {
@@ -268,7 +284,7 @@ public class AttacksManager : AttributesSync
             m.locked = true;
             if (m.controller.isGrounded == false)
             {
-            m.verticalVelocity += 8;
+            m.verticalVelocity += 10;
             }
             ani.Animator.SetTrigger("UpNormal");
             yield return new WaitForSeconds(0.1f);

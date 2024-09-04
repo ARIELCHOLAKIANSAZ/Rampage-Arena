@@ -10,7 +10,6 @@ public class BattleManager : AttributesSync
     void Start()
     {  
         int p = GameObject.Find("PLAYERMANAGER").GetComponent<PlayerManager>().playerNumber;
-        Debug.Log(p);
         if (p == 1)
         {
             sp = GameObject.Find("SPAWNPOINT1").transform.position;
