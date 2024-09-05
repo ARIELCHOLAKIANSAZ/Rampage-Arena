@@ -35,14 +35,12 @@ ScriptsOnlyBuild:
     - Cinemachine.CinemachinePipeline
     - Cinemachine.CinemachineVirtualCamera
     Unity.2D.Tilemap.Editor.dll:
-    - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
-    - UnityEditor.Tilemaps.TilemapEditorToolPreferences
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
@@ -189,13 +187,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3904}
     - Class: 114
-      Script: {instanceID: 6642}
+      Script: {instanceID: 4290}
     - Class: 114
-      Script: {instanceID: 6766}
+      Script: {instanceID: 6646}
     - Class: 114
-      Script: {instanceID: 22010}
-    - Class: 114
-      Script: {instanceID: 41976}
+      Script: {instanceID: 6770}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -276,15 +272,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4072}
     - Class: 114
-      Script: {instanceID: 4834}
+      Script: {instanceID: 4356}
     - Class: 114
-      Script: {instanceID: 5068}
+      Script: {instanceID: 4838}
     - Class: 114
-      Script: {instanceID: 5104}
+      Script: {instanceID: 5072}
     - Class: 114
-      Script: {instanceID: 5428}
+      Script: {instanceID: 5108}
     - Class: 114
-      Script: {instanceID: 5494}
+      Script: {instanceID: 5432}
+    - Class: 114
+      Script: {instanceID: 5498}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -349,7 +347,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3904}
     - Class: 114
-      Script: {instanceID: 4366}
+      Script: {instanceID: 4368}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -438,25 +436,27 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4072}
     - Class: 114
-      Script: {instanceID: 4320}
+      Script: {instanceID: 4322}
     - Class: 114
-      Script: {instanceID: 4508}
+      Script: {instanceID: 4356}
     - Class: 114
-      Script: {instanceID: 4834}
+      Script: {instanceID: 4512}
     - Class: 114
-      Script: {instanceID: 5068}
+      Script: {instanceID: 4838}
     - Class: 114
-      Script: {instanceID: 5104}
+      Script: {instanceID: 5072}
     - Class: 114
-      Script: {instanceID: 5222}
+      Script: {instanceID: 5108}
     - Class: 114
-      Script: {instanceID: 5248}
+      Script: {instanceID: 5226}
     - Class: 114
-      Script: {instanceID: 5428}
+      Script: {instanceID: 5252}
     - Class: 114
-      Script: {instanceID: 5458}
+      Script: {instanceID: 5432}
     - Class: 114
-      Script: {instanceID: 5494}
+      Script: {instanceID: 5462}
+    - Class: 114
+      Script: {instanceID: 5498}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1126,6 +1126,12 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
+      Hash: e0a4bb1718965b11ec0b8c15bb1ad2ff
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DeathManager
+  - hash:
+      serializedVersion: 2
       Hash: 68587ea39bb503ea8d65053e93c31d06
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -1142,6 +1148,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: Alteruna
     className: RoomBrowserRow
+  - hash:
+      serializedVersion: 2
+      Hash: acfe8e022861bfc5f418a5ef1a7e8798
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LayerManager
   - hash:
       serializedVersion: 2
       Hash: 8e0c532287e694f9d9eb05a373edfb03
@@ -1610,18 +1622,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PercentageDisplayManager
-  - hash:
-      serializedVersion: 2
-      Hash: e0a4bb1718965b11ec0b8c15bb1ad2ff
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: DeathManager
-  - hash:
-      serializedVersion: 2
-      Hash: b6d4623355d2f4615de9714ff9efcc6c
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: LayerManager
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu.unity

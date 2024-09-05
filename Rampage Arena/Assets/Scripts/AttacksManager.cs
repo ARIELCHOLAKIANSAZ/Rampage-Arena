@@ -20,27 +20,6 @@ public class AttacksManager : AttributesSync
     {
         ava = GetComponent<Alteruna.Avatar>();
         if (!ava.IsMe) return;
-
-        PlayerManager p = GameObject.Find("PLAYERMANAGER").GetComponent<PlayerManager>();
-        int LayerTeam = 0;
-        if (p.playerNumber == 1)
-        {
-            LayerTeam = LayerMask.NameToLayer("Team1");
-        }
-        else if (p.playerNumber == 2)
-        {
-            LayerTeam = LayerMask.NameToLayer("Team2");
-        }
-        else if (p.playerNumber == 3)
-        {
-            LayerTeam = LayerMask.NameToLayer("Team3");
-        }
-        else if (p.playerNumber == 4)
-        {
-            LayerTeam = LayerMask.NameToLayer("Team4");
-        }
-        gameObject.layer = LayerTeam;
-        enemyLayers &= ~(1 << LayerTeam);
     }
     void Update()
     {
