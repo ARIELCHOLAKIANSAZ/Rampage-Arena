@@ -18,19 +18,19 @@ public class LayerManager : AttributesSync
 
         if (p.playerNumber == 1)
         {
-            BroadcastRemoteMethod("setPlayer", 0, gameObject.name);
+            BroadcastRemoteMethod("setPlayer", 0, this.gameObject.name);
         }
         else if (p.playerNumber == 2)
         {
-            BroadcastRemoteMethod("setPlayer", 1, gameObject.name);
+            BroadcastRemoteMethod("setPlayer", 1, this.gameObject.name);
         }
         else if (p.playerNumber == 3)
         {
-            BroadcastRemoteMethod("setPlayer", 2, gameObject.name);
+            BroadcastRemoteMethod("setPlayer", 2, this.gameObject.name);
         }
         else if (p.playerNumber == 4)
         {
-            BroadcastRemoteMethod("setPlayer", 3, gameObject.name);
+            BroadcastRemoteMethod("setPlayer", 3, this.gameObject.name);
         }
         Debug.Log("name 2: " + players[1]);
         Debug.Log("name 3: " + players[2]);
