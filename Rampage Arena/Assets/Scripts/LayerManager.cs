@@ -31,22 +31,23 @@ public class LayerManager : AttributesSync
 
     private void Update()
     {
+        p = GameObject.Find("PLAYERMANAGER").GetComponent<PlayerManager>();
 
         if (p.playerNumber == 1 && players[0] == "")
         {
-            BroadcastRemoteMethod("setPlayer", 0);
+            players[0] = gameObject.name;
         }
         if (p.playerNumber == 2 && players[0] == "")
         {
-            BroadcastRemoteMethod("setPlayer", 1);
+            players[1] = gameObject.name;
         }
         if (p.playerNumber == 3 && players[0] == "")
         {
-            BroadcastRemoteMethod("setPlayer", 2);
+            players[2] = gameObject.name;
         }
         if (p.playerNumber == 4 && players[0] == "")
         {
-            BroadcastRemoteMethod("setPlayer", 3);
+            players[3] = gameObject.name;
         }
         if (p.activePlayerList[0] == true && GameObject.Find(players[0]).layer != LayerMask.NameToLayer("Team1")) GameObject.Find(players[0]).layer = LayerMask.NameToLayer("Team1");
         if (p.activePlayerList[1] == true && GameObject.Find(players[1]).layer != LayerMask.NameToLayer("Team2")) GameObject.Find(players[1]).layer = LayerMask.NameToLayer("Team2");
