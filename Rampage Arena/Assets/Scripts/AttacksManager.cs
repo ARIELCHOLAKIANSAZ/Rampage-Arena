@@ -228,7 +228,6 @@ public class AttacksManager : AttributesSync
             {
                 HealthManager p = enemy.GetComponent<HealthManager>();
                 p.percen += 0.1f;
-                Rigidbody rb = enemy.GetComponent<Rigidbody>();
                 KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
                 kn.mainx = transform.position.x;
                 kn.mainy = transform.position.y;
