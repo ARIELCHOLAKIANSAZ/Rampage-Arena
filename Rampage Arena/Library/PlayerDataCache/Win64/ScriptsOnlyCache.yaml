@@ -20,7 +20,6 @@ ScriptsOnlyBuild:
     - HealthManager
     - KnockbackHandler
     - LayerManager
-    - NameChooser
     - PercentageDisplayManager
     - PlayerLook
     - PlayerManager
@@ -35,12 +34,14 @@ ScriptsOnlyBuild:
     - Cinemachine.CinemachinePipeline
     - Cinemachine.CinemachineVirtualCamera
     Unity.2D.Tilemap.Editor.dll:
+    - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
+    - UnityEditor.Tilemaps.TilemapEditorToolPreferences
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
@@ -329,8 +330,6 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1582}
-    - Class: 114
       Script: {instanceID: 1586}
     - Class: 114
       Script: {instanceID: 1660}
@@ -349,8 +348,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4368}
     - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -413,8 +410,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 1870}
     - Class: 114
       Script: {instanceID: 2274}
-    - Class: 114
-      Script: {instanceID: 2300}
     - Class: 114
       Script: {instanceID: 2546}
     - Class: 114
@@ -1628,4 +1623,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/RoomMenu.unity
   - Assets/Scenes/CharSelec.unity
   - Assets/Scenes/Battle.unity
-  playerPath: C:/Users/48464009/Downloads/Rampage Arena.exe
+  playerPath: C:/Users/PC/Downloads/Rampage Build/Rampage Arena.exe
