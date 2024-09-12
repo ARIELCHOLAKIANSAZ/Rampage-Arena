@@ -16,43 +16,32 @@ public class LayerManager : AttributesSync
         ava = GetComponent<Alteruna.Avatar>();
         if (!ava.IsMe) return;
         p = GameObject.Find("PLAYERMANAGER").GetComponent<PlayerManager>();
-        var avaArray = FindObjectsOfType<Alteruna.Avatar>();
-        for (int i = 0; i < avaArray.Length; i++)
-        {
-            nameArray[i] = avaArray[i].gameObject.name;
-        }
     }
 
     void Start()
     {
+        Alteruna.Avatar[] avaArray = FindObjectsOfType<Alteruna.Avatar>();
+        for (int i = 0; i < avaArray.Length; i++)
+        {
+            nameArray[i] = avaArray[i].gameObject.name;
+        }
         AttacksManager am = GetComponent<AttacksManager>();
+        p = GameObject.Find("PLAYERMANAGER").GetComponent<PlayerManager>();
+;
+        for(int i = 0; i < avaArray.Length; i++)
+        {
+            if (GameObject.Find(nameArray[i]).GetComponent<ThirdPersonMovement>().playNum == 1 && GameObject.Find(players[i]).layer != LayerMask.NameToLayer("Team1")) GameObject.Find(players[i]).layer = LayerMask.NameToLayer("Team1");
+            if (GameObject.Find(nameArray[i]).GetComponent<ThirdPersonMovement>().playNum == 2 && GameObject.Find(players[i]).layer != LayerMask.NameToLayer("Team2")) GameObject.Find(players[i]).layer = LayerMask.NameToLayer("Team2");
+            if (GameObject.Find(nameArray[i]).GetComponent<ThirdPersonMovement>().playNum == 3 && GameObject.Find(players[i]).layer != LayerMask.NameToLayer("Team3")) GameObject.Find(players[i]).layer = LayerMask.NameToLayer("Team3");
+            if (GameObject.Find(nameArray[i]).GetComponent<ThirdPersonMovement>().playNum == 4 && GameObject.Find(players[i]).layer != LayerMask.NameToLayer("Team4")) GameObject.Find(players[i]).layer = LayerMask.NameToLayer("Team4");
+        }
         am.enemyLayers &= ~(1 << gameObject.layer);
     }
 
     private void Update()
     {
-        p = GameObject.Find("PLAYERMANAGER").GetComponent<PlayerManager>();
 
-        if (p.playerNumber == 1 && players[0] == "")
-        {
-            players[0] = gameObject.name;
-        }
-        if (p.playerNumber == 2 && players[0] == "")
-        {
-            players[1] = gameObject.name;
-        }
-        if (p.playerNumber == 3 && players[0] == "")
-        {
-            players[2] = gameObject.name;
-        }
-        if (p.playerNumber == 4 && players[0] == "")
-        {
-            players[3] = gameObject.name;
-        }
-        if (p.activePlayerList[0] == true && GameObject.Find(players[0]).layer != LayerMask.NameToLayer("Team1")) GameObject.Find(players[0]).layer = LayerMask.NameToLayer("Team1");
-        if (p.activePlayerList[1] == true && GameObject.Find(players[1]).layer != LayerMask.NameToLayer("Team2")) GameObject.Find(players[1]).layer = LayerMask.NameToLayer("Team2");
-        if (p.activePlayerList[2] == true && GameObject.Find(players[2]).layer != LayerMask.NameToLayer("Team3")) GameObject.Find(players[2]).layer = LayerMask.NameToLayer("Team3");
-        if (p.activePlayerList[3] == true && GameObject.Find(players[3]).layer != LayerMask.NameToLayer("Team4")) GameObject.Find(players[3]).layer = LayerMask.NameToLayer("Team4");
+
     }
 
     [SynchronizableMethod]
