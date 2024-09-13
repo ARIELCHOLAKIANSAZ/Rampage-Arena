@@ -20,36 +20,34 @@ public class LayerManager : AttributesSync
 
     void Start()
     {
+        ava = GetComponent<Alteruna.Avatar>();
+        if (!ava.IsMe) return;
+        StartCoroutine(setLayers());
+    }
+
+    IEnumerator setLayers()
+    {
+        yield return new WaitForSeconds(3);
         Alteruna.Avatar[] avaArray = FindObjectsOfType<Alteruna.Avatar>();
         for (int i = 0; i < avaArray.Length; i++)
         {
             nameArray[i] = avaArray[i].gameObject.name;
         }
-        AttacksManager am = GetComponent<AttacksManager>();
-        p = GameObject.Find("PLAYERMANAGER").GetComponent<PlayerManager>();
-;
-        for(int i = 0; i < avaArray.Length; i++)
-        {
-            if (GameObject.Find(nameArray[i]).GetComponent<ThirdPersonMovement>().playNum == 1 && GameObject.Find(players[i]).layer != LayerMask.NameToLayer("Team1")) GameObject.Find(players[i]).layer = LayerMask.NameToLayer("Team1");
-            if (GameObject.Find(nameArray[i]).GetComponent<ThirdPersonMovement>().playNum == 2 && GameObject.Find(players[i]).layer != LayerMask.NameToLayer("Team2")) GameObject.Find(players[i]).layer = LayerMask.NameToLayer("Team2");
-            if (GameObject.Find(nameArray[i]).GetComponent<ThirdPersonMovement>().playNum == 3 && GameObject.Find(players[i]).layer != LayerMask.NameToLayer("Team3")) GameObject.Find(players[i]).layer = LayerMask.NameToLayer("Team3");
-            if (GameObject.Find(nameArray[i]).GetComponent<ThirdPersonMovement>().playNum == 4 && GameObject.Find(players[i]).layer != LayerMask.NameToLayer("Team4")) GameObject.Find(players[i]).layer = LayerMask.NameToLayer("Team4");
-        }
-        am.enemyLayers &= ~(1 << gameObject.layer);
-    }
-
-    private void Update()
-    {
-
-
-    }
-
-    [SynchronizableMethod]
-    void setPlayer(int numb)
-    {
         for(int i = 0; i < nameArray.Length; i++)
         {
-            if (nameArray[i] == this.gameObject.name) players[numb] = nameArray[i];
+            Debug.Log("name " + i + ": " + nameArray[i]);
         }
+        AttacksManager am = GetComponent<AttacksManager>();
+        p = GameObject.Find("PLAYERMANAGER").GetComponent<PlayerManager>();
+;       
+        for(int i = 0; i < avaArray.Length; i++)
+        {
+            if (GameObject.Find(nameArray[i]).GetComponent<ThirdPersonMovement>().playNum == 1) GameObject.Find(nameArray[i]).layer = LayerMask.NameToLayer("Team1"); Debug.Log("Attempted to turn " + nameArray[i] + " into Team 1");
+            if (GameObject.Find(nameArray[i]).GetComponent<ThirdPersonMovement>().playNum == 2) GameObject.Find(nameArray[i]).layer = LayerMask.NameToLayer("Team2"); Debug.Log("Attempted to turn " + nameArray[i] + " into Team 2");
+            if (GameObject.Find(nameArray[i]).GetComponent<ThirdPersonMovement>().playNum == 3) GameObject.Find(nameArray[i]).layer = LayerMask.NameToLayer("Team3"); Debug.Log("Attempted to turn " + nameArray[i] + " into Team 3");
+            if (GameObject.Find(nameArray[i]).GetComponent<ThirdPersonMovement>().playNum == 4) GameObject.Find(nameArray[i]).layer = LayerMask.NameToLayer("Team4"); Debug.Log("Attempted to turn " + nameArray[i] + " into Team 4");
+        }
+        am.enemyLayers &= ~(1 << gameObject.layer);
+
     }
 }

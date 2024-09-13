@@ -19,14 +19,18 @@ public class ThirdPersonMovement : AttributesSync
     public bool jlock = false;
     public bool gravAffect = true;
     private Alteruna.Avatar ava;
-    public int playNum;
+    [SynchronizableField] public int playNum;
 
     void Awake()
     {
         ava = GetComponent<Alteruna.Avatar>();
         if (!ava.IsMe) return;
-        PlayerManager pm = GameObject.Find("PLAYERMANAGER").GetComponent<PlayerManager>();
-        playNum = pm.playerNumber;
+    }
+    private void Start()
+    {
+        ava = GetComponent<Alteruna.Avatar>();
+        if (!ava.IsMe) return;
+        playNum = GameObject.Find("PLAYERMANAGER").GetComponent<PlayerManager>().playerNumber;
     }
     void Update()
     {
