@@ -20,7 +20,6 @@ ScriptsOnlyBuild:
     - HealthManager
     - KnockbackHandler
     - LayerManager
-    - PercentageDisplayManager
     - PlayerLook
     - PlayerManager
     - SceneBus
@@ -34,12 +33,14 @@ ScriptsOnlyBuild:
     - Cinemachine.CinemachinePipeline
     - Cinemachine.CinemachineVirtualCamera
     Unity.2D.Tilemap.Editor.dll:
+    - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
+    - UnityEditor.Tilemaps.TilemapEditorToolPreferences
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
@@ -151,9 +152,17 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 64
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 89
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -164,11 +173,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1586}
     - Class: 114
+      Script: {instanceID: 1592}
+    - Class: 114
       Script: {instanceID: 1660}
     - Class: 114
       Script: {instanceID: 1924}
     - Class: 114
       Script: {instanceID: 2310}
+    - Class: 114
+      Script: {instanceID: 2546}
+    - Class: 114
+      Script: {instanceID: 2550}
     - Class: 114
       Script: {instanceID: 2696}
     - Class: 114
@@ -188,14 +203,28 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4290}
     - Class: 114
-      Script: {instanceID: 6646}
+      Script: {instanceID: 4356}
     - Class: 114
-      Script: {instanceID: 6770}
+      Script: {instanceID: 4838}
+    - Class: 114
+      Script: {instanceID: 5072}
+    - Class: 114
+      Script: {instanceID: 5108}
+    - Class: 114
+      Script: {instanceID: 5432}
+    - Class: 114
+      Script: {instanceID: 5498}
+    - Class: 114
+      Script: {instanceID: 6646}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
       Script: {instanceID: 0}
     - Class: 135
+      Script: {instanceID: 0}
+    - Class: 137
+      Script: {instanceID: 0}
+    - Class: 143
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -222,27 +251,13 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
-    - Class: 23
-      Script: {instanceID: 0}
     - Class: 28
       Script: {instanceID: 0}
-    - Class: 33
-      Script: {instanceID: 0}
-    - Class: 43
-      Script: {instanceID: 0}
     - Class: 48
-      Script: {instanceID: 0}
-    - Class: 74
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 89
-      Script: {instanceID: 0}
-    - Class: 90
-      Script: {instanceID: 0}
-    - Class: 91
-      Script: {instanceID: 0}
-    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -251,15 +266,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1586}
     - Class: 114
-      Script: {instanceID: 1592}
-    - Class: 114
       Script: {instanceID: 1660}
     - Class: 114
       Script: {instanceID: 2382}
-    - Class: 114
-      Script: {instanceID: 2546}
-    - Class: 114
-      Script: {instanceID: 2550}
     - Class: 114
       Script: {instanceID: 2556}
     - Class: 114
@@ -270,25 +279,9 @@ ScriptsOnlyBuild:
       Script: {instanceID: 3904}
     - Class: 114
       Script: {instanceID: 4072}
-    - Class: 114
-      Script: {instanceID: 4356}
-    - Class: 114
-      Script: {instanceID: 4838}
-    - Class: 114
-      Script: {instanceID: 5072}
-    - Class: 114
-      Script: {instanceID: 5108}
-    - Class: 114
-      Script: {instanceID: 5432}
-    - Class: 114
-      Script: {instanceID: 5498}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
-      Script: {instanceID: 0}
-    - Class: 137
-      Script: {instanceID: 0}
-    - Class: 143
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -1281,7 +1274,7 @@ ScriptsOnlyBuild:
     className: AudioPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: fc4056dd8c4c662f675230197fcf3bbb
+      Hash: 6af88a1395f336404e62b5c5e8e2f73c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: HealthManager
