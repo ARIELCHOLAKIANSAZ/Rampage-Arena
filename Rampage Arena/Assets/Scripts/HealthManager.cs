@@ -20,7 +20,7 @@ public class HealthManager : AttributesSync
     {
         ava = GetComponent<Alteruna.Avatar>();
         if (!ava.IsMe) return;
-        pm = GetComponent<PlayerManager>();
+        pm = GameObject.Find("PLAYERMANAGER").GetComponent<PlayerManager>();
         if (pm.activePlayerList[0] == false) display[0].SetActive(false);
         if (pm.activePlayerList[1] == false) display[1].SetActive(false);
         if (pm.activePlayerList[2] == false) display[2].SetActive(false);

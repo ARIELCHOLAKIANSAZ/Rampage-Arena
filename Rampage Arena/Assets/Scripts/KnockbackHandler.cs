@@ -27,6 +27,7 @@ public class KnockbackHandler : AttributesSync
         p = GameObject.Find("PLAYERMANAGER").GetComponent<PlayerManager>();
         atmg = GetComponent<AttacksManager>();
         tpm = GetComponent<ThirdPersonMovement>();
+        cont = GetComponent<CharacterController>();
     }
     void Update()
     {
