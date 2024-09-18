@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class HealthManager : AttributesSync
 {
-    [SynchronizableField] public float[] percen = { 0, 0, 0, 0 };
+    public float[] percen = { 0, 0, 0, 0 };
     [SynchronizableField] public bool[] hit = { false, false, false, false };
     [SynchronizableField] public float[] dam = { 0, 0, 0, 0 };
     public Text[] displayText;
@@ -14,12 +14,9 @@ public class HealthManager : AttributesSync
     float percenLast = 0;
     public int guy;
     PlayerManager pm;
-    private Alteruna.Avatar ava;
 
     void Start()
     {
-        ava = GetComponent<Alteruna.Avatar>();
-        if (!ava.IsMe) return;
         pm = GameObject.Find("PLAYERMANAGER").GetComponent<PlayerManager>();
         if (pm.activePlayerList[0] == false) display[0].SetActive(false);
         if (pm.activePlayerList[1] == false) display[1].SetActive(false);
@@ -28,23 +25,22 @@ public class HealthManager : AttributesSync
     }
     void Update()
     {
-        if (!ava.IsMe) return;
-        if (pm.playerNumber == 1 && hit[0] == true)
+        if (hit[0])
         {
             percen[0] += dam[0];
             hit[0] = false;
         }
-        if (pm.playerNumber == 2 && hit[1] == true)
+        if (hit[1])
         {
             percen[1] += dam[1];
             hit[1] = false;
         }
-        if (pm.playerNumber == 3 && hit[2] == true)
+        if (hit[2])
         {
             percen[2] += dam[2];
             hit[2] = false;
         }
-        if (pm.playerNumber == 4 && hit[3] == true)
+        if (hit[3])
         {
             percen[3] += dam[3];
             hit[3] = false;

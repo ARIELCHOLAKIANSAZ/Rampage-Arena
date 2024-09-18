@@ -92,12 +92,12 @@ public class AttacksManager : AttributesSync
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[3].position, attackRanges[3], enemyLayers);
             foreach (Collider enemy in hitEnemies)
             {
-                HealthManager p = GetComponent<HealthManager>();
+                HealthManager p = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
                 KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
                 kn.mainx = transform.position.x;
                 kn.mainy = transform.position.y;
                 kn.mainz = transform.position.z;
-                if (enemy.gameObject.layer == 9) 
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team 1"))
                 {
                     kn.force = p.percen[0]/2;
                     p.dam[0] = 2.4f;
@@ -107,22 +107,22 @@ public class AttacksManager : AttributesSync
                 if(enemy.gameObject.layer == 11)
                 {
                     kn.force = p.percen[1]/2;
-                    p.dam[0] = 2.4f;
-                    p.hit[0] = true;
+                    p.dam[1] = 2.4f;
+                    p.hit[1] = true;
                     kn.hit2 = true;
                 }
                 if(enemy.gameObject.layer == 12) 
                 {
                     kn.force = p.percen[2]/2;
-                    p.dam[0] = 2.4f;
-                    p.hit[0] = true;
+                    p.dam[2] = 2.4f;
+                    p.hit[2] = true;
                     kn.hit3 = true;
                 }
                 if(enemy.gameObject.layer == 13)
                 {
                     kn.force = p.percen[3]/2;
-                    p.dam[0] = 2.4f;
-                    p.hit[0] = true;
+                    p.dam[3] = 2.4f;
+                    p.hit[3] = true;
                     kn.hit4 = true;
                 }
             }
@@ -143,37 +143,37 @@ public class AttacksManager : AttributesSync
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[2].position, attackRanges[2], enemyLayers);
             foreach (Collider enemy in hitEnemies)
             {
-                HealthManager p = GetComponent<HealthManager>();
+                HealthManager p = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
                 KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
                 kn.mainx = transform.position.x;
                 kn.mainy = transform.position.y;
                 kn.mainz = transform.position.z;
-                if (enemy.gameObject.layer == 9)
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team1"))
                 {
                     kn.force = p.percen[0] / 2;
                     p.dam[0] = 2.4f;
                     p.hit[0] = true;
                     kn.hit1 = true;
                 }
-                if (enemy.gameObject.layer == 11)
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team2"))
                 {
                     kn.force = p.percen[1] / 2;
-                    p.dam[0] = 2.4f;
-                    p.hit[0] = true;
+                    p.dam[1] = 2.4f;
+                    p.hit[1] = true;
                     kn.hit2 = true;
                 }
-                if (enemy.gameObject.layer == 12)
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team3"))
                 {
                     kn.force = p.percen[2] / 2;
-                    p.dam[0] = 2.4f;
-                    p.hit[0] = true;
+                    p.dam[2] = 2.4f;
+                    p.hit[2] = true;
                     kn.hit3 = true;
                 }
-                if (enemy.gameObject.layer == 13)
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team4"))
                 {
                     kn.force = p.percen[3] / 2;
-                    p.dam[0] = 2.4f;
-                    p.hit[0] = true;
+                    p.dam[3] = 2.4f;
+                    p.hit[3] = true;
                     kn.hit4 = true;
                 }
             }
@@ -197,37 +197,37 @@ public class AttacksManager : AttributesSync
             foreach (Collider enemy in hitEnemies)
             {
                 Debug.Log("inforeach");
-                HealthManager p = GetComponent<HealthManager>();
+                HealthManager p = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
                 KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
                 kn.mainx = transform.position.x;
                 kn.mainy = transform.position.y;
                 kn.mainz = transform.position.z;
-                if (enemy.gameObject.layer == 9)
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team1"))
                 {
                     kn.force = p.percen[0] / 2;
                     p.dam[0] = 4f;
                     p.hit[0] = true;
                     kn.hit1 = true;
                 }
-                if (enemy.gameObject.layer == 11)
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team2"))
                 {
                     kn.force = p.percen[1] / 2;
-                    p.dam[0] = 4f;
-                    p.hit[0] = true;
+                    p.dam[1] = 4f;
+                    p.hit[1] = true;
                     kn.hit2 = true;
                 }
-                if (enemy.gameObject.layer == 12)
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team3"))
                 {
                     kn.force = p.percen[2] / 2;
-                    p.dam[0] = 4f;
-                    p.hit[0] = true;
+                    p.dam[2] = 4f;
+                    p.hit[2] = true;
                     kn.hit3 = true;
                 }
-                if (enemy.gameObject.layer == 13)
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team4"))
                 {
                     kn.force = p.percen[3] / 2;
-                    p.dam[0] = 4f;
-                    p.hit[0] = true;
+                    p.dam[3] = 4f;
+                    p.hit[3] = true;
                     kn.hit4 = true;
                 }
                 Debug.Log("postknock");
@@ -251,37 +251,37 @@ public class AttacksManager : AttributesSync
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[1].position, attackRanges[1], enemyLayers);
             foreach (Collider enemy in hitEnemies)
             {
-                HealthManager p = GetComponent<HealthManager>();
+                HealthManager p = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
                 KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
                 kn.mainx = transform.position.x;
                 kn.mainy = transform.position.y;
                 kn.mainz = transform.position.z;
-                if (enemy.gameObject.layer == 9)
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team1"))
                 {
                     kn.force = p.percen[0] / 2;
                     p.dam[0] = 2.8f;
                     p.hit[0] = true;
                     kn.hit1 = true;
                 }
-                if (enemy.gameObject.layer == 11)
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team2"))
                 {
                     kn.force = p.percen[1] / 2;
-                    p.dam[0] = 2.8f;
-                    p.hit[0] = true;
+                    p.dam[1] = 2.8f;
+                    p.hit[1] = true;
                     kn.hit2 = true;
                 }
-                if (enemy.gameObject.layer == 12)
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team3"))
                 {
                     kn.force = p.percen[2] / 2;
-                    p.dam[0] = 2.8f;
-                    p.hit[0] = true;
+                    p.dam[2] = 2.8f;
+                    p.hit[2] = true;
                     kn.hit3 = true;
                 }
-                if (enemy.gameObject.layer == 13)
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team4"))
                 {
                     kn.force = p.percen[3] / 2;
-                    p.dam[0] = 2.8f;
-                    p.hit[0] = true;
+                    p.dam[3] = 2.8f;
+                    p.hit[3] = true;
                     kn.hit4 = true;
                 }
             }
@@ -314,37 +314,37 @@ public class AttacksManager : AttributesSync
             Collider[] hitEnemies = Physics.OverlapBox(attackPoints[4].position, new Vector3(2.5f, 1, 2.5f), Quaternion.identity, enemyLayers);
             foreach (Collider enemy in hitEnemies)
             {
-                HealthManager p = GetComponent<HealthManager>();
+                HealthManager p = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
                 KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
                 kn.mainx = transform.position.x;
                 kn.mainy = transform.position.y;
                 kn.mainz = transform.position.z;
-                if (enemy.gameObject.layer == 9)
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team1"))
                 {
                     kn.force = p.percen[0] / 5;
                     p.dam[0] = 0.1f;
                     p.hit[0] = true;
                     kn.hit1 = true;
                 }
-                if (enemy.gameObject.layer == 11)
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team2"))
                 {
                     kn.force = p.percen[1] / 5;
-                    p.dam[0] = 0.1f;
-                    p.hit[0] = true;
+                    p.dam[1] = 0.1f;
+                    p.hit[1] = true;
                     kn.hit2 = true;
                 }
-                if (enemy.gameObject.layer == 12)
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team3"))
                 {
                     kn.force = p.percen[2] / 5;
-                    p.dam[0] = 0.1f;
-                    p.hit[0] = true;
+                    p.dam[2] = 0.1f;
+                    p.hit[2] = true;
                     kn.hit3 = true;
                 }
-                if (enemy.gameObject.layer == 13)
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team4"))
                 {
                     kn.force = p.percen[3] / 5;
-                    p.dam[0] = 0.1f;
-                    p.hit[0] = true;
+                    p.dam[3] = 0.1f;
+                    p.hit[3] = true;
                     kn.hit4 = true;
                 }
             }
@@ -364,37 +364,37 @@ public class AttacksManager : AttributesSync
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[5].position, attackRanges[5], enemyLayers);
             foreach (Collider enemy in hitEnemies)
             {
-                HealthManager p = GetComponent<HealthManager>();
+                HealthManager p = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
                 KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
                 kn.mainx = transform.position.x;
                 kn.mainy = transform.position.y;
                 kn.mainz = transform.position.z;
-                if (enemy.gameObject.layer == 9)
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team1"))
                 {
                     kn.force = p.percen[0] / 2;
                     p.dam[0] = 3.2f;
                     p.hit[0] = true;
                     kn.hit1 = true;
                 }
-                if (enemy.gameObject.layer == 11)
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team2"))
                 {
                     kn.force = p.percen[1] / 2;
-                    p.dam[0] = 3.2f;
-                    p.hit[0] = true;
+                    p.dam[1] = 3.2f;
+                    p.hit[1] = true;
                     kn.hit2 = true;
                 }
-                if (enemy.gameObject.layer == 12)
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team3"))
                 {
                     kn.force = p.percen[2] / 2;
-                    p.dam[0] = 3.2f;
-                    p.hit[0] = true;
+                    p.dam[2] = 3.2f;
+                    p.hit[2] = true;
                     kn.hit3 = true;
                 }
-                if (enemy.gameObject.layer == 13)
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team4"))
                 {
                     kn.force = p.percen[3] / 2;
-                    p.dam[0] = 3.2f;
-                    p.hit[0] = true;
+                    p.dam[3] = 3.2f;
+                    p.hit[3] = true;
                     kn.hit4 = true;
                 }
             }
@@ -415,37 +415,37 @@ public class AttacksManager : AttributesSync
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[0].position, 1.5f, enemyLayers);
             foreach (Collider enemy in hitEnemies)
             {
-                HealthManager p = GetComponentInParent<HealthManager>();
+                HealthManager p = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
                 KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
                 kn.mainx = transform.position.x;
                 kn.mainy = transform.position.y;
                 kn.mainz = transform.position.z;
-                if (enemy.gameObject.layer == 9)
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team1"))
                 {
                     kn.force = p.percen[0] / 2;
                     p.dam[0] = 1.7f;
                     p.hit[0] = true;
                     kn.hit1 = true;
                 }
-                if (enemy.gameObject.layer == 11)
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team2"))
                 {
                     kn.force = p.percen[1] / 2;
-                    p.dam[0] = 1.7f;
-                    p.hit[0] = true;
+                    p.dam[1] = 1.7f;
+                    p.hit[1] = true;
                     kn.hit2 = true;
                 }
-                if (enemy.gameObject.layer == 12)
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team3"))
                 {
                     kn.force = p.percen[2] / 2;
-                    p.dam[0] = 1.7f;
-                    p.hit[0] = true;
+                    p.dam[2] = 1.7f;
+                    p.hit[2] = true;
                     kn.hit3 = true;
                 }
-                if (enemy.gameObject.layer == 13)
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team4"))
                 {
                     kn.force = p.percen[3] / 2;
-                    p.dam[0] = 1.7f;
-                    p.hit[0] = true;
+                    p.dam[3] = 1.7f;
+                    p.hit[3] = true;
                     kn.hit4 = true;
                 }
             }
