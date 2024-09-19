@@ -10,11 +10,12 @@ public class PlayerManager : AttributesSync
 {
     public int playerNumber;
     public GameObject chosenCharacter;
-    [SynchronizableField] public float[] chosenCharacters = { 3, 3, 3, 3 };
+    public float[] chosenCharacters = { 3, 3, 3, 3 };
     public GameObject[] charList;
     public GameObject[] btnList;
     public Text[] charName;
-    [SynchronizableField] public bool[] activePlayerList = { false, false, false, false };
+    public bool[] activePlayerList = { false, false, false, false };
+    int pnumM1;
 
     public static PlayerManager Instance;
 
@@ -64,7 +65,8 @@ public class PlayerManager : AttributesSync
         if (playerNumber == 0) return;
         charName[playerNumber-1].text = charList[num].name;
         chosenCharacter = charList[num];
-        chosenCharacters[playerNumber - 1] = num;
+        pnumM1 = playerNumber - 1;
+        BroadcastRemoteMethod("setChosenChars", pnumM1, num);
     }
 
     public void ChooseNumber(int num)
@@ -73,16 +75,21 @@ public class PlayerManager : AttributesSync
         {
             btnList[playerNumber-1].SetActive(true);
             activePlayerList[playerNumber - 1] = false;
+            pnumM1 = playerNumber - 1;
+            BroadcastRemoteMethod("setActivePlayers", pnumM1 - 1, false);
             if (chosenCharacters[playerNumber -1] != 3)
             {
                 charName[playerNumber - 1].text = "";
                 chosenCharacter = null;
-                chosenCharacters[playerNumber - 1] = 3;
+                pnumM1 = playerNumber - 1;
+                BroadcastRemoteMethod("setChosenChars", pnumM1, 3);
+        BroadcastRemoteMethod("setActivePlayers", pnumM1, true);
             }
         }
         playerNumber = num;
         btnList[num-1].SetActive(false);
-        activePlayerList[playerNumber - 1] = true;
+        pnumM1 = playerNumber - 1;
+        BroadcastRemoteMethod("setActivePlayers", pnumM1, true);
     }
 
     public void gameStart()
@@ -94,6 +101,17 @@ public class PlayerManager : AttributesSync
     public void toBattle()
     {
         GameManager.Instance.ChangeSceneSingle("Battle");
+    }
+    [SynchronizableMethod]
+    public void setActivePlayers(int playerNum, bool isPlayerActive)
+    {
+        activePlayerList[playerNum] = isPlayerActive;
+    }
+
+    [SynchronizableMethod]
+    public void setChosenChars(int playerNum, int charChosen)
+    {
+        chosenCharacters[playerNum] = charChosen;
     }
 
 }
