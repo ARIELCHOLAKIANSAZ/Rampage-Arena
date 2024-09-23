@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Alteruna;
 
-public class DeathManager : MonoBehaviour
+public class DeathManager : AttributesSync
 {
     int lives = 3;
     bool done = false;
@@ -36,6 +36,17 @@ public class DeathManager : MonoBehaviour
         tpm.gravAffect = true;
         tpm.locked = false;
         tpm.jlock = false;
-        Debug.Log(lives.ToString());
+        if (other.gameObject.layer == LayerMask.NameToLayer("Team1")) BroadcastRemoteMethod("resetPercen", 0);
+        if (other.gameObject.layer == LayerMask.NameToLayer("Team2")) BroadcastRemoteMethod("resetPercen", 1);
+        if (other.gameObject.layer == LayerMask.NameToLayer("Team3")) BroadcastRemoteMethod("resetPercen", 2);
+        if (other.gameObject.layer == LayerMask.NameToLayer("Team4")) BroadcastRemoteMethod("resetPercen", 3);
+
+         Debug.Log(lives.ToString());
+    }
+    [SynchronizableMethod]
+    void resetPercen(int num)
+    {
+        HealthManager hm = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
+        hm.percen[num] = 0;
     }
 }
