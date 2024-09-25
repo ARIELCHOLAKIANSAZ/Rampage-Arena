@@ -36,10 +36,10 @@ public class DeathManager : AttributesSync
         tpm.gravAffect = true;
         tpm.locked = false;
         tpm.jlock = false;
-        if (other.gameObject.layer == LayerMask.NameToLayer("Team1")) BroadcastRemoteMethod("resetPercen", 0);
-        if (other.gameObject.layer == LayerMask.NameToLayer("Team2")) BroadcastRemoteMethod("resetPercen", 1);
-        if (other.gameObject.layer == LayerMask.NameToLayer("Team3")) BroadcastRemoteMethod("resetPercen", 2);
-        if (other.gameObject.layer == LayerMask.NameToLayer("Team4")) BroadcastRemoteMethod("resetPercen", 3);
+        if (other.gameObject.layer == LayerMask.NameToLayer("Team1")) resetPercen(1);
+        if (other.gameObject.layer == LayerMask.NameToLayer("Team2")) resetPercen(2);
+        if (other.gameObject.layer == LayerMask.NameToLayer("Team3")) resetPercen(3);
+        if (other.gameObject.layer == LayerMask.NameToLayer("Team4")) resetPercen(4);
 
          Debug.Log(lives.ToString());
     }
@@ -47,9 +47,13 @@ public class DeathManager : AttributesSync
     void resetPercen(int num)
     {
         HealthManager hm = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
-        if (num == 1) hm.percen1 = 0;
-        if (num == 2) hm.percen2 = 0;
-        if (num == 3) hm.percen3 = 0;
-        if (num == 4) hm.percen4 = 0;
+        if (num == 1) hm.hit1 = true;
+        if (num == 1) hm.dam1 = -1000;
+        if (num == 2) hm.hit2 = true;
+        if (num == 2) hm.dam2 = -1000;
+        if (num == 3) hm.hit3 = true;
+        if (num == 3) hm.dam3 = -1000;
+        if (num == 4) hm.hit4 = true;
+        if (num == 4) hm.dam4 = -1000;
     }
 }

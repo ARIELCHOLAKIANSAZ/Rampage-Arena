@@ -58,5 +58,14 @@ public class HealthManager : AttributesSync
         if (pm.activePlayerList[1] == true) displayText[1].text = percen2.ToString();
         if (pm.activePlayerList[2] == true) displayText[2].text = percen3.ToString();
         if (pm.activePlayerList[3] == true) displayText[3].text = percen4.ToString();
+
+        if (percen1 > 1000) percen1 = 999.99f;
+        if (percen1 < 0) percen1 = 0;
+        if (percen2 > 1000) percen2 = 999.99f;
+        if (percen2 < 0) percen2 = 0;
+        if (percen3 > 1000) percen3 = 999.99f;
+        if (percen3 < 0) percen3 = 0;
+        if (percen4 > 1000) percen4 = 999.99f;
+        if (percen4 < 0) percen4 = 0;
     }
 }
