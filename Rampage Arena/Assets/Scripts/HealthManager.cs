@@ -6,9 +6,18 @@ using UnityEngine.UI;
 
 public class HealthManager : AttributesSync
 {
-    public float[] percen = { 0, 0, 0, 0 };
-    [SynchronizableField] public bool[] hit = { false, false, false, false };
-    [SynchronizableField] public float[] dam = { 0, 0, 0, 0 };
+    [SynchronizableField] public float percen1 = 0;
+    [SynchronizableField] public float percen2 = 0;
+    [SynchronizableField] public float percen3 = 0;
+    [SynchronizableField] public float percen4 = 0;
+    [SynchronizableField] public bool hit1 = false;
+    [SynchronizableField] public bool hit2 = false;
+    [SynchronizableField] public bool hit3 = false;
+    [SynchronizableField] public bool hit4 = false;
+    [SynchronizableField] public float dam1 = 0;
+    [SynchronizableField] public float dam2 = 0;
+    [SynchronizableField] public float dam3 = 0;
+    [SynchronizableField] public float dam4 = 0;
     public Text[] displayText;
     public GameObject[] display;
     float percenLast = 0;
@@ -25,30 +34,29 @@ public class HealthManager : AttributesSync
     }
     void Update()
     {
-        if (hit[0])
+        if (hit1)
         {
-            percen[0] += dam[0];
-            hit[0] = false;
+            percen1 += dam1;
+            hit1 = false;
         }
-        if (hit[1])
+        if (hit2)
         {
-            percen[1] += dam[1];
-            hit[1] = false;
+            percen2 += dam2;
+            hit2 = false;
         }
-        if (hit[2])
+        if (hit3)
         {
-            percen[2] += dam[2];
-            hit[2] = false;
+            percen3 += dam3;
+            hit3 = false;
         }
-        if (hit[3])
+        if (hit4)
         {
-            percen[3] += dam[3];
-            hit[3] = false;
+            percen4 += dam4;
+            hit4 = false;
         }
-        if (pm.activePlayerList[0] == true) displayText[0].text = percen[0].ToString();
-        if (pm.activePlayerList[1] == true) displayText[1].text = percen[1].ToString();
-        if (pm.activePlayerList[2] == true) displayText[2].text = percen[2].ToString();
-        if (pm.activePlayerList[3] == true) displayText[3].text = percen[3].ToString();
-
+        if (pm.activePlayerList[0] == true) displayText[0].text = percen1.ToString();
+        if (pm.activePlayerList[1] == true) displayText[1].text = percen2.ToString();
+        if (pm.activePlayerList[2] == true) displayText[2].text = percen3.ToString();
+        if (pm.activePlayerList[3] == true) displayText[3].text = percen4.ToString();
     }
 }

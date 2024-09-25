@@ -47,6 +47,9 @@ public class DeathManager : AttributesSync
     void resetPercen(int num)
     {
         HealthManager hm = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
-        hm.percen[num] = 0;
+        if (num == 1) hm.percen1 = 0;
+        if (num == 2) hm.percen2 = 0;
+        if (num == 3) hm.percen3 = 0;
+        if (num == 4) hm.percen4 = 0;
     }
 }
