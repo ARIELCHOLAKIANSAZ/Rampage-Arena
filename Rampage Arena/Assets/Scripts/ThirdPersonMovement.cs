@@ -23,7 +23,7 @@ public class ThirdPersonMovement : AttributesSync
     [SynchronizableField] bool walk;
     [SynchronizableField] bool crouch;
     [SynchronizableField] bool jump;
-    [SynchronizableField] bool ground;
+    [SynchronizableField] public bool ground;
 
     void Awake()
     {

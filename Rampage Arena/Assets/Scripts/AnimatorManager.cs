@@ -13,9 +13,23 @@ public class AnimatorManager : AttributesSync
     [SynchronizableField] public bool un;
     [SynchronizableField] public bool dn;
     [SynchronizableField] public bool fn;
+    [SynchronizableField] public bool usS;
+    [SynchronizableField] public bool usF;
 
     void Update()
     {
+        if (usS)
+        {
+            ani.SetBool("UpSpecialStart", true);
+            usS = false;
+        }
+        else ani.SetBool("UpSpecialStart", false);
+        if (usF)
+        {
+            ani.SetBool("UpSpecialFall", true);
+            usF = false;
+        }
+        else ani.SetBool("UpSpecialFall", false);
         if (nn)
         {
             ani.SetTrigger("NeutralNormal");

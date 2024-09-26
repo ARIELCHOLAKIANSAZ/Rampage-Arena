@@ -33,12 +33,14 @@ ScriptsOnlyBuild:
     - Cinemachine.CinemachinePipeline
     - Cinemachine.CinemachineVirtualCamera
     Unity.2D.Tilemap.Editor.dll:
+    - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
+    - UnityEditor.Tilemaps.TilemapEditorToolPreferences
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
@@ -171,9 +173,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1586}
     - Class: 114
-      Script: {instanceID: 1660}
+      Script: {instanceID: 1658}
     - Class: 114
-      Script: {instanceID: 1924}
+      Script: {instanceID: 1922}
     - Class: 114
       Script: {instanceID: 2310}
     - Class: 114
@@ -258,9 +260,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1586}
     - Class: 114
-      Script: {instanceID: 1592}
+      Script: {instanceID: 1590}
     - Class: 114
-      Script: {instanceID: 1660}
+      Script: {instanceID: 1658}
+    - Class: 114
+      Script: {instanceID: 2138}
     - Class: 114
       Script: {instanceID: 2382}
     - Class: 114
@@ -285,8 +289,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5432}
     - Class: 114
       Script: {instanceID: 5498}
-    - Class: 114
-      Script: {instanceID: 27782}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -335,7 +337,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1586}
     - Class: 114
-      Script: {instanceID: 1660}
+      Script: {instanceID: 1658}
     - Class: 114
       Script: {instanceID: 2542}
     - Class: 114
@@ -406,11 +408,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1586}
     - Class: 114
-      Script: {instanceID: 1592}
+      Script: {instanceID: 1590}
     - Class: 114
-      Script: {instanceID: 1660}
+      Script: {instanceID: 1658}
     - Class: 114
-      Script: {instanceID: 1870}
+      Script: {instanceID: 1868}
+    - Class: 114
+      Script: {instanceID: 2138}
     - Class: 114
       Script: {instanceID: 2274}
     - Class: 114
@@ -451,8 +455,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5462}
     - Class: 114
       Script: {instanceID: 5498}
-    - Class: 114
-      Script: {instanceID: 27782}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -646,6 +648,12 @@ ScriptsOnlyBuild:
     assemblyName: Cinemachine.dll
     namespaceName: 
     className: CinemachineCameraOffset
+  - hash:
+      serializedVersion: 2
+      Hash: 4cf70063c0de73cbd3841e819fc0d309
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AnimatorManager
   - hash:
       serializedVersion: 2
       Hash: e53895f10ef0224824a4c4a30d2a761b
@@ -1422,7 +1430,7 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
-      Hash: 82e182a47685e07256b631ca38f5991a
+      Hash: 95705c08de680f878957c86a4e1ea57d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ThirdPersonMovement
@@ -1618,12 +1626,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PercentageDisplayManager
-  - hash:
-      serializedVersion: 2
-      Hash: fa281fa2295d86f216b562e1706aa424
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: AnimatorManager
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu.unity
