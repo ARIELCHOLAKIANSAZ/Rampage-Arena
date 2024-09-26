@@ -423,7 +423,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8704725688027521970}
   - component: {fileID: 796485657919103552}
-  - component: {fileID: 9017678715965681241}
   m_Layer: 0
   m_Name: ice smasher
   m_TagString: Untagged
@@ -471,23 +470,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &9017678715965681241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8704725688027889554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -805392892, guid: 0ae8d181602a00248a82f64a684a1c88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Multiplayer: {fileID: 0}
-  _uidString: 1540712e-572c-4117-9fac-ad440cbc7b4a
-  Reliability: 1
-  LocalMethodBehavior: 1
-  Animator: {fileID: 0}
 --- !u!1 &8704725688027889556
 GameObject:
   m_ObjectHideFlags: 0
@@ -1631,6 +1613,7 @@ GameObject:
   - component: {fileID: 6503437993419365254}
   - component: {fileID: 8598628356414594343}
   - component: {fileID: 7413469159952282692}
+  - component: {fileID: 5043953296753558113}
   m_Layer: 9
   m_Name: Ice Breaker
   m_TagString: Untagged
@@ -1696,7 +1679,7 @@ MonoBehaviour:
   jumpForce: 12
   airSpeed: 8
   jumps: 0
-  ani: {fileID: 9017678715965681241}
+  ani: {fileID: 796485657919103552}
   turnSmoothTime: 0.1
   locked: 0
   jlock: 0
@@ -1719,7 +1702,7 @@ MonoBehaviour:
   Reliability: 1
   LocalMethodBehavior: 1
   con: {fileID: 8704725688381541832}
-  ani: {fileID: 9017678715965681241}
+  ani: {fileID: 0}
   dada: {fileID: 8704725688381541838}
   lcked: 0
   attackPoints:
@@ -1854,6 +1837,30 @@ MonoBehaviour:
   _uidString: dbf0da0c-27bc-4cc7-838d-20a99c23f723
   Reliability: 1
   LocalMethodBehavior: 1
+--- !u!114 &5043953296753558113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8704725688381541838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ee19717b8a998f47b924a425a10f1f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Multiplayer: {fileID: 0}
+  _uidString: c6ac26ae-1ab6-4a3e-ac97-6c0ae8814a4d
+  Reliability: 1
+  LocalMethodBehavior: 1
+  ani: {fileID: 796485657919103552}
+  nn: 0
+  ln: 0
+  rn: 0
+  bn: 0
+  un: 0
+  dn: 0
+  fn: 0
 --- !u!1 &8704725688381710383
 GameObject:
   m_ObjectHideFlags: 0

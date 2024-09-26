@@ -12,7 +12,7 @@ public class ThirdPersonMovement : AttributesSync
     public float jumpForce;
     public float airSpeed;
     public float jumps;
-    public AnimationSynchronizable ani;
+    public Animator ani;
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
     public bool locked = false;
@@ -20,6 +20,10 @@ public class ThirdPersonMovement : AttributesSync
     public bool gravAffect = true;
     private Alteruna.Avatar ava;
     [SynchronizableField] public int playNum;
+    [SynchronizableField] bool walk;
+    [SynchronizableField] bool crouch;
+    [SynchronizableField] bool jump;
+    [SynchronizableField] bool ground;
 
     void Awake()
     {
@@ -34,6 +38,14 @@ public class ThirdPersonMovement : AttributesSync
     }
     void Update()
     {
+        if (walk) ani.SetBool("Walk", true);
+        else ani.SetBool("Walk", false);
+        if (crouch) ani.SetBool("Crouch", true);
+        else ani.SetBool("Crouch", false);
+        if (jump) ani.SetBool("Jump", true);
+        else ani.SetBool("Jump", false);
+        if (ground) ani.SetBool("Ground", true);
+        else ani.SetBool("Ground", false);
         if (!ava.IsMe) return;
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -49,7 +61,7 @@ public class ThirdPersonMovement : AttributesSync
             if (controller.isGrounded)
             {
                 controller.Move(moveDir.normalized * speed * Time.deltaTime);
-                ani.Animator.SetBool("Walk", true);
+                walk = true;
             }
             else
             {
@@ -58,8 +70,8 @@ public class ThirdPersonMovement : AttributesSync
             
         }
         else
-        { 
-            ani.Animator.SetBool("Walk", false);
+        {
+            walk = false;
             transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, Camera.main.transform.eulerAngles.y, transform.rotation.eulerAngles.z);
         }
         
@@ -71,11 +83,11 @@ public class ThirdPersonMovement : AttributesSync
             
             verticalVelocity = jumpForce;
             jumps--;
-            ani.Animator.SetBool("Jump", true);
+            jump = true;
         }
         else
         {
-            ani.Animator.SetBool("Jump", false);
+            jump = false;
         }
 
 
@@ -83,7 +95,7 @@ public class ThirdPersonMovement : AttributesSync
         {
             jumps = 2;
             verticalVelocity = 0;
-            ani.Animator.SetBool("Ground", true);
+            ground = true;
 
         }
         else if (-2 < verticalVelocity && verticalVelocity < 3 && gravAffect)
@@ -94,7 +106,7 @@ public class ThirdPersonMovement : AttributesSync
         else if (gravAffect)
         {
             verticalVelocity += grav;
-            ani.Animator.SetBool("Ground", false);
+            ground = false;
         }
         else
         {

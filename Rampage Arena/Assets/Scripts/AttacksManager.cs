@@ -7,7 +7,7 @@ using JetBrains.Annotations;
 public class AttacksManager : AttributesSync
 {
     public CharacterController con;
-    public AnimationSynchronizable ani;
+    public AnimatorManager ani;
     public GameObject dada;
     public bool lcked = false;
     public Transform[] attackPoints;
@@ -16,8 +16,10 @@ public class AttacksManager : AttributesSync
     bool kadoosh = false;
     private Alteruna.Avatar ava;
 
+
     void Start()
     {
+        ani = GetComponent<AnimatorManager>();
         ava = GetComponent<Alteruna.Avatar>();
         if (!ava.IsMe) return;
     }
@@ -87,7 +89,7 @@ public class AttacksManager : AttributesSync
             lcked = true;
             m.locked = true;
             m.jlock = true;
-            ani.Animator.SetTrigger("LeftNormal");
+            ani.ln = true;
             yield return new WaitForSeconds(0.3f);
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[3].position, attackRanges[3], enemyLayers);
             foreach (Collider enemy in hitEnemies)
@@ -138,7 +140,7 @@ public class AttacksManager : AttributesSync
             lcked = true;
             m.jlock = true;
             m.locked = true;
-            ani.Animator.SetTrigger("RightNormal");
+            ani.rn = true;
             yield return new WaitForSeconds(0.1f);
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[2].position, attackRanges[2], enemyLayers);
             foreach (Collider enemy in hitEnemies)
@@ -190,7 +192,7 @@ public class AttacksManager : AttributesSync
             m.jlock = true;
             m.locked = true;
             m.gravAffect = false;
-            ani.Animator.SetTrigger("NeutralNormal");
+            ani.nn = true;
             Debug.Log("preforeach");
             yield return new WaitForSeconds(0.2f);
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[0].position, attackRanges[0], enemyLayers);
@@ -246,7 +248,7 @@ public class AttacksManager : AttributesSync
             lcked = true;
             m.jlock = true;
             m.locked = true;
-            ani.Animator.SetTrigger("BackNormal");
+            ani.bn = true;
             yield return new WaitForSeconds(0.1f);
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[1].position, attackRanges[1], enemyLayers);
             foreach (Collider enemy in hitEnemies)
@@ -298,7 +300,7 @@ public class AttacksManager : AttributesSync
             m.jlock = true;
             m.locked = true;
             m.gravAffect = false;
-            ani.Animator.SetBool("DownNormal", true);
+            ani.dn = true;
             yield return new WaitForSeconds(0.1f);
             kadoosh = true;
             yield return new WaitForSeconds(0.3f);
@@ -307,7 +309,7 @@ public class AttacksManager : AttributesSync
             m.locked = false;
             m.jlock = false;
             m.gravAffect = true;
-            ani.Animator.SetBool("DownNormal", false);
+            ani.dn = false;
         }
         if (kadoosh)
         {
@@ -359,7 +361,7 @@ public class AttacksManager : AttributesSync
             {
             m.verticalVelocity += 10;
             }
-            ani.Animator.SetTrigger("UpNormal");
+            ani.un = true;
             yield return new WaitForSeconds(0.1f);
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[5].position, attackRanges[5], enemyLayers);
             foreach (Collider enemy in hitEnemies)
@@ -410,7 +412,7 @@ public class AttacksManager : AttributesSync
             lcked = true;
             m.jlock = true;
             m.locked = true;
-            ani.Animator.SetTrigger("ForwardNormal");
+            ani.fn = true;
             yield return new WaitForSeconds(0.1f);
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[0].position, 1.5f, enemyLayers);
             foreach (Collider enemy in hitEnemies)

@@ -1,7 +1,6 @@
 ScriptsOnlyBuild:
   usedScripts:
     Alteruna.Trinity.dll:
-    - Alteruna.AnimationSynchronizable
     - Alteruna.Avatar
     - Alteruna.Configs.AlterunaApplicationData
     - Alteruna.Configs.AlterunaConfig
@@ -12,6 +11,7 @@ ScriptsOnlyBuild:
     - Alteruna.EnsureEventSystem
     - Alteruna.MapDescriptions
     - Alteruna.RoomMenu
+    - AnimatorManager
     - AttacksManager
     - BattleManager
     - ButtonGameManagerLinker
@@ -33,17 +33,23 @@ ScriptsOnlyBuild:
     - Cinemachine.CinemachinePipeline
     - Cinemachine.CinemachineVirtualCamera
     Unity.2D.Tilemap.Editor.dll:
-    - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
-    - UnityEditor.Tilemaps.TilemapEditorToolPreferences
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -258,8 +264,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2382}
     - Class: 114
-      Script: {instanceID: 2546}
-    - Class: 114
       Script: {instanceID: 2550}
     - Class: 114
       Script: {instanceID: 2556}
@@ -281,6 +285,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5432}
     - Class: 114
       Script: {instanceID: 5498}
+    - Class: 114
+      Script: {instanceID: 27782}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -408,8 +414,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2274}
     - Class: 114
-      Script: {instanceID: 2546}
-    - Class: 114
       Script: {instanceID: 2550}
     - Class: 114
       Script: {instanceID: 2560}
@@ -447,6 +451,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5462}
     - Class: 114
       Script: {instanceID: 5498}
+    - Class: 114
+      Script: {instanceID: 27782}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1392,7 +1398,7 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
-      Hash: 1900a7fc660ea159141c6e7df9eb47e9
+      Hash: aa732631458d1ca544f9f6a108d4ed56
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AttacksManager
@@ -1416,7 +1422,7 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
-      Hash: a1d14dac83aeea3b529013b260e6c613
+      Hash: 82e182a47685e07256b631ca38f5991a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ThirdPersonMovement
@@ -1612,6 +1618,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PercentageDisplayManager
+  - hash:
+      serializedVersion: 2
+      Hash: fa281fa2295d86f216b562e1706aa424
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AnimatorManager
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu.unity
