@@ -17,6 +17,7 @@ public class AttacksManager : AttributesSync
     private Alteruna.Avatar ava;
     bool upspecial1 = false;
     bool upspecial2 = false;
+    bool forSpec = false;
     ThirdPersonMovement tpm;
 
 
@@ -32,13 +33,13 @@ public class AttacksManager : AttributesSync
 
         if (Input.GetKey(KeyCode.LeftShift) && lcked == false)
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                StartCoroutine(UpNormal());
-            }
             if (Input.GetMouseButtonDown(1))
             {
                 StartCoroutine(UpSpecial());
+            }
+            if (Input.GetMouseButtonDown(0))
+            {
+                StartCoroutine(UpNormal());
             }
 
         }
@@ -51,11 +52,14 @@ public class AttacksManager : AttributesSync
         }
         else if (Input.GetKey(KeyCode.W) && lcked == false)
         {
+            if (Input.GetMouseButtonDown(1))
+            {
+                StartCoroutine(ForwardSpecial());
+            }
             if (Input.GetMouseButtonDown(0))
             {
                 StartCoroutine(ForwardNormal());
             }
-
         }
         else if (Input.GetKey(KeyCode.A) && lcked == false)
         {
@@ -183,6 +187,48 @@ public class AttacksManager : AttributesSync
                 upspecial2 = false;
                 lcked = false;
                 tpm.jlock = false;
+            }
+        }
+        if (forSpec)
+        {
+            tpm.controller.Move(transform.TransformDirection(Vector3.forward) * 8 * Time.deltaTime);
+            Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[0].position, attackRanges[6], enemyLayers);
+            foreach (Collider enemy in hitEnemies)
+            {
+                HealthManager p = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
+                KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
+                kn.mainx = transform.position.x;
+                kn.mainy = transform.position.y;
+                kn.mainz = transform.position.z;
+                enemy.transform.position = attackPoints[0].position;
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team1"))
+                {
+                    kn.force = 0;
+                    p.dam1 = 0.2f;
+                    p.hit1 = true;
+                    kn.hit1 = true;
+                }
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team2"))
+                {
+                    kn.force = 0;
+                    p.dam2 = 0.2f;
+                    p.hit2 = true;
+                    kn.hit2 = true;
+                }
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team3"))
+                {
+                    kn.force = 0;
+                    p.dam3 = 0.2f;
+                    p.hit3 = true;
+                    kn.hit3 = true;
+                }
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team4"))
+                {
+                    kn.force = 0;
+                    p.dam4 = 0.2f;
+                    p.hit4 = true;
+                    kn.hit4 = true;
+                }
             }
         }
     }
@@ -529,5 +575,60 @@ public class AttacksManager : AttributesSync
             yield return new WaitForSeconds(0.2f);
         tpm.verticalVelocity = 25;
         upspecial1 = true;
+        }
+    IEnumerator ForwardSpecial()
+    {
+        tpm = dada.GetComponent<ThirdPersonMovement>();
+        lcked = true;
+        tpm.jlock = true;
+        tpm.locked = true;
+        tpm.gravAffect = false;
+        forSpec = true;
+        ani.fs = true;
+        yield return new WaitForSeconds(0.8f);
+        ani.fs = false;
+        yield return new WaitForSeconds(0.2f);
+        forSpec = false;
+        Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[0].position, attackRanges[7], enemyLayers);
+        foreach (Collider enemy in hitEnemies)
+        {
+            HealthManager p = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
+            KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
+            kn.mainx = transform.position.x;
+            kn.mainy = transform.position.y;
+            kn.mainz = transform.position.z;
+            if (enemy.gameObject.layer == LayerMask.NameToLayer("Team1"))
+            {
+                p.dam1 = 7.2f;
+                kn.force = p.percen1;
+                p.hit1 = true;
+                kn.hit1 = true;
+            }
+            if (enemy.gameObject.layer == LayerMask.NameToLayer("Team2"))
+            {
+                p.dam2 = 7.2f;
+                kn.force = p.percen2;
+                p.hit2 = true;
+                kn.hit2 = true;
+            }
+            if (enemy.gameObject.layer == LayerMask.NameToLayer("Team3"))
+            {
+                p.dam3 = 7.2f;
+                kn.force = p.percen3;
+                p.hit3 = true;
+                kn.hit3 = true;
+            }
+            if (enemy.gameObject.layer == LayerMask.NameToLayer("Team4"))
+            {
+                p.dam4 = 7.2f;
+                kn.force = p.percen4;
+                p.hit4 = true;
+                kn.hit4 = true;
+            }
+        }
+        lcked = false;
+        tpm.jlock = false;
+        tpm.locked = false;
+        tpm.gravAffect = true;
     }
 }

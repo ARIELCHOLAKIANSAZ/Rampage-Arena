@@ -15,9 +15,12 @@ public class AnimatorManager : AttributesSync
     [SynchronizableField] public bool fn;
     [SynchronizableField] public bool usS;
     [SynchronizableField] public bool usF;
+    [SynchronizableField] public bool fs;
 
     void Update()
     {
+        if (fs) ani.SetBool("ForwardSpecial", true);
+        else ani.SetBool("ForwardSpecial", false);
         if (usS)
         {
             ani.SetBool("UpSpecialStart", true);
