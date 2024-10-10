@@ -19,6 +19,12 @@ public class AttacksManager : AttributesSync
     bool upspecial2 = false;
     bool forSpec = false;
     ThirdPersonMovement tpm;
+    [SynchronizableField] string oucher;
+    [SynchronizableField] bool frosp1 = false;
+    [SynchronizableField] bool frosp2 = false;
+    [SynchronizableField] bool frosp3 = false;
+    [SynchronizableField] bool frosp4 = false;
+    PlayerManager p;
 
 
     void Start()
@@ -26,6 +32,7 @@ public class AttacksManager : AttributesSync
         ani = GetComponent<AnimatorManager>();
         ava = GetComponent<Alteruna.Avatar>();
         if (!ava.IsMe) return;
+        p = GetComponent<PlayerManager>();
     }
     void Update()
     {
@@ -197,12 +204,14 @@ public class AttacksManager : AttributesSync
             {
                 HealthManager p = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
                 KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
+                AttacksManager am = enemy.GetComponentInParent<AttacksManager>();
                 kn.mainx = transform.position.x;
                 kn.mainy = transform.position.y;
                 kn.mainz = transform.position.z;
-                enemy.transform.position = attackPoints[0].position;
+                oucher = this.gameObject.name;
                 if (enemy.gameObject.layer == LayerMask.NameToLayer("Team1"))
                 {
+                    frosp1 = true;
                     kn.force = 0;
                     p.dam1 = 0.2f;
                     p.hit1 = true;
@@ -210,6 +219,7 @@ public class AttacksManager : AttributesSync
                 }
                 if (enemy.gameObject.layer == LayerMask.NameToLayer("Team2"))
                 {
+                    frosp2 = true;
                     kn.force = 0;
                     p.dam2 = 0.2f;
                     p.hit2 = true;
@@ -217,6 +227,7 @@ public class AttacksManager : AttributesSync
                 }
                 if (enemy.gameObject.layer == LayerMask.NameToLayer("Team3"))
                 {
+                    frosp3 = true;
                     kn.force = 0;
                     p.dam3 = 0.2f;
                     p.hit3 = true;
@@ -224,6 +235,7 @@ public class AttacksManager : AttributesSync
                 }
                 if (enemy.gameObject.layer == LayerMask.NameToLayer("Team4"))
                 {
+                    frosp4 = true;
                     kn.force = 0;
                     p.dam4 = 0.2f;
                     p.hit4 = true;
@@ -231,6 +243,14 @@ public class AttacksManager : AttributesSync
                 }
             }
         }
+        if (frosp1 && p.playerNumber == 1) this.gameObject.transform.parent = GameObject.Find(oucher).transform.Find("Forward Normal");
+        else if (p.playerNumber == 1) this.gameObject.transform.parent = null;
+        if (frosp2 && p.playerNumber == 2) this.gameObject.transform.parent = GameObject.Find(oucher).transform.Find("Forward Normal");
+        else if (p.playerNumber == 2) this.gameObject.transform.parent = null;
+        if (frosp3 && p.playerNumber == 3) this.gameObject.transform.parent = GameObject.Find(oucher).transform.Find("Forward Normal");
+        else if (p.playerNumber == 3) this.gameObject.transform.parent = null;
+        if (frosp4 && p.playerNumber == 4) this.gameObject.transform.parent = GameObject.Find(oucher).transform.Find("Forward Normal");
+        else if (p.playerNumber == 4) this.gameObject.transform.parent = null;
     }
         IEnumerator LeftNormal()
         {
@@ -587,7 +607,12 @@ public class AttacksManager : AttributesSync
         ani.fs = true;
         yield return new WaitForSeconds(0.8f);
         ani.fs = false;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
+        frosp1 = false;
+        frosp2 = false;
+        frosp3 = false;
+        frosp4 = false;
+        yield return new WaitForSeconds(0.1f);
         forSpec = false;
         Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[0].position, attackRanges[7], enemyLayers);
         foreach (Collider enemy in hitEnemies)
