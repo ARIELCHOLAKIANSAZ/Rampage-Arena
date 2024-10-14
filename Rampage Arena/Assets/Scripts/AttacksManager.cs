@@ -24,6 +24,9 @@ public class AttacksManager : AttributesSync
     [SynchronizableField] bool frosp2 = false;
     [SynchronizableField] bool frosp3 = false;
     [SynchronizableField] bool frosp4 = false;
+    [SynchronizableField] float frox;
+    [SynchronizableField] float froy;
+    [SynchronizableField] float froz;
     PlayerManager p;
 
 
@@ -208,7 +211,9 @@ public class AttacksManager : AttributesSync
                 kn.mainx = transform.position.x;
                 kn.mainy = transform.position.y;
                 kn.mainz = transform.position.z;
-                oucher = this.gameObject.name;
+                am.frox = attackPoints[0].transform.position.x;
+                am.froy = attackPoints[0].transform.position.y;
+                am.froz = attackPoints[0].transform.position.z;
                 if (enemy.gameObject.layer == LayerMask.NameToLayer("Team1"))
                 {
                     frosp1 = true;
@@ -243,14 +248,10 @@ public class AttacksManager : AttributesSync
                 }
             }
         }
-        if (frosp1 && p.playerNumber == 1) this.gameObject.transform.parent = GameObject.Find(oucher).transform.Find("Forward Normal");
-        else if (p.playerNumber == 1) this.gameObject.transform.parent = null;
-        if (frosp2 && p.playerNumber == 2) this.gameObject.transform.parent = GameObject.Find(oucher).transform.Find("Forward Normal");
-        else if (p.playerNumber == 2) this.gameObject.transform.parent = null;
-        if (frosp3 && p.playerNumber == 3) this.gameObject.transform.parent = GameObject.Find(oucher).transform.Find("Forward Normal");
-        else if (p.playerNumber == 3) this.gameObject.transform.parent = null;
-        if (frosp4 && p.playerNumber == 4) this.gameObject.transform.parent = GameObject.Find(oucher).transform.Find("Forward Normal");
-        else if (p.playerNumber == 4) this.gameObject.transform.parent = null;
+        if (frosp1 && p.playerNumber == 1) gameObject.transform.position = new Vector3(frox, froy, froz);
+        if (frosp2 && p.playerNumber == 2) gameObject.transform.position = new Vector3(frox, froy, froz);
+        if (frosp3 && p.playerNumber == 3) gameObject.transform.position = new Vector3(frox, froy, froz);
+        if (frosp4 && p.playerNumber == 4) gameObject.transform.position = new Vector3(frox, froy, froz);
     }
         IEnumerator LeftNormal()
         {
@@ -607,13 +608,14 @@ public class AttacksManager : AttributesSync
         ani.fs = true;
         yield return new WaitForSeconds(0.8f);
         ani.fs = false;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.05f);
+        forSpec = false;
+        yield return new WaitForSeconds(0.05f);
         frosp1 = false;
         frosp2 = false;
         frosp3 = false;
         frosp4 = false;
         yield return new WaitForSeconds(0.1f);
-        forSpec = false;
         Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[0].position, attackRanges[7], enemyLayers);
         foreach (Collider enemy in hitEnemies)
         {
