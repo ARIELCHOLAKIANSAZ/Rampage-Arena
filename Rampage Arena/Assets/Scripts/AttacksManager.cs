@@ -28,6 +28,7 @@ public class AttacksManager : AttributesSync
     [SynchronizableField] float froy;
     [SynchronizableField] float froz;
     PlayerManager p;
+    bool weakfall = false;
 
 
     void Start()
@@ -252,6 +253,16 @@ public class AttacksManager : AttributesSync
         if (frosp2 && p.playerNumber == 2) gameObject.transform.position = new Vector3(frox, froy, froz);
         if (frosp3 && p.playerNumber == 3) gameObject.transform.position = new Vector3(frox, froy, froz);
         if (frosp4 && p.playerNumber == 4) gameObject.transform.position = new Vector3(frox, froy, froz);
+
+        if (weakfall)
+        {
+            if (tpm.controller.isGrounded)
+            {
+                lcked = false;
+                tpm.jlock = false;
+                weakfall = false;
+            }
+        }
     }
         IEnumerator LeftNormal()
         {
@@ -653,9 +664,8 @@ public class AttacksManager : AttributesSync
                 kn.hit4 = true;
             }
         }
-        lcked = false;
-        tpm.jlock = false;
         tpm.locked = false;
         tpm.gravAffect = true;
+        weakfall = true;
     }
 }
