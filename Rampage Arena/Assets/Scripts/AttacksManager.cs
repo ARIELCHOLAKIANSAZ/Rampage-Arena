@@ -29,6 +29,7 @@ public class AttacksManager : AttributesSync
     [SynchronizableField] float froz;
     PlayerManager p;
     bool weakfall = false;
+    bool downsp = false;
 
 
     void Start()
@@ -56,6 +57,10 @@ public class AttacksManager : AttributesSync
         }
         else if (Input.GetKey(KeyCode.LeftControl) && lcked == false)
         {
+            if (Input.GetMouseButtonDown(1))
+            {
+                StartCoroutine(DownSpecial());
+            }
             if (Input.GetMouseButtonDown(0))
             {
                 StartCoroutine(DownNormal());
@@ -139,6 +144,47 @@ public class AttacksManager : AttributesSync
                 {
                     kn.force = p.percen4 / 5;
                     p.dam4 = 0.1f;
+                    p.hit4 = true;
+                    kn.hit4 = true;
+                }
+            }
+        }
+
+        if (downsp)
+        {
+            Collider[] hitEnemies = Physics.OverlapBox(attackPoints[4].position, new Vector3(3f, 2, 3f), Quaternion.identity, enemyLayers);
+            foreach (Collider enemy in hitEnemies)
+            {
+                HealthManager p = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
+                KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
+                kn.mainx = transform.position.x;
+                kn.mainy = transform.position.y;
+                kn.mainz = transform.position.z;
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team1"))
+                {
+                    kn.force = p.percen1 / 4;
+                    p.dam1 = 0.3f;
+                    p.hit1 = true;
+                    kn.hit1 = true;
+                }
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team2"))
+                {
+                    kn.force = p.percen2 / 4;
+                    p.dam2 = 0.3f;
+                    p.hit2 = true;
+                    kn.hit2 = true;
+                }
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team3"))
+                {
+                    kn.force = p.percen3 / 4;
+                    p.dam3 = 0.3f;
+                    p.hit3 = true;
+                    kn.hit3 = true;
+                }
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team4"))
+                {
+                    kn.force = p.percen4 / 4;
+                    p.dam4 = 0.3f;
                     p.hit4 = true;
                     kn.hit4 = true;
                 }
@@ -673,5 +719,21 @@ public class AttacksManager : AttributesSync
         tpm.locked = false;
         tpm.gravAffect = true;
         weakfall = true;
+    }
+    IEnumerator DownSpecial()
+    {
+        tpm = dada.GetComponent<ThirdPersonMovement>();
+        lcked = true;
+        tpm.jlock = true;
+        ani.ds = true;
+        tpm.speed /=  2;
+        tpm.grav /=  2;
+        downsp = true;
+        yield return new WaitForSeconds(0.8f);
+        downsp = false;
+        tpm.speed *= 2;
+        tpm.grav *= 2;
+        tpm.jlock = false;
+        lcked = false;
     }
 }
