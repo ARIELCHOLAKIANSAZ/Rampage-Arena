@@ -163,28 +163,28 @@ public class AttacksManager : AttributesSync
                 if (enemy.gameObject.layer == LayerMask.NameToLayer("Team1"))
                 {
                     kn.force = p.percen1 / 4;
-                    p.dam1 = 0.3f;
+                    p.dam1 = 0.5f;
                     p.hit1 = true;
                     kn.hit1 = true;
                 }
                 if (enemy.gameObject.layer == LayerMask.NameToLayer("Team2"))
                 {
                     kn.force = p.percen2 / 4;
-                    p.dam2 = 0.3f;
+                    p.dam2 = 0.5f;
                     p.hit2 = true;
                     kn.hit2 = true;
                 }
                 if (enemy.gameObject.layer == LayerMask.NameToLayer("Team3"))
                 {
                     kn.force = p.percen3 / 4;
-                    p.dam3 = 0.3f;
+                    p.dam3 = 0.5f;
                     p.hit3 = true;
                     kn.hit3 = true;
                 }
                 if (enemy.gameObject.layer == LayerMask.NameToLayer("Team4"))
                 {
                     kn.force = p.percen4 / 4;
-                    p.dam4 = 0.3f;
+                    p.dam4 = 0.5f;
                     p.hit4 = true;
                     kn.hit4 = true;
                 }
