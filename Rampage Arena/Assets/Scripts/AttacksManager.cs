@@ -261,6 +261,12 @@ public class AttacksManager : AttributesSync
                 lcked = false;
                 tpm.jlock = false;
                 weakfall = false;
+                ani.vulfall = false;
+            }
+            else
+            {
+            ani.
+                vulfall = true;
             }
         }
     }

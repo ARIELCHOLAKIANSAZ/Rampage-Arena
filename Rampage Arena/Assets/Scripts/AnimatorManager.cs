@@ -16,9 +16,12 @@ public class AnimatorManager : AttributesSync
     [SynchronizableField] public bool usS;
     [SynchronizableField] public bool usF;
     [SynchronizableField] public bool fs;
+    [SynchronizableField] public bool vulfall;
 
     void Update()
     {
+        if (vulfall) ani.SetBool("VulnerableFall", true);
+        else ani.SetBool("VulnerableFall", false);
         if (fs) ani.SetBool("ForwardSpecial", true);
         else ani.SetBool("ForwardSpecial", false);
         if (usS)
