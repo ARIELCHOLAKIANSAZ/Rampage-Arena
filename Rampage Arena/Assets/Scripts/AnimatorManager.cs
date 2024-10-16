@@ -18,9 +18,15 @@ public class AnimatorManager : AttributesSync
     [SynchronizableField] public bool fs;
     [SynchronizableField] public bool vulfall;
     [SynchronizableField] public bool ds;
+    [SynchronizableField] public bool rs;
+    [SynchronizableField] public bool ls;
 
     void Update()
     {
+        if (rs) ani.SetBool("RightSpecial", true);
+        else ani.SetBool("RightSpecil", false);
+        if (ls) ani.SetBool("LeftSpecial", true);
+        else ani.SetBool("LeftSpecial", false);
         if (ds)
         {
             ani.SetTrigger("DownSpecial");
