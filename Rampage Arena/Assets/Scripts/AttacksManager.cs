@@ -321,7 +321,7 @@ public class AttacksManager : AttributesSync
         }
         if (bodyhit)
         {
-            tpm.controller.Move(transform.TransformDirection(Vector3.right) * 15 * Time.deltaTime);
+            tpm.controller.Move(transform.TransformDirection(Vector3.right) * 25  * Time.deltaTime);
             Collider[] hitEnemies = Physics.OverlapSphere(this.gameObject.transform.position, 2.5f, enemyLayers);
             foreach (Collider enemy in hitEnemies)
             {
@@ -787,13 +787,15 @@ public class AttacksManager : AttributesSync
         lcked = true;
         tpm.jlock = true;
         tpm.locked = true;
+        tpm.grav /= 2;
         ani.rs = true;
         yield return new WaitForSeconds(0.1f);
-        ani.rs = false;
         bodyhit = true;
-        yield return new WaitForSeconds(2.1f);
+        yield return new WaitForSeconds(0.3f);
+        ani.rs = false;
         bodyhit = false;
         yield return new WaitForSeconds(.3f);
+        tpm.grav *= 2;
         lcked = false;
         tpm.jlock = false;
         tpm.locked = false;

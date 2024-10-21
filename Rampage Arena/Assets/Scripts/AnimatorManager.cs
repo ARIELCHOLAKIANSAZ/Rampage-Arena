@@ -24,7 +24,7 @@ public class AnimatorManager : AttributesSync
     void Update()
     {
         if (rs) ani.SetBool("RightSpecial", true);
-        else ani.SetBool("RightSpecil", false);
+        else ani.SetBool("RightSpecial", false);
         if (ls) ani.SetBool("LeftSpecial", true);
         else ani.SetBool("LeftSpecial", false);
         if (ds)
