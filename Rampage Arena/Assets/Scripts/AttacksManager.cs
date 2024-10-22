@@ -30,6 +30,7 @@ public class AttacksManager : AttributesSync
     bool weakfall = false;
     bool downsp = false;
     bool bodyhit = false;
+    bool bodyhit2 = false;
 
 
     void Start()
@@ -79,6 +80,10 @@ public class AttacksManager : AttributesSync
         }
         else if (Input.GetKey(KeyCode.A) && lcked == false)
         {
+            if (Input.GetMouseButtonDown(1))
+            {
+                StartCoroutine(LeftSpecial());
+            }
             if (Input.GetMouseButtonDown(0))
             {
                 StartCoroutine(LeftNormal());
@@ -322,6 +327,47 @@ public class AttacksManager : AttributesSync
         if (bodyhit)
         {
             tpm.controller.Move(transform.TransformDirection(Vector3.right) * 25  * Time.deltaTime);
+            Collider[] hitEnemies = Physics.OverlapSphere(this.gameObject.transform.position, 2.5f, enemyLayers);
+            foreach (Collider enemy in hitEnemies)
+            {
+                HealthManager p = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
+                KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
+                kn.mainx = transform.position.x;
+                kn.mainy = transform.position.y;
+                kn.mainz = transform.position.z;
+                if (enemy.gameObject.layer == LayerMask.NameToLayer("Team 1"))
+                {
+                    kn.force = p.percen1;
+                    p.dam1 = 0.3f;
+                    p.hit1 = true;
+                    kn.hit1 = true;
+                }
+                if (enemy.gameObject.layer == 11)
+                {
+                    kn.force = p.percen2;
+                    p.dam2 = 0.3f;
+                    p.hit2 = true;
+                    kn.hit2 = true;
+                }
+                if (enemy.gameObject.layer == 12)
+                {
+                    kn.force = p.percen3;
+                    p.dam3 = 0.3f;
+                    p.hit3 = true;
+                    kn.hit3 = true;
+                }
+                if (enemy.gameObject.layer == 13)
+                {
+                    kn.force = p.percen4;
+                    p.dam4 = 0.3f;
+                    p.hit4 = true;
+                    kn.hit4 = true;
+                }
+            }
+        }
+        if (bodyhit2)
+        {
+            tpm.controller.Move(transform.TransformDirection(Vector3.left) * 25  * Time.deltaTime);
             Collider[] hitEnemies = Physics.OverlapSphere(this.gameObject.transform.position, 2.5f, enemyLayers);
             foreach (Collider enemy in hitEnemies)
             {
@@ -789,11 +835,30 @@ public class AttacksManager : AttributesSync
         tpm.locked = true;
         tpm.grav /= 2;
         ani.rs = true;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.2f);
         bodyhit = true;
-        yield return new WaitForSeconds(0.3f);
         ani.rs = false;
+        yield return new WaitForSeconds(0.3f);
         bodyhit = false;
+        yield return new WaitForSeconds(.3f);
+        tpm.grav *= 2;
+        lcked = false;
+        tpm.jlock = false;
+        tpm.locked = false;
+    }
+    IEnumerator LeftSpecial()
+    {
+        tpm = dada.GetComponent<ThirdPersonMovement>();
+        lcked = true;
+        tpm.jlock = true;
+        tpm.locked = true;
+        tpm.grav /= 2;
+        ani.ls = true;
+        yield return new WaitForSeconds(0.2f);
+        bodyhit2 = true;
+        ani.ls = false;
+        yield return new WaitForSeconds(0.3f);
+        bodyhit2 = false;
         yield return new WaitForSeconds(.3f);
         tpm.grav *= 2;
         lcked = false;
