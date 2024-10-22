@@ -113,7 +113,7 @@ public class ThirdPersonMovement : AttributesSync
             verticalVelocity = 0;
         }
 
-        if (verticalVelocity <= -10) verticalVelocity = -10;
+        if (verticalVelocity <= -20) verticalVelocity = -20;
 
         
     }

@@ -835,8 +835,8 @@ public class AttacksManager : AttributesSync
         tpm.locked = true;
         tpm.grav /= 2;
         ani.rs = true;
-        yield return new WaitForSeconds(0.2f);
         bodyhit = true;
+        yield return new WaitForSeconds(0.2f);
         ani.rs = false;
         yield return new WaitForSeconds(0.3f);
         bodyhit = false;
@@ -854,8 +854,8 @@ public class AttacksManager : AttributesSync
         tpm.locked = true;
         tpm.grav /= 2;
         ani.ls = true;
-        yield return new WaitForSeconds(0.2f);
         bodyhit2 = true;
+        yield return new WaitForSeconds(0.2f);
         ani.ls = false;
         yield return new WaitForSeconds(0.3f);
         bodyhit2 = false;

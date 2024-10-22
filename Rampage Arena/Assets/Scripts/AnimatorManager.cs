@@ -68,8 +68,11 @@ public class AnimatorManager : AttributesSync
             ani.SetTrigger("BackNormal");
             bn = false;
         }
-        if (dn) ani.SetBool("DownNormal", true);
-        else ani.SetBool("DownNormal", false);
+        if (dn)
+        {
+            ani.SetTrigger("DownNormal");
+            ds = false;
+        }
         if (un)
         {
             ani.SetTrigger("UpNormal");
