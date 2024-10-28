@@ -25,6 +25,8 @@ public class GameManager : AttributesSync
     void Update()
     {
         if (Input.anyKeyDown && SceneManager.GetActiveScene().name == "Menu") ChangeSceneSingle("RoomMenu");
+        if (SceneManager.GetActiveScene().name == "Battle") Screen.lockCursor = true;
+        else Screen.lockCursor = false;
     }
 
     public void ChangeScene(string sceneName)
