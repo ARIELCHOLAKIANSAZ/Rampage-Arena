@@ -13,19 +13,17 @@ public class DeathManager : AttributesSync
     public Text[] lifeDisplay;
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("left");
         Alteruna.Avatar ava = other.GetComponent<Alteruna.Avatar>();
         if (!ava.IsMe) return;
-        Debug.Log("avaisme");
         ThirdPersonMovement tpm = other.GetComponent<ThirdPersonMovement>();
         tpm.gravAffect = false;
         tpm.locked = true;
         tpm.jlock = true;
         StartCoroutine(timer(other, tpm));
-        if (other.gameObject.layer == LayerMask.NameToLayer("Team1")) if (lives1 <= 0) Destroy(other.gameObject);
-        if (other.gameObject.layer == LayerMask.NameToLayer("Team2")) if (lives2 <= 0) Destroy(other.gameObject);
-        if (other.gameObject.layer == LayerMask.NameToLayer("Team3")) if (lives3 <= 0) Destroy(other.gameObject);
-        if (other.gameObject.layer == LayerMask.NameToLayer("Team4")) if (lives4 <= 0) Destroy(other.gameObject);
+        if (other.gameObject.layer == LayerMask.NameToLayer("Team1")) if (lives1 == 0) Destroy(other.gameObject);
+        if (other.gameObject.layer == LayerMask.NameToLayer("Team2")) if (lives2 == 0) Destroy(other.gameObject);
+        if (other.gameObject.layer == LayerMask.NameToLayer("Team3")) if (lives3 == 0) Destroy(other.gameObject);
+        if (other.gameObject.layer == LayerMask.NameToLayer("Team4")) if (lives4 == 0) Destroy(other.gameObject);
     }
     IEnumerator timer(Collider other, ThirdPersonMovement tpm)
     {

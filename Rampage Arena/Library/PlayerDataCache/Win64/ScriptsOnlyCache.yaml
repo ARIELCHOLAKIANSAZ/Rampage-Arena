@@ -22,6 +22,7 @@ ScriptsOnlyBuild:
     - LayerManager
     - PlayerLook
     - PlayerManager
+    - PointsManager
     - SceneBus
     - ThirdPersonMovement
     Cinemachine.dll:
@@ -36,7 +37,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -52,10 +52,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -227,15 +225,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3444}
     - Class: 114
-      Script: {instanceID: 3634}
+      Script: {instanceID: 3520}
     - Class: 114
-      Script: {instanceID: 3930}
+      Script: {instanceID: 3636}
     - Class: 114
-      Script: {instanceID: 4316}
+      Script: {instanceID: 3932}
     - Class: 114
-      Script: {instanceID: 4864}
+      Script: {instanceID: 4318}
     - Class: 114
-      Script: {instanceID: 6672}
+      Script: {instanceID: 4866}
+    - Class: 114
+      Script: {instanceID: 6674}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -310,21 +310,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3328}
     - Class: 114
-      Script: {instanceID: 3634}
+      Script: {instanceID: 3636}
     - Class: 114
-      Script: {instanceID: 3930}
+      Script: {instanceID: 3932}
     - Class: 114
-      Script: {instanceID: 4098}
+      Script: {instanceID: 4100}
     - Class: 114
-      Script: {instanceID: 4382}
+      Script: {instanceID: 4384}
     - Class: 114
-      Script: {instanceID: 5098}
+      Script: {instanceID: 5100}
     - Class: 114
-      Script: {instanceID: 5134}
+      Script: {instanceID: 5136}
     - Class: 114
-      Script: {instanceID: 5458}
+      Script: {instanceID: 5460}
     - Class: 114
-      Script: {instanceID: 5524}
+      Script: {instanceID: 5526}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -377,13 +377,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3328}
     - Class: 114
-      Script: {instanceID: 3634}
+      Script: {instanceID: 3636}
     - Class: 114
-      Script: {instanceID: 3930}
+      Script: {instanceID: 3932}
     - Class: 114
-      Script: {instanceID: 4098}
+      Script: {instanceID: 4100}
     - Class: 114
-      Script: {instanceID: 5252}
+      Script: {instanceID: 5254}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -438,15 +438,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3328}
     - Class: 114
-      Script: {instanceID: 3634}
+      Script: {instanceID: 3636}
     - Class: 114
-      Script: {instanceID: 3930}
+      Script: {instanceID: 3932}
     - Class: 114
-      Script: {instanceID: 4394}
+      Script: {instanceID: 4396}
     - Class: 114
-      Script: {instanceID: 5646}
+      Script: {instanceID: 5648}
     - Class: 114
-      Script: {instanceID: 6092}
+      Script: {instanceID: 6094}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -493,9 +493,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3328}
     - Class: 114
-      Script: {instanceID: 3634}
+      Script: {instanceID: 3636}
     - Class: 114
-      Script: {instanceID: 3930}
+      Script: {instanceID: 3932}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -566,35 +566,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3328}
     - Class: 114
-      Script: {instanceID: 3634}
+      Script: {instanceID: 3636}
     - Class: 114
-      Script: {instanceID: 3708}
+      Script: {instanceID: 3710}
     - Class: 114
-      Script: {instanceID: 3930}
+      Script: {instanceID: 3932}
     - Class: 114
-      Script: {instanceID: 3948}
+      Script: {instanceID: 3950}
     - Class: 114
-      Script: {instanceID: 4098}
+      Script: {instanceID: 4100}
     - Class: 114
-      Script: {instanceID: 4348}
+      Script: {instanceID: 4350}
     - Class: 114
-      Script: {instanceID: 4382}
+      Script: {instanceID: 4384}
     - Class: 114
-      Script: {instanceID: 4538}
+      Script: {instanceID: 4540}
     - Class: 114
-      Script: {instanceID: 5098}
+      Script: {instanceID: 5100}
     - Class: 114
-      Script: {instanceID: 5134}
+      Script: {instanceID: 5136}
     - Class: 114
-      Script: {instanceID: 5252}
+      Script: {instanceID: 5254}
     - Class: 114
-      Script: {instanceID: 5278}
+      Script: {instanceID: 5280}
     - Class: 114
-      Script: {instanceID: 5458}
+      Script: {instanceID: 5460}
     - Class: 114
-      Script: {instanceID: 5488}
+      Script: {instanceID: 5490}
     - Class: 114
-      Script: {instanceID: 5524}
+      Script: {instanceID: 5526}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1130,6 +1130,12 @@ ScriptsOnlyBuild:
     assemblyName: Cinemachine.dll
     namespaceName: Cinemachine
     className: CinemachineHardLookAt
+  - hash:
+      serializedVersion: 2
+      Hash: 96342ea1cfe1e5d4eccf117699636631
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PointsManager
   - hash:
       serializedVersion: 2
       Hash: cafff7c4f3a30ae3a2c9e13571a161b4

@@ -35,6 +35,10 @@ public class ThirdPersonMovement : AttributesSync
         ava = GetComponent<Alteruna.Avatar>();
         if (!ava.IsMe) return;
         playNum = GameObject.Find("PLAYERMANAGER").GetComponent<PlayerManager>().playerNumber;
+        if (playNum == 1) gameObject.tag = "Player 1";
+        if (playNum == 2) gameObject.tag = "Player 2";
+        if (playNum == 3) gameObject.tag = "Player 3";
+        if (playNum == 4) gameObject.tag = "Player 4";
     }
     void Update()
     {
