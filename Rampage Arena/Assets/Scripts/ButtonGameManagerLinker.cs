@@ -15,5 +15,12 @@ public class ButtonGameManagerLinker : AttributesSync
         Debug.Log("NextScene called");
         GameManager.Instance.ChangeSceneSingle("CharSelec");
     }
-
+    public void salir()
+    {
+        Application.Quit();
+    }
+    public void sceneChange(string SceneName)
+    {
+        GameManager.Instance.ChangeSceneSingle(SceneName);
+    }
 }
