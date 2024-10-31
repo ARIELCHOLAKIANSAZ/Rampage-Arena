@@ -19,8 +19,12 @@ public class ButtonGameManagerLinker : AttributesSync
     {
         Application.Quit();
     }
-    public void sceneChange(string SceneName)
+    public void option()
     {
-        GameManager.Instance.ChangeSceneSingle(SceneName);
+        GameManager.Instance.ChangeSceneSingle("Options");
+    }
+    public void rampagin()
+    {
+        GameManager.Instance.ChangeSceneSingle("RoomMenus");
     }
 }
