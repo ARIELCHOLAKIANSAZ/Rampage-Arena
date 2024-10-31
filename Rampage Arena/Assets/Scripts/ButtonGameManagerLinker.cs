@@ -25,6 +25,6 @@ public class ButtonGameManagerLinker : AttributesSync
     }
     public void rampagin()
     {
-        GameManager.Instance.ChangeSceneSingle("RoomMenus");
+        GameManager.Instance.ChangeSceneSingle("RoomMenu");
     }
 }
