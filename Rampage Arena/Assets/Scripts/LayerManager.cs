@@ -33,10 +33,6 @@ public class LayerManager : AttributesSync
         {
             nameArray[i] = avaArray[i].gameObject.name;
         }
-        for(int i = 0; i < nameArray.Length; i++)
-        {
-            Debug.Log("name " + i + ": " + nameArray[i]);
-        }
         AttacksManager am = GetComponent<AttacksManager>();
         p = GameObject.Find("PLAYERMANAGER").GetComponent<PlayerManager>();
 ;       

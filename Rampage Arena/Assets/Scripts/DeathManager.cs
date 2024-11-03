@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Alteruna;
 using UnityEngine.UI;
+using System;
 
 public class DeathManager : AttributesSync
 {
@@ -20,10 +21,10 @@ public class DeathManager : AttributesSync
         tpm.locked = true;
         tpm.jlock = true;
         StartCoroutine(timer(other, tpm));
-        if (other.gameObject.layer == LayerMask.NameToLayer("Team1")) if (lives1 == 0) Destroy(other.gameObject);
-        if (other.gameObject.layer == LayerMask.NameToLayer("Team2")) if (lives2 == 0) Destroy(other.gameObject);
-        if (other.gameObject.layer == LayerMask.NameToLayer("Team3")) if (lives3 == 0) Destroy(other.gameObject);
-        if (other.gameObject.layer == LayerMask.NameToLayer("Team4")) if (lives4 == 0) Destroy(other.gameObject);
+        if (other.gameObject.layer == LayerMask.NameToLayer("Team1")) if (lives1 == 0) BroadcastRemoteMethod("Destroy", other.gameObject.name);
+        if (other.gameObject.layer == LayerMask.NameToLayer("Team2")) if (lives2 == 0) BroadcastRemoteMethod("Destroy", other.gameObject.name);
+        if (other.gameObject.layer == LayerMask.NameToLayer("Team3")) if (lives3 == 0) BroadcastRemoteMethod("Destroy", other.gameObject.name);
+        if (other.gameObject.layer == LayerMask.NameToLayer("Team4")) if (lives4 == 0) BroadcastRemoteMethod("Destroy", other.gameObject.name);
     }
     IEnumerator timer(Collider other, ThirdPersonMovement tpm)
     {
@@ -78,5 +79,10 @@ public class DeathManager : AttributesSync
     void livesDisplay(int life, int pn)
     {
         lifeDisplay[pn - 1].text = life.ToString();
+    }
+    [SynchronizableMethod]
+    void Destroy(string gm)
+    {
+        Destroy(GameObject.Find(gm));
     }
 }
