@@ -10,7 +10,7 @@ public class PlayerManager : AttributesSync
 {
     public int playerNumber;
     public GameObject chosenCharacter;
-    public float[] chosenCharacters = { 3, 3, 3, 3 };
+    public int[] chosenCharacters = { 3, 3, 3, 3 };
     public GameObject[] charList;
     public GameObject[] btnList;
     public Text[] charName;
