@@ -100,7 +100,7 @@ public class PlayerManager : AttributesSync
     [SynchronizableMethod]
     public void toBattle()
     {
-        GameManager.Instance.ChangeSceneSingle("Battle");
+        GameManager.Instance.ChangeSceneSingle("Map");
     }
     [SynchronizableMethod]
     public void setActivePlayers(int playerNum, bool isPlayerActive)
