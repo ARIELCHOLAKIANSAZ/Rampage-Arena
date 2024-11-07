@@ -27,4 +27,8 @@ public class ButtonGameManagerLinker : AttributesSync
     {
         GameManager.Instance.ChangeSceneSingle("RoomMenu");
     }
+    public void xamnin()
+    {
+        GameManager.Instance.ChangeSceneSingle("Hub");
+    }
 }
