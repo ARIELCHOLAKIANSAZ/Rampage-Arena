@@ -58,6 +58,16 @@ public class PlayerManager : AttributesSync
         }
         else btnList[4].SetActive(true);
         }
+        if(SceneManager.GetActiveScene().name == "Placement")
+        {
+            playerNumber = 0;
+            chosenCharacter = null;
+            for (int i = 0; i < 4; i++) 
+            {
+                chosenCharacters[i] = 0;
+                activePlayerList[i] = false;
+            }
+        }
     }
 
     public void CharChosen(int num)

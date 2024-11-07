@@ -57,6 +57,14 @@ public class MapManager : AttributesSync
             mapChosen = true;
             GameManager.Instance.ChangeSceneSingle("Battle");
         }
+        if (SceneManager.GetActiveScene().name == "Placement" && mapChosen)
+        {
+            easterIslandP = 0;
+            epicPeaksP = 0;
+            roofCityP = 0;
+            finalMap = 0;
+            mapChosen = false;
+        }
     }
 
     public void VoteMap(int map)

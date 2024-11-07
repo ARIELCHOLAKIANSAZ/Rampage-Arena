@@ -18,6 +18,7 @@ public class PointsManager : MonoBehaviour
     string[] nameArray = { "", "", "", "" };
     bool done = false;
     public float playerAmmount = 4;
+    bool again = true;
 
     void Awake()
     {
@@ -28,10 +29,19 @@ public class PointsManager : MonoBehaviour
     void Start()
     {
         pm = GameObject.Find("PLAYERMANAGER").GetComponent<PlayerManager>();
-        StartCoroutine(GetGameObjects());
     }
     void Update()
     {
+        if (again && SceneManager.GetActiveScene().name == "Battle")
+        {
+            StartCoroutine(GetGameObjects());
+            again = false;
+        }
+        if (SceneManager.GetActiveScene().name == "Placement")
+        {
+            again = true;
+            done = false;
+        }
         if (SceneManager.GetActiveScene().name == "Battle" && done == true)
         {
             if (placement[0] == 0 && placed[0] == false && pm.activePlayerList[0] == true && P1 == null)

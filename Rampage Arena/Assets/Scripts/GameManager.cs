@@ -25,7 +25,6 @@ public class GameManager : AttributesSync
     void Update()
     {
         if (Input.anyKeyDown && SceneManager.GetActiveScene().name == "Menu") ChangeSceneSingle("Hub");
-        if (Input.anyKeyDown && SceneManager.GetActiveScene().name == "Placement") ChangeSceneSingle("CharSelec");
         if (SceneManager.GetActiveScene().name == "Battle") Screen.lockCursor = true;
         else Screen.lockCursor = false;
     }
