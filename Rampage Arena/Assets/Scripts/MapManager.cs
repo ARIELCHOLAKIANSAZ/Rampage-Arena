@@ -13,7 +13,7 @@ public class MapManager : AttributesSync
     public GameObject[] mapBtns;
     int playerAmmount;
     bool mapChosen = false;
-    int finalMap;
+    public int finalMap;
     public static MapManager Instance;
 
     void Awake()
@@ -40,8 +40,7 @@ public class MapManager : AttributesSync
 
     void Update()
     {
-        if(easterIslandP + epicPeaksP + roofCityP == playerAmmount) GameManager.Instance.ChangeSceneSingle("Battle");
-        if(SceneManager.GetActiveScene().name == "Battle" && !mapChosen)
+        if(easterIslandP + epicPeaksP + roofCityP == playerAmmount && !mapChosen) 
         {
             if(easterIslandP > epicPeaksP && easterIslandP > roofCityP) finalMap = 0;
             if(epicPeaksP > easterIslandP && epicPeaksP > roofCityP) finalMap = 1;
@@ -55,22 +54,8 @@ public class MapManager : AttributesSync
                 if(finalMap == 4) finalMap = 2;
             }
             if(easterIslandP == epicPeaksP && easterIslandP == roofCityP) finalMap = Random.Range(0, 2);
-            if(finalMap == 0)
-            {
-                GameObject.Find("EasterIsland").SetActive(true);
-                GameObject.Find("KillZoneEI").SetActive(true);
-            }
-            else if (finalMap == 1)
-            {
-                GameObject.Find("EpicPeaks").SetActive(true);
-                GameObject.Find("KillZoneEP").SetActive(true);
-            }
-            else if (finalMap == 2)
-            {
-                GameObject.Find("RoofCityRoofs").SetActive(true);
-                GameObject.Find("KillZoneRCR").SetActive(true);
-            }
             mapChosen = true;
+            GameManager.Instance.ChangeSceneSingle("Battle");
         }
     }
 
