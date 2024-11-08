@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 public class PointsManager : MonoBehaviour
 {
     public static PointsManager Instance;
-    [SerializeField] GameObject P1;
-    [SerializeField] GameObject P2;
-    [SerializeField] GameObject P3;
-    [SerializeField] GameObject P4;
+    GameObject P1;
+    GameObject P2;
+    GameObject P3;
+    GameObject P4;
     public int[] placement = {0, 0, 0, 0};
     bool[] placed = {false, false, false, false};
     int placing = 4;
@@ -57,6 +57,12 @@ public class PointsManager : MonoBehaviour
                 placing -= 1;
                 playerAmmount -=1;
             }
+            else if (placing == 1 && placed[0] == false)
+            {
+                placed[0] = true;
+                placement[0] = placing;
+                placing -= 1;
+            }
             if (placement[1] == 0 && placed[1] == false && pm.activePlayerList[1] == true && P2 == null)
             {
                 placed[1] = true;
@@ -70,7 +76,13 @@ public class PointsManager : MonoBehaviour
                 placing -= 1;
                 playerAmmount -=1;
             }
-            if (placement[2] == 2 && placed[2] == false && pm.activePlayerList[2] == true && P3 == null)
+            else if (placing == 1 && placed[1] == false)
+            {
+                placed[1] = true;
+                placement[1] = placing;
+                placing -= 1;
+            }
+            if (placement[2] == 0 && placed[2] == false && pm.activePlayerList[2] == true && P3 == null)
             {
                 placed[2] = true;
                 placement[2] = placing;
@@ -83,7 +95,13 @@ public class PointsManager : MonoBehaviour
                 placing -= 1;
                 playerAmmount -=1;
             }
-            if (placement[3] == 3 && placed[3] == false && pm.activePlayerList[3] == true && P4 == null)
+            else if (placing == 1 && placed[2] == false)
+            {
+                placed[2] = true;
+                placement[2] = placing;
+                placing -= 1;
+            }
+            if (placement[3] == 0 && placed[3] == false && pm.activePlayerList[3] == true && P4 == null)
             {
                 placed[3] = true;
                 placement[3] = placing;
@@ -95,6 +113,12 @@ public class PointsManager : MonoBehaviour
                 placement[3] = 5;
                 placing -= 1;
                 playerAmmount -=1;
+            }
+            else if (placing == 1 && placed[3] == false)
+            {
+                placed[3] = true;
+                placement[3] = placing;
+                placing -= 1;
             }
             if(placing == 0) GameManager.Instance.ChangeSceneSingle("Placement");
         }
