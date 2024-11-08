@@ -31,4 +31,16 @@ public class ButtonGameManagerLinker : AttributesSync
     {
         GameManager.Instance.ChangeSceneSingle("Hub");
     }
+    public void charchosen(int num)
+    {
+        PlayerManager.Instance.CharChosen(num);
+    }
+    public void chosnum(int num)
+    {
+        PlayerManager.Instance.ChooseNumber(num);
+    }
+    public void gamstart()
+    {
+        PlayerManager.Instance.gameStart();
+    }
 }

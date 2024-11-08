@@ -72,7 +72,7 @@ public class PlayerManager : AttributesSync
             chosenCharacter = null;
             for (int i = 0; i < 4; i++) 
             {
-                chosenCharacters[i] = 0;
+                chosenCharacters[i] = 3;
                 activePlayerList[i] = false;
             }
         }

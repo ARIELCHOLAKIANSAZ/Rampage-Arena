@@ -517,6 +517,7 @@ GameObject:
   - component: {fileID: 332704117}
   - component: {fileID: 332704116}
   - component: {fileID: 332704119}
+  - component: {fileID: 332704120}
   m_Layer: 5
   m_Name: Player4SelecBtn
   m_TagString: Untagged
@@ -589,9 +590,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1592729414}
-        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
-        m_MethodName: ChooseNumber
+      - m_Target: {fileID: 332704120}
+        m_TargetAssemblyTypeName: ButtonGameManagerLinker, Assembly-CSharp
+        m_MethodName: chosnum
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -653,6 +654,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Multiplayer: {fileID: 0}
   _uidString: cdc5e685-70f7-47ed-b8d3-e182988f8edb
+  Reliability: 1
+  LocalMethodBehavior: 1
+--- !u!114 &332704120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332704114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b51079a646f5824984fd82cbc269c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Multiplayer: {fileID: 0}
+  _uidString: 893f7ce0-6b6f-4429-9fc1-2c52d61af7e8
   Reliability: 1
   LocalMethodBehavior: 1
 --- !u!1 &367562848
@@ -862,6 +879,7 @@ GameObject:
   - component: {fileID: 524069954}
   - component: {fileID: 524069953}
   - component: {fileID: 524069956}
+  - component: {fileID: 524069957}
   m_Layer: 5
   m_Name: Player1SelecBtn
   m_TagString: Untagged
@@ -934,9 +952,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1592729414}
-        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
-        m_MethodName: ChooseNumber
+      - m_Target: {fileID: 524069957}
+        m_TargetAssemblyTypeName: ButtonGameManagerLinker, Assembly-CSharp
+        m_MethodName: chosnum
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -998,6 +1016,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Multiplayer: {fileID: 0}
   _uidString: a6513e6e-9a8d-467c-9489-b962f8ac0320
+  Reliability: 1
+  LocalMethodBehavior: 1
+--- !u!114 &524069957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524069951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b51079a646f5824984fd82cbc269c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Multiplayer: {fileID: 0}
+  _uidString: 69b05eb0-c497-472b-8563-af224979fcc3
   Reliability: 1
   LocalMethodBehavior: 1
 --- !u!1 &537970860
@@ -1255,6 +1289,7 @@ GameObject:
   - component: {fileID: 767601726}
   - component: {fileID: 767601725}
   - component: {fileID: 767601728}
+  - component: {fileID: 767601729}
   m_Layer: 5
   m_Name: RampageBtn
   m_TagString: Untagged
@@ -1326,9 +1361,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1592729414}
-        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
-        m_MethodName: gameStart
+      - m_Target: {fileID: 767601729}
+        m_TargetAssemblyTypeName: ButtonGameManagerLinker, Assembly-CSharp
+        m_MethodName: gamstart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1390,6 +1425,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Multiplayer: {fileID: 0}
   _uidString: 035d5bbd-b385-47d5-8db7-855ab81c0a90
+  Reliability: 1
+  LocalMethodBehavior: 1
+--- !u!114 &767601729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767601723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b51079a646f5824984fd82cbc269c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Multiplayer: {fileID: 0}
+  _uidString: 86ee43bd-93e2-44ec-808a-04658159239e
   Reliability: 1
   LocalMethodBehavior: 1
 --- !u!1 &861916068
@@ -1655,6 +1706,7 @@ GameObject:
   - component: {fileID: 916215119}
   - component: {fileID: 916215118}
   - component: {fileID: 916215121}
+  - component: {fileID: 916215122}
   m_Layer: 5
   m_Name: Player2SelecBtn
   m_TagString: Untagged
@@ -1727,9 +1779,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1592729414}
-        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
-        m_MethodName: ChooseNumber
+      - m_Target: {fileID: 916215122}
+        m_TargetAssemblyTypeName: ButtonGameManagerLinker, Assembly-CSharp
+        m_MethodName: chosnum
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1791,6 +1843,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Multiplayer: {fileID: 0}
   _uidString: 4e99bb49-955f-47d4-b021-a3deb61c3e0d
+  Reliability: 1
+  LocalMethodBehavior: 1
+--- !u!114 &916215122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916215116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b51079a646f5824984fd82cbc269c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Multiplayer: {fileID: 0}
+  _uidString: 3af12b07-4478-45d4-90de-aa188c61e085
   Reliability: 1
   LocalMethodBehavior: 1
 --- !u!1 &952930526
@@ -1886,6 +1954,7 @@ GameObject:
   - component: {fileID: 1319937970}
   - component: {fileID: 1319937969}
   - component: {fileID: 1319937972}
+  - component: {fileID: 1319937973}
   m_Layer: 5
   m_Name: Player3SelecBtn
   m_TagString: Untagged
@@ -1958,9 +2027,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1592729414}
-        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
-        m_MethodName: ChooseNumber
+      - m_Target: {fileID: 1319937973}
+        m_TargetAssemblyTypeName: ButtonGameManagerLinker, Assembly-CSharp
+        m_MethodName: chosnum
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2022,6 +2091,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Multiplayer: {fileID: 0}
   _uidString: 31dcc226-a828-4374-b4ee-f7e0c57fac84
+  Reliability: 1
+  LocalMethodBehavior: 1
+--- !u!114 &1319937973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319937967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b51079a646f5824984fd82cbc269c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Multiplayer: {fileID: 0}
+  _uidString: 724b9823-12e8-4b41-b681-f8680269a06a
   Reliability: 1
   LocalMethodBehavior: 1
 --- !u!1 &1345992312
@@ -2104,6 +2189,7 @@ GameObject:
   - component: {fileID: 1357463691}
   - component: {fileID: 1357463690}
   - component: {fileID: 1357463689}
+  - component: {fileID: 1357463692}
   m_Layer: 5
   m_Name: IceBreakerBtn
   m_TagString: Untagged
@@ -2175,9 +2261,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1592729414}
-        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
-        m_MethodName: CharChosen
+      - m_Target: {fileID: 1357463692}
+        m_TargetAssemblyTypeName: ButtonGameManagerLinker, Assembly-CSharp
+        m_MethodName: charchosen
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2225,6 +2311,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357463687}
   m_CullTransparentMesh: 1
+--- !u!114 &1357463692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357463687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b51079a646f5824984fd82cbc269c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Multiplayer: {fileID: 0}
+  _uidString: d2fc93d3-1f70-4d45-823c-49431be8d9d7
+  Reliability: 1
+  LocalMethodBehavior: 1
 --- !u!1 &1477708693
 GameObject:
   m_ObjectHideFlags: 0
