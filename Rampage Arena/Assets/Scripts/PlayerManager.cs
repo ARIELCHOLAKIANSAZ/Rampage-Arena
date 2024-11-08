@@ -23,7 +23,7 @@ public class PlayerManager : AttributesSync
     {
         if(Instance != this && Instance != null)
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
         else
         {
@@ -34,7 +34,7 @@ public class PlayerManager : AttributesSync
     }
     void Update()
     {
-        if(SceneManager.GetActiveScene().name == "CharSelec")
+        if(SceneManager.GetActiveScene().name == "CharSelec" && btnList[1] != null)
         {
         if (!activePlayerList[0] && !activePlayerList[1] && !activePlayerList[2] && !activePlayerList[3])
         {
@@ -57,6 +57,14 @@ public class PlayerManager : AttributesSync
             btnList[4].SetActive(false);
         }
         else btnList[4].SetActive(true);
+        }
+        else if(SceneManager.GetActiveScene().name == "CharSelec" && btnList[1] == null)
+        {
+            btnList[0] = GameObject.Find("Player1SelecBtn");
+            btnList[1] = GameObject.Find("Player2SelecBtn");
+            btnList[2] = GameObject.Find("Player3SelecBtn");
+            btnList[3] = GameObject.Find("Player4SelecBtn");
+            btnList[4] = GameObject.Find("RampageBtn");
         }
         if(SceneManager.GetActiveScene().name == "Placement")
         {
