@@ -31,7 +31,7 @@ public class AttacksManager : AttributesSync
     bool downsp = false;
     bool bodyhit = false;
     bool bodyhit2 = false;
-
+    ParticleSystem snow;
 
     void Start()
     {
@@ -112,11 +112,14 @@ public class AttacksManager : AttributesSync
         }
         else if (lcked == false)
         {
+            if (Input.GetMouseButtonDown(1))
+            {
+                StartCoroutine(NeutralSpecial());
+            }
             if (Input.GetMouseButtonDown(0))
             {
                 StartCoroutine(NeutralNormal());
             }
-
         }
         if (kadoosh)
         {
@@ -861,6 +864,19 @@ public class AttacksManager : AttributesSync
         bodyhit2 = false;
         yield return new WaitForSeconds(.3f);
         tpm.grav *= 2;
+        lcked = false;
+        tpm.jlock = false;
+        tpm.locked = false;
+    }
+    IEnumerator NeutralSpecial()
+    {
+        tpm = dada.GetComponent<ThirdPersonMovement>();
+        lcked = true;
+        tpm.jlock = true;
+        tpm.locked = true;
+        ani.ns = true;
+        yield return new WaitForSeconds(0.1f);
+        snow.Play();
         lcked = false;
         tpm.jlock = false;
         tpm.locked = false;

@@ -101,7 +101,6 @@ public class PlayerManager : AttributesSync
                 chosenCharacter = null;
                 pnumM1 = playerNumber - 1;
                 BroadcastRemoteMethod("setChosenChars", pnumM1, 3);
-        BroadcastRemoteMethod("setActivePlayers", pnumM1, true);
             }
         }
         playerNumber = num;
