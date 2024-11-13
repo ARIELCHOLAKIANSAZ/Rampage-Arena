@@ -21,9 +21,15 @@ public class AnimatorManager : AttributesSync
     [SynchronizableField] public bool rs;
     [SynchronizableField] public bool ls;
     [SynchronizableField] public bool ns;
+    [SynchronizableField] public bool bs;
 
     void Update()
     {
+        if (bs)
+        {
+            ani.SetTrigger("BackSpecial");
+            bs = false;
+        }
         if (ns)
         {
             ani.SetTrigger("NeutralSpecial");

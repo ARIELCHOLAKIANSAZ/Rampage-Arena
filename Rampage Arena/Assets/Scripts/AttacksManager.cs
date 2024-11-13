@@ -104,6 +104,10 @@ public class AttacksManager : AttributesSync
         }
         else if (Input.GetKey(KeyCode.S) && lcked == false)
         {
+            if (Input.GetMouseButtonDown(1))
+            {
+                StartCoroutine(BackSpecial());
+            }
             if (Input.GetMouseButtonDown(0))
             {
                 StartCoroutine(BackNormal());
@@ -919,5 +923,56 @@ public class AttacksManager : AttributesSync
         m.jlock = false;
         m.locked = false;
         m.gravAffect = true;
+    }
+
+    IEnumerator BackSpecial()
+    {
+        ThirdPersonMovement m = dada.GetComponent<ThirdPersonMovement>();
+        lcked = true;
+        m.jlock = true;
+        m.locked = true;
+        ani.bs = true;
+        yield return new WaitForSeconds(0.3f);
+        Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[1].position, attackRanges[1], enemyLayers);
+        foreach (Collider enemy in hitEnemies)
+        {
+            HealthManager p = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
+            KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
+            kn.mainx = transform.position.x;
+            kn.mainy = transform.position.y;
+            kn.mainz = transform.position.z;
+            if (enemy.gameObject.layer == LayerMask.NameToLayer("Team1"))
+            {
+                kn.force = p.percen1 / 2f;
+                p.dam1 = 6.2f;
+                p.hit1 = true;
+                kn.hit1 = true;
+            }
+            if (enemy.gameObject.layer == LayerMask.NameToLayer("Team2"))
+            {
+                kn.force = p.percen2 / 2;
+                p.dam2 = 6.2f;
+                p.hit2 = true;
+                kn.hit2 = true;
+            }
+            if (enemy.gameObject.layer == LayerMask.NameToLayer("Team3"))
+            {
+                kn.force = p.percen3 / 2f;
+                p.dam3 = 6.2f;
+                p.hit3 = true;
+                kn.hit3 = true;
+            }
+            if (enemy.gameObject.layer == LayerMask.NameToLayer("Team4"))
+            {
+                kn.force = p.percen4 / 2f;
+                p.dam4 = 6.2f;
+                p.hit4 = true;
+                kn.hit4 = true;
+            }
+        }
+        yield return new WaitForSeconds(0.5f);
+        lcked = false;
+        m.jlock = false;
+        m.locked = false;
     }
 }
