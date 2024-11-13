@@ -870,15 +870,54 @@ public class AttacksManager : AttributesSync
     }
     IEnumerator NeutralSpecial()
     {
-        tpm = dada.GetComponent<ThirdPersonMovement>();
+
+        ThirdPersonMovement m = dada.GetComponent<ThirdPersonMovement>();
         lcked = true;
-        tpm.jlock = true;
-        tpm.locked = true;
+        m.jlock = true;
+        m.locked = true;
         ani.ns = true;
-        yield return new WaitForSeconds(0.1f);
-        snow.Play();
+        yield return new WaitForSeconds(0.2f);
+        Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[0].position, attackRanges[0], enemyLayers);
+        foreach (Collider enemy in hitEnemies)
+        {
+            HealthManager p = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
+            KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
+            kn.mainx = transform.position.x;
+            kn.mainy = transform.position.y;
+            kn.mainz = transform.position.z;
+            if (enemy.gameObject.layer == LayerMask.NameToLayer("Team1"))
+            {
+                kn.force = p.percen1;
+                p.dam1 = 0.2f;
+                p.hit1 = true;
+                kn.hit1 = true;
+            }
+            if (enemy.gameObject.layer == LayerMask.NameToLayer("Team2"))
+            {
+                kn.force = p.percen2;
+                p.dam2 = 0.2f;
+                p.hit2 = true;
+                kn.hit2 = true;
+            }
+            if (enemy.gameObject.layer == LayerMask.NameToLayer("Team3"))
+            {
+                kn.force = p.percen3;
+                p.dam3 = 0.2f;
+                p.hit3 = true;
+                kn.hit3 = true;
+            }
+            if (enemy.gameObject.layer == LayerMask.NameToLayer("Team4"))
+            {
+                kn.force = p.percen4;
+                p.dam4 = 0.2f;
+                p.hit4 = true;
+                kn.hit4 = true;
+            }
+        }
+        yield return new WaitForSeconds(0.6f);
         lcked = false;
-        tpm.jlock = false;
-        tpm.locked = false;
+        m.jlock = false;
+        m.locked = false;
+        m.gravAffect = true;
     }
 }
