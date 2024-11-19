@@ -15,7 +15,7 @@ C:/Users/48464009/Documents/GitHub/Rampage-Arena/Rampage Arena
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-49966
+50547
 Successfully changed project path to: C:/Users/48464009/Documents/GitHub/Rampage-Arena/Rampage Arena
 C:/Users/48464009/Documents/GitHub/Rampage-Arena/Rampage Arena
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,12 +47,12 @@ C:/Users/48464009/Documents/GitHub/Rampage-Arena/Rampage Arena
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [15840] Host "[IP] 10.4.4.210 [Port] 0 [Flags] 2 [Guid] 1937068530 [EditorId] 1937068530 [Version] 1048832 [Id] WindowsEditor(7,B-TIC-Z004) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [14816] Host "[IP] 10.4.4.210 [Port] 0 [Flags] 2 [Guid] 1675595600 [EditorId] 1675595600 [Version] 1048832 [Id] WindowsEditor(7,B-TIC-Z004) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [15840] Host "[IP] 10.4.4.210 [Port] 0 [Flags] 2 [Guid] 1937068530 [EditorId] 1937068530 [Version] 1048832 [Id] WindowsEditor(7,B-TIC-Z004) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [14816] Host "[IP] 10.4.4.210 [Port] 0 [Flags] 2 [Guid] 1675595600 [EditorId] 1675595600 [Version] 1048832 [Id] WindowsEditor(7,B-TIC-Z004) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with {0} workers.
-Refreshing native plugins compatible for Editor in 55.42 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 91.16 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.43f1 (6f9470916942)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.43f1/Editor/Data/Resources/UnitySubsystems
@@ -60,103 +60,103 @@ Initialize engine version: 2021.3.43f1 (6f9470916942)
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA RTX 3500 Ada Generation Laptop GPU (ID=0x27bb)
-    Vendor:   NVIDIA
-    VRAM:     12031 MB
-    Driver:   31.0.15.3625
+    Renderer: Intel(R) UHD Graphics (ID=0xa788)
+    Vendor:   Intel
+    VRAM:     16184 MB
+    Driver:   31.0.101.4887
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.43f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.43f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.43f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56780
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56720
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.43f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.009409 seconds.
+Registered in 0.033280 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 34.87 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 56.69 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.762 seconds
+- Completed reload, in  1.326 seconds
 Domain Reload Profiling:
-	ReloadAssembly (763ms)
-		BeginReloadAssembly (140ms)
+	ReloadAssembly (1327ms)
+		BeginReloadAssembly (216ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (485ms)
-			LoadAssemblies (137ms)
+			CreateAndSetChildDomain (3ms)
+		EndReloadAssembly (844ms)
+			LoadAssemblies (204ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (141ms)
+			SetupTypeCache (209ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (36ms)
-			SetupLoadedEditorAssemblies (253ms)
+			RebuildScriptCaches (66ms)
+			SetupLoadedEditorAssemblies (483ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (9ms)
+				InitializePlatformSupportModulesInManaged (16ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (35ms)
-				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (155ms)
-				ProcessInitializeOnLoadMethodAttributes (53ms)
+				RefreshPlugins (57ms)
+				BeforeProcessingInitializeOnLoad (3ms)
+				ProcessInitializeOnLoadAttributes (316ms)
+				ProcessInitializeOnLoadMethodAttributes (91ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.006065 seconds.
+Registered in 0.011701 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file data-000002A251530BB0 doesn't match image C:\Users\48464009\Documents\GitHub\Rampage-Arena\Rampage Arena\Library\ScriptAssemblies\Assembly-CSharp.dll
+Symbol file data-000001EE591D2100 doesn't match image C:\Users\48464009\Documents\GitHub\Rampage-Arena\Rampage Arena\Library\ScriptAssemblies\Assembly-CSharp.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002A253127050 doesn't match image C:\Users\48464009\Documents\GitHub\Rampage-Arena\Rampage Arena\Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
+Symbol file data-000001EE56A85430 doesn't match image C:\Users\48464009\Documents\GitHub\Rampage-Arena\Rampage Arena\Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
 Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.88 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.30 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Completed reload, in  1.744 seconds
+- Completed reload, in  2.264 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1745ms)
-		BeginReloadAssembly (130ms)
+	ReloadAssembly (2266ms)
+		BeginReloadAssembly (217ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
+			DisableScriptedObjects (11ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (24ms)
-		EndReloadAssembly (1497ms)
-			LoadAssemblies (98ms)
+			CreateAndSetChildDomain (31ms)
+		EndReloadAssembly (1880ms)
+			LoadAssemblies (174ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (227ms)
+			SetupTypeCache (330ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (73ms)
-			SetupLoadedEditorAssemblies (1046ms)
+			RebuildScriptCaches (116ms)
+			SetupLoadedEditorAssemblies (1211ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (6ms)
+				InitializePlatformSupportModulesInManaged (9ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (76ms)
-				ProcessInitializeOnLoadAttributes (762ms)
-				ProcessInitializeOnLoadMethodAttributes (188ms)
-				AfterProcessingInitializeOnLoad (12ms)
+				BeforeProcessingInitializeOnLoad (115ms)
+				ProcessInitializeOnLoadAttributes (850ms)
+				ProcessInitializeOnLoadMethodAttributes (221ms)
+				AfterProcessingInitializeOnLoad (13ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (10ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Refreshing native plugins compatible for Editor in 1.05 ms, found 2 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.10 seconds
+Refreshing native plugins compatible for Editor in 1.72 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2594 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 67 unused Assets / (120.4 KB). Loaded Objects now: 3077.
+Unloading 67 unused Assets / (120.3 KB). Loaded Objects now: 3077.
 Memory consumption went from 99.1 MB to 99.0 MB.
-Total: 10.156700 ms (FindLiveObjects: 0.338900 ms CreateObjectMapping: 0.115100 ms MarkObjects: 9.553300 ms  DeleteObjects: 0.148100 ms)
+Total: 13.957400 ms (FindLiveObjects: 0.395800 ms CreateObjectMapping: 0.137000 ms MarkObjects: 13.248700 ms  DeleteObjects: 0.174200 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -172,567 +172,70 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 318.911518 seconds.
+  Time since last request: 4754.463035 seconds.
+  path: Assets/Scenes/Battle.unity
+  artifactKey: Guid(a34da13de7461dd4697f5dc79fc898eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Scenes/Battle.unity using Guid(a34da13de7461dd4697f5dc79fc898eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10e93a640f6d8fd7e64ad8de9a9292d2') in 0.024813 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 2.857980 seconds.
   path: Assets/Scenes/Testing Site.unity
   artifactKey: Guid(66d7704c9d2e6924c84e615325861c1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/Scenes/Testing Site.unity using Guid(66d7704c9d2e6924c84e615325861c1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ce9e54d643e1da3f71283fe3f53066b') in 0.017349 seconds 
+Start importing Assets/Scenes/Testing Site.unity using Guid(66d7704c9d2e6924c84e615325861c1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '076f76da1d80bf9bc879d089061f7942') in 0.020245 seconds 
 Number of asset objects unloaded after import = 0
 ========================================================================
-Received Import Request.
-  Time since last request: 12.397316 seconds.
-  path: Assets/Scenes/RoomMenu.unity
-  artifactKey: Guid(8392c73b3b895944db4df5a532c579a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/Scenes/RoomMenu.unity using Guid(8392c73b3b895944db4df5a532c579a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04beeb2a7d50a85228e2f513275960e0') in 0.013118 seconds 
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 108.650990 seconds.
-  path: Assets/Models/Tiki 1.fbx
-  artifactKey: Guid(6356deefac7a4874aa8ad3045d7c2370) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/Models/Tiki 1.fbx using Guid(6356deefac7a4874aa8ad3045d7c2370) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25e5a4831c08fb1a2f68afc73af5a413') in 0.561272 seconds 
-Number of asset objects unloaded after import = 138
-========================================================================
-Received Import Request.
-  Time since last request: 11.177538 seconds.
-  path: Assets/Models/Tiki.fbx
-  artifactKey: Guid(6356deefac7a4874aa8ad3045d7c2370) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/Models/Tiki.fbx using Guid(6356deefac7a4874aa8ad3045d7c2370) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c45daa796ca12b398cabed224e74426') in 0.154514 seconds 
-Number of asset objects unloaded after import = 138
-========================================================================
-Received Import Request.
-  Time since last request: 194.133319 seconds.
-  path: Assets/Animation Controller/Ice Breaker.controller
-  artifactKey: Guid(3e9601372887da34d9ec1648b0e28b6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/Animation Controller/Ice Breaker.controller using Guid(3e9601372887da34d9ec1648b0e28b6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d1f77d39b3de954f38e7f8eaf6427fd') in 0.038730 seconds 
-Number of asset objects unloaded after import = 101
-========================================================================
-Received Import Request.
-  Time since last request: 1.990126 seconds.
-  path: Assets/Animation Controller/Ice Breaker 1.controller
-  artifactKey: Guid(5e79f68077e02df409e8567f5f5b15ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/Animation Controller/Ice Breaker 1.controller using Guid(5e79f68077e02df409e8567f5f5b15ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32449692137cd15d3ac75c0995f7e222') in 0.020164 seconds 
-Number of asset objects unloaded after import = 101
-========================================================================
-Received Import Request.
-  Time since last request: 8.289677 seconds.
-  path: Assets/Animation Controller/Tiki.controller
-  artifactKey: Guid(5e79f68077e02df409e8567f5f5b15ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/Animation Controller/Tiki.controller using Guid(5e79f68077e02df409e8567f5f5b15ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48f4327dbf2b2aa041669588c8bf3107') in 0.013078 seconds 
-Number of asset objects unloaded after import = 101
-========================================================================
-Received Import Request.
-  Time since last request: 55.048287 seconds.
-  path: Assets/Characters/Ice Breaker.prefab
-  artifactKey: Guid(c3ca53676712f0a49b359a5792e3989d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/Characters/Ice Breaker.prefab using Guid(c3ca53676712f0a49b359a5792e3989d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '770086b801daa6029118a8d5e279b7ad') in 0.088190 seconds 
-Number of asset objects unloaded after import = 300
-========================================================================
-Received Import Request.
-  Time since last request: 411.480352 seconds.
-  path: Assets/Characters/Tiki.prefab
-  artifactKey: Guid(8d11884c9565817499844ff2877abf7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/Characters/Tiki.prefab using Guid(8d11884c9565817499844ff2877abf7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3d11d383ad14d844fb8ea9ee796651a') in 0.043106 seconds 
-Number of asset objects unloaded after import = 353
-========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.005489 seconds.
+Registered in 0.008361 seconds.
 Begin MonoManager ReloadAssembly
-Symbol file data-000002A251722380 doesn't match image C:\Users\48464009\Documents\GitHub\Rampage-Arena\Rampage Arena\Library\ScriptAssemblies\Assembly-CSharp.dll
+Symbol file data-000001EE594C1030 doesn't match image C:\Users\48464009\Documents\GitHub\Rampage-Arena\Rampage Arena\Library\ScriptAssemblies\Assembly-CSharp.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002A2571E22A0 doesn't match image C:\Users\48464009\Documents\GitHub\Rampage-Arena\Rampage Arena\Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
+Symbol file data-000001EE5CE0C040 doesn't match image C:\Users\48464009\Documents\GitHub\Rampage-Arena\Rampage Arena\Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
 Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.18 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.56 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Completed reload, in  1.766 seconds
+- Completed reload, in  3.405 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1767ms)
-		BeginReloadAssembly (170ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (43ms)
-		EndReloadAssembly (1481ms)
-			LoadAssemblies (115ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (239ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (76ms)
-			SetupLoadedEditorAssemblies (1010ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (8ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (96ms)
-				ProcessInitializeOnLoadAttributes (747ms)
-				ProcessInitializeOnLoadMethodAttributes (145ms)
-				AfterProcessingInitializeOnLoad (11ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (10ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.99 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2574 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 60 unused Assets / (95.4 KB). Loaded Objects now: 3125.
-Memory consumption went from 114.8 MB to 114.8 MB.
-Total: 7.932900 ms (FindLiveObjects: 0.236100 ms CreateObjectMapping: 0.093000 ms MarkObjects: 7.512900 ms  DeleteObjects: 0.089800 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:CustomObjectIndexerAttribute: bc11b3a6c3213fcdd17b65e7da85e133 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.006043 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000002A2565BF020 doesn't match image C:\Users\48464009\Documents\GitHub\Rampage-Arena\Rampage Arena\Library\ScriptAssemblies\Assembly-CSharp.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002A250CC7010 doesn't match image C:\Users\48464009\Documents\GitHub\Rampage-Arena\Rampage Arena\Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.38 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Completed reload, in  1.987 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1988ms)
-		BeginReloadAssembly (181ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (46ms)
-		EndReloadAssembly (1684ms)
-			LoadAssemblies (124ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (284ms)
-			ReleaseScriptCaches (3ms)
-			RebuildScriptCaches (87ms)
-			SetupLoadedEditorAssemblies (1131ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (9ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (112ms)
-				ProcessInitializeOnLoadAttributes (810ms)
-				ProcessInitializeOnLoadMethodAttributes (185ms)
-				AfterProcessingInitializeOnLoad (12ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (11ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.34 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2574 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 58 unused Assets / (93.7 KB). Loaded Objects now: 3128.
-Memory consumption went from 114.8 MB to 114.8 MB.
-Total: 11.055800 ms (FindLiveObjects: 0.317200 ms CreateObjectMapping: 0.104400 ms MarkObjects: 10.569100 ms  DeleteObjects: 0.063500 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:CustomObjectIndexerAttribute: bc11b3a6c3213fcdd17b65e7da85e133 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.009147 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000002A254908010 doesn't match image C:\Users\48464009\Documents\GitHub\Rampage-Arena\Rampage Arena\Library\ScriptAssemblies\Assembly-CSharp.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002A250CC7010 doesn't match image C:\Users\48464009\Documents\GitHub\Rampage-Arena\Rampage Arena\Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.43 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Completed reload, in  3.202 seconds
-Domain Reload Profiling:
-	ReloadAssembly (3204ms)
-		BeginReloadAssembly (356ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (16ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (86ms)
-		EndReloadAssembly (2603ms)
-			LoadAssemblies (255ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (504ms)
-			ReleaseScriptCaches (4ms)
-			RebuildScriptCaches (160ms)
-			SetupLoadedEditorAssemblies (1637ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (14ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (179ms)
-				ProcessInitializeOnLoadAttributes (1099ms)
-				ProcessInitializeOnLoadMethodAttributes (323ms)
-				AfterProcessingInitializeOnLoad (20ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (19ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 2.18 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2574 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 58 unused Assets / (93.6 KB). Loaded Objects now: 3131.
-Memory consumption went from 114.9 MB to 114.8 MB.
-Total: 22.740600 ms (FindLiveObjects: 0.406400 ms CreateObjectMapping: 0.131200 ms MarkObjects: 22.033700 ms  DeleteObjects: 0.166700 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:CustomObjectIndexerAttribute: bc11b3a6c3213fcdd17b65e7da85e133 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.010584 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000002A29CC39010 doesn't match image C:\Users\48464009\Documents\GitHub\Rampage-Arena\Rampage Arena\Library\ScriptAssemblies\Assembly-CSharp.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002A25367C010 doesn't match image C:\Users\48464009\Documents\GitHub\Rampage-Arena\Rampage Arena\Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.75 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Completed reload, in  3.249 seconds
-Domain Reload Profiling:
-	ReloadAssembly (3251ms)
-		BeginReloadAssembly (376ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (19ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (99ms)
-		EndReloadAssembly (2625ms)
-			LoadAssemblies (261ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (483ms)
-			ReleaseScriptCaches (4ms)
-			RebuildScriptCaches (168ms)
-			SetupLoadedEditorAssemblies (1644ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (16ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (184ms)
-				ProcessInitializeOnLoadAttributes (1099ms)
-				ProcessInitializeOnLoadMethodAttributes (322ms)
-				AfterProcessingInitializeOnLoad (19ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (17ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 2.18 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2574 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 58 unused Assets / (93.6 KB). Loaded Objects now: 3134.
-Memory consumption went from 114.9 MB to 114.8 MB.
-Total: 15.257300 ms (FindLiveObjects: 0.445900 ms CreateObjectMapping: 0.150600 ms MarkObjects: 14.569300 ms  DeleteObjects: 0.089900 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:CustomObjectIndexerAttribute: bc11b3a6c3213fcdd17b65e7da85e133 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.008612 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000002A258C05010 doesn't match image C:\Users\48464009\Documents\GitHub\Rampage-Arena\Rampage Arena\Library\ScriptAssemblies\Assembly-CSharp.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002A2547B4070 doesn't match image C:\Users\48464009\Documents\GitHub\Rampage-Arena\Rampage Arena\Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.58 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Completed reload, in  3.282 seconds
-Domain Reload Profiling:
-	ReloadAssembly (3284ms)
-		BeginReloadAssembly (421ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (18ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (88ms)
-		EndReloadAssembly (2624ms)
-			LoadAssemblies (341ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (485ms)
-			ReleaseScriptCaches (4ms)
-			RebuildScriptCaches (160ms)
-			SetupLoadedEditorAssemblies (1644ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (15ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (166ms)
-				ProcessInitializeOnLoadAttributes (1082ms)
-				ProcessInitializeOnLoadMethodAttributes (358ms)
-				AfterProcessingInitializeOnLoad (19ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (18ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 2.04 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2574 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 58 unused Assets / (93.7 KB). Loaded Objects now: 3137.
-Memory consumption went from 114.9 MB to 114.8 MB.
-Total: 17.835000 ms (FindLiveObjects: 0.487600 ms CreateObjectMapping: 0.175300 ms MarkObjects: 17.068100 ms  DeleteObjects: 0.101700 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:CustomObjectIndexerAttribute: bc11b3a6c3213fcdd17b65e7da85e133 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.009281 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000002A2517BA240 doesn't match image C:\Users\48464009\Documents\GitHub\Rampage-Arena\Rampage Arena\Library\ScriptAssemblies\Assembly-CSharp.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002A29CF7C1D0 doesn't match image C:\Users\48464009\Documents\GitHub\Rampage-Arena\Rampage Arena\Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.50 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Completed reload, in  3.240 seconds
-Domain Reload Profiling:
-	ReloadAssembly (3243ms)
-		BeginReloadAssembly (417ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (18ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (99ms)
-		EndReloadAssembly (2552ms)
-			LoadAssemblies (288ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (517ms)
-			ReleaseScriptCaches (3ms)
-			RebuildScriptCaches (148ms)
-			SetupLoadedEditorAssemblies (1589ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (14ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (164ms)
-				ProcessInitializeOnLoadAttributes (1075ms)
-				ProcessInitializeOnLoadMethodAttributes (314ms)
-				AfterProcessingInitializeOnLoad (18ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (15ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.96 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2574 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 58 unused Assets / (93.7 KB). Loaded Objects now: 3140.
-Memory consumption went from 114.9 MB to 114.8 MB.
-Total: 17.721700 ms (FindLiveObjects: 0.642500 ms CreateObjectMapping: 0.292400 ms MarkObjects: 16.557300 ms  DeleteObjects: 0.226900 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:CustomObjectIndexerAttribute: bc11b3a6c3213fcdd17b65e7da85e133 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.008963 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000002A2517BA240 doesn't match image C:\Users\48464009\Documents\GitHub\Rampage-Arena\Rampage Arena\Library\ScriptAssemblies\Assembly-CSharp.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002A256FD5040 doesn't match image C:\Users\48464009\Documents\GitHub\Rampage-Arena\Rampage Arena\Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.54 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Completed reload, in  3.172 seconds
-Domain Reload Profiling:
-	ReloadAssembly (3173ms)
-		BeginReloadAssembly (393ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (16ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (93ms)
-		EndReloadAssembly (2529ms)
-			LoadAssemblies (289ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (493ms)
-			ReleaseScriptCaches (3ms)
-			RebuildScriptCaches (140ms)
-			SetupLoadedEditorAssemblies (1603ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (13ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (182ms)
-				ProcessInitializeOnLoadAttributes (1078ms)
-				ProcessInitializeOnLoadMethodAttributes (310ms)
-				AfterProcessingInitializeOnLoad (17ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (16ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 2.56 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2574 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 58 unused Assets / (93.7 KB). Loaded Objects now: 3143.
-Memory consumption went from 114.9 MB to 114.8 MB.
-Total: 16.735500 ms (FindLiveObjects: 0.435600 ms CreateObjectMapping: 0.155300 ms MarkObjects: 16.043900 ms  DeleteObjects: 0.099100 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:CustomObjectIndexerAttribute: bc11b3a6c3213fcdd17b65e7da85e133 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.010883 seconds.
-Begin MonoManager ReloadAssembly
-Symbol file data-000002A2517BA240 doesn't match image C:\Users\48464009\Documents\GitHub\Rampage-Arena\Rampage Arena\Library\ScriptAssemblies\Assembly-CSharp.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000002A256FD5040 doesn't match image C:\Users\48464009\Documents\GitHub\Rampage-Arena\Rampage Arena\Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file LoadedFromMemory is not a mono symbol file
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.89 ms, found 2 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Completed reload, in  3.326 seconds
-Domain Reload Profiling:
-	ReloadAssembly (3328ms)
-		BeginReloadAssembly (382ms)
+	ReloadAssembly (3407ms)
+		BeginReloadAssembly (368ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (11ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (101ms)
-		EndReloadAssembly (2680ms)
-			LoadAssemblies (279ms)
+			CreateAndSetChildDomain (85ms)
+		EndReloadAssembly (2738ms)
+			LoadAssemblies (281ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (530ms)
+			SetupTypeCache (525ms)
 			ReleaseScriptCaches (4ms)
-			RebuildScriptCaches (161ms)
-			SetupLoadedEditorAssemblies (1677ms)
+			RebuildScriptCaches (156ms)
+			SetupLoadedEditorAssemblies (1721ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (16ms)
+				InitializePlatformSupportModulesInManaged (15ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (2ms)
-				BeforeProcessingInitializeOnLoad (186ms)
-				ProcessInitializeOnLoadAttributes (1121ms)
-				ProcessInitializeOnLoadMethodAttributes (330ms)
-				AfterProcessingInitializeOnLoad (20ms)
+				BeforeProcessingInitializeOnLoad (180ms)
+				ProcessInitializeOnLoadAttributes (1143ms)
+				ProcessInitializeOnLoadMethodAttributes (356ms)
+				AfterProcessingInitializeOnLoad (23ms)
 				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (17ms)
+			AwakeInstancesAfterBackupRestoration (21ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.94 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 1.86 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2574 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 58 unused Assets / (93.8 KB). Loaded Objects now: 3146.
-Memory consumption went from 114.9 MB to 114.8 MB.
-Total: 16.950600 ms (FindLiveObjects: 0.566100 ms CreateObjectMapping: 0.236800 ms MarkObjects: 16.023900 ms  DeleteObjects: 0.120500 ms)
+Unloading 58 unused Assets / (93.6 KB). Loaded Objects now: 3080.
+Memory consumption went from 97.4 MB to 97.3 MB.
+Total: 22.888000 ms (FindLiveObjects: 0.440300 ms CreateObjectMapping: 0.225800 ms MarkObjects: 22.088200 ms  DeleteObjects: 0.131600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -746,3 +249,208 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008884 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001EE5E5E1CB0 doesn't match image C:\Users\48464009\Documents\GitHub\Rampage-Arena\Rampage Arena\Library\ScriptAssemblies\Assembly-CSharp.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001EE5E638DF0 doesn't match image C:\Users\48464009\Documents\GitHub\Rampage-Arena\Rampage Arena\Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.78 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Completed reload, in  3.527 seconds
+Domain Reload Profiling:
+	ReloadAssembly (3528ms)
+		BeginReloadAssembly (373ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (11ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (90ms)
+		EndReloadAssembly (2885ms)
+			LoadAssemblies (301ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (552ms)
+			ReleaseScriptCaches (5ms)
+			RebuildScriptCaches (174ms)
+			SetupLoadedEditorAssemblies (1799ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (15ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (190ms)
+				ProcessInitializeOnLoadAttributes (1145ms)
+				ProcessInitializeOnLoadMethodAttributes (421ms)
+				AfterProcessingInitializeOnLoad (25ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (21ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.70 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2574 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 58 unused Assets / (93.6 KB). Loaded Objects now: 3083.
+Memory consumption went from 97.4 MB to 97.3 MB.
+Total: 21.650500 ms (FindLiveObjects: 0.494300 ms CreateObjectMapping: 0.192700 ms MarkObjects: 20.735800 ms  DeleteObjects: 0.224800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:CustomObjectIndexerAttribute: bc11b3a6c3213fcdd17b65e7da85e133 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.009477 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001EE5BF58020 doesn't match image C:\Users\48464009\Documents\GitHub\Rampage-Arena\Rampage Arena\Library\ScriptAssemblies\Assembly-CSharp.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001EE5D852DF0 doesn't match image C:\Users\48464009\Documents\GitHub\Rampage-Arena\Rampage Arena\Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.35 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Completed reload, in  2.062 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2063ms)
+		BeginReloadAssembly (262ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (11ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (62ms)
+		EndReloadAssembly (1626ms)
+			LoadAssemblies (188ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (279ms)
+			ReleaseScriptCaches (3ms)
+			RebuildScriptCaches (87ms)
+			SetupLoadedEditorAssemblies (1076ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (8ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (98ms)
+				ProcessInitializeOnLoadAttributes (764ms)
+				ProcessInitializeOnLoadMethodAttributes (186ms)
+				AfterProcessingInitializeOnLoad (16ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (11ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.88 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2574 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 58 unused Assets / (93.6 KB). Loaded Objects now: 3086.
+Memory consumption went from 97.4 MB to 97.3 MB.
+Total: 12.558500 ms (FindLiveObjects: 0.358800 ms CreateObjectMapping: 0.133400 ms MarkObjects: 11.994500 ms  DeleteObjects: 0.070300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:CustomObjectIndexerAttribute: bc11b3a6c3213fcdd17b65e7da85e133 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 315.330278 seconds.
+  path: Assets/Models/Tiki.fbx
+  artifactKey: Guid(6356deefac7a4874aa8ad3045d7c2370) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Models/Tiki.fbx using Guid(6356deefac7a4874aa8ad3045d7c2370) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c850ad9b86fb46b13f56e89a32723b8') in 0.572322 seconds 
+Number of asset objects unloaded after import = 138
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008858 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-000001EE5BF58020 doesn't match image C:\Users\48464009\Documents\GitHub\Rampage-Arena\Rampage Arena\Library\ScriptAssemblies\Assembly-CSharp.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001EE5ECD9AA0 doesn't match image C:\Users\48464009\Documents\GitHub\Rampage-Arena\Rampage Arena\Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.19 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Completed reload, in  3.339 seconds
+Domain Reload Profiling:
+	ReloadAssembly (3341ms)
+		BeginReloadAssembly (373ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (83ms)
+		EndReloadAssembly (2707ms)
+			LoadAssemblies (297ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (519ms)
+			ReleaseScriptCaches (4ms)
+			RebuildScriptCaches (204ms)
+			SetupLoadedEditorAssemblies (1665ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (15ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (3ms)
+				BeforeProcessingInitializeOnLoad (180ms)
+				ProcessInitializeOnLoadAttributes (1114ms)
+				ProcessInitializeOnLoadMethodAttributes (331ms)
+				AfterProcessingInitializeOnLoad (21ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (19ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.73 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2574 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 58 unused Assets / (93.7 KB). Loaded Objects now: 3134.
+Memory consumption went from 114.2 MB to 114.1 MB.
+Total: 21.847100 ms (FindLiveObjects: 0.505700 ms CreateObjectMapping: 0.209700 ms MarkObjects: 20.995800 ms  DeleteObjects: 0.132600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:CustomObjectIndexerAttribute: bc11b3a6c3213fcdd17b65e7da85e133 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 132.066672 seconds.
+  path: Assets/Models/Tiki.fbx
+  artifactKey: Guid(6356deefac7a4874aa8ad3045d7c2370) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Models/Tiki.fbx using Guid(6356deefac7a4874aa8ad3045d7c2370) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f5a0652f3c35505877236b7ff51e363') in 0.822859 seconds 
+Number of asset objects unloaded after import = 138
