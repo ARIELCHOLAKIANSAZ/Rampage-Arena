@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 110274635}
   - component: {fileID: 110274634}
   - component: {fileID: 110274633}
+  - component: {fileID: 110274636}
   m_Layer: 5
   m_Name: TikiBtn
   m_TagString: Untagged
@@ -204,7 +205,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 110274634}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 110274636}
+        m_TargetAssemblyTypeName: ButtonGameManagerLinker, Assembly-CSharp
+        m_MethodName: charchosen
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &110274634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,6 +256,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 110274631}
   m_CullTransparentMesh: 1
+--- !u!114 &110274636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110274631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b51079a646f5824984fd82cbc269c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Multiplayer: {fileID: 0}
+  _uidString: 0599cb90-9b8c-448e-8671-8b8e3dd7aad9
+  Reliability: 1
+  LocalMethodBehavior: 1
+  sm: {fileID: 0}
 --- !u!1 &111405578
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,6 +702,7 @@ MonoBehaviour:
   _uidString: 893f7ce0-6b6f-4429-9fc1-2c52d61af7e8
   Reliability: 1
   LocalMethodBehavior: 1
+  sm: {fileID: 0}
 --- !u!1 &367562848
 GameObject:
   m_ObjectHideFlags: 0
@@ -1034,6 +1065,7 @@ MonoBehaviour:
   _uidString: 69b05eb0-c497-472b-8563-af224979fcc3
   Reliability: 1
   LocalMethodBehavior: 1
+  sm: {fileID: 0}
 --- !u!1 &537970860
 GameObject:
   m_ObjectHideFlags: 0
@@ -1443,6 +1475,7 @@ MonoBehaviour:
   _uidString: 86ee43bd-93e2-44ec-808a-04658159239e
   Reliability: 1
   LocalMethodBehavior: 1
+  sm: {fileID: 0}
 --- !u!1 &861916068
 GameObject:
   m_ObjectHideFlags: 0
@@ -1861,6 +1894,7 @@ MonoBehaviour:
   _uidString: 3af12b07-4478-45d4-90de-aa188c61e085
   Reliability: 1
   LocalMethodBehavior: 1
+  sm: {fileID: 0}
 --- !u!1 &952930526
 GameObject:
   m_ObjectHideFlags: 0
@@ -2109,6 +2143,7 @@ MonoBehaviour:
   _uidString: 724b9823-12e8-4b41-b681-f8680269a06a
   Reliability: 1
   LocalMethodBehavior: 1
+  sm: {fileID: 0}
 --- !u!1 &1345992312
 GameObject:
   m_ObjectHideFlags: 0
@@ -2327,6 +2362,7 @@ MonoBehaviour:
   _uidString: d2fc93d3-1f70-4d45-823c-49431be8d9d7
   Reliability: 1
   LocalMethodBehavior: 1
+  sm: {fileID: 0}
 --- !u!1 &1477708693
 GameObject:
   m_ObjectHideFlags: 0
@@ -2497,7 +2533,8 @@ MonoBehaviour:
   chosenCharacter: {fileID: 0}
   chosenCharacters: 03000000030000000300000003000000
   charList:
-  - {fileID: 8704725688381541838, guid: c3ca53676712f0a49b359a5792e3989d, type: 3}
+  - {fileID: 8959909217349180460, guid: c3ca53676712f0a49b359a5792e3989d, type: 3}
+  - {fileID: 5797925948306934545, guid: 8d11884c9565817499844ff2877abf7c, type: 3}
   btnList:
   - {fileID: 524069951}
   - {fileID: 916215116}

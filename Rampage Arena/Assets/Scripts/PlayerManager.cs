@@ -9,9 +9,9 @@ using UnityEngine.SceneManagement;
 public class PlayerManager : AttributesSync
 {
     public int playerNumber;
-    public GameObject chosenCharacter;
+    public Alteruna.Avatar chosenCharacter;
     public int[] chosenCharacters = { 3, 3, 3, 3 };
-    public GameObject[] charList;
+    public Alteruna.Avatar[] charList;
     public GameObject[] btnList;
     public Text[] charName;
     public bool[] activePlayerList = { false, false, false, false };
@@ -85,6 +85,7 @@ public class PlayerManager : AttributesSync
         chosenCharacter = charList[num];
         pnumM1 = playerNumber - 1;
         BroadcastRemoteMethod("setChosenChars", pnumM1, num);
+        GameObject.Find("NETWORK MANAGER").GetComponent<Alteruna.Multiplayer>().AvatarPrefab = chosenCharacter;
     }
 
     public void ChooseNumber(int num)
