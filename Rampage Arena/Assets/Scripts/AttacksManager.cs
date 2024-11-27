@@ -32,6 +32,7 @@ public class AttacksManager : AttributesSync
     bool bodyhit = false;
     bool bodyhit2 = false;
     ParticleSystem snow;
+    public SoundManager sm;
 
     void Start()
     {
@@ -39,6 +40,7 @@ public class AttacksManager : AttributesSync
         ava = GetComponent<Alteruna.Avatar>();
         if (!ava.IsMe) return;
         p = GetComponent<PlayerManager>();
+        sm = GameObject.Find("SOUNDMANAGER").GetComponent<SoundManager>();
     }
     void Update()
     {
@@ -130,6 +132,7 @@ public class AttacksManager : AttributesSync
             Collider[] hitEnemies = Physics.OverlapBox(attackPoints[4].position, new Vector3(2.5f, 1, 2.5f), Quaternion.identity, enemyLayers);
             foreach (Collider enemy in hitEnemies)
             {
+                sm.hit = true;
                 HealthManager p = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
                 KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
                 kn.mainx = transform.position.x;
@@ -171,6 +174,7 @@ public class AttacksManager : AttributesSync
             Collider[] hitEnemies = Physics.OverlapBox(attackPoints[4].position, new Vector3(3f, 2, 3f), Quaternion.identity, enemyLayers);
             foreach (Collider enemy in hitEnemies)
             {
+                sm.hit = true;
                 HealthManager p = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
                 KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
                 kn.mainx = transform.position.x;
@@ -221,6 +225,7 @@ public class AttacksManager : AttributesSync
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[6].position, attackRanges[6], enemyLayers);
             foreach (Collider enemy in hitEnemies)
             {
+                sm.hit = true;
                 HealthManager p = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
                 KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
                 kn.mainx = transform.position.x;
@@ -268,6 +273,7 @@ public class AttacksManager : AttributesSync
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[0].position, attackRanges[6], enemyLayers);
             foreach (Collider enemy in hitEnemies)
             {
+                sm.hit = true;
                 HealthManager p = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
                 KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
                 AttacksManager am = enemy.GetComponentInParent<AttacksManager>();
@@ -337,6 +343,7 @@ public class AttacksManager : AttributesSync
             Collider[] hitEnemies = Physics.OverlapSphere(this.gameObject.transform.position, 2.5f, enemyLayers);
             foreach (Collider enemy in hitEnemies)
             {
+                sm.hit = true;
                 HealthManager p = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
                 KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
                 kn.mainx = transform.position.x;
@@ -378,6 +385,7 @@ public class AttacksManager : AttributesSync
             Collider[] hitEnemies = Physics.OverlapSphere(this.gameObject.transform.position, 2.5f, enemyLayers);
             foreach (Collider enemy in hitEnemies)
             {
+                sm.hit = true;
                 HealthManager p = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
                 KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
                 kn.mainx = transform.position.x;
@@ -425,6 +433,7 @@ public class AttacksManager : AttributesSync
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[3].position, attackRanges[3], enemyLayers);
             foreach (Collider enemy in hitEnemies)
             {
+                sm.hit = true;
                 HealthManager p = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
                 KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
                 kn.mainx = transform.position.x;
@@ -437,21 +446,21 @@ public class AttacksManager : AttributesSync
                     p.hit1 = true;
                     kn.hit1 = true;
                 } 
-                if(enemy.gameObject.layer == 11)
+                if(enemy.gameObject.layer == LayerMask.NameToLayer("Team2"))
                 {
                     kn.force = p.percen2/2;
                     p.dam2 = 2.4f;
                     p.hit2 = true;
                     kn.hit2 = true;
                 }
-                if(enemy.gameObject.layer == 12) 
+                if(enemy.gameObject.layer == LayerMask.NameToLayer("Team3")) 
                 {
                     kn.force = p.percen3/2;
                     p.dam3 = 2.4f;
                     p.hit3 = true;
                     kn.hit3 = true;
                 }
-                if(enemy.gameObject.layer == 13)
+                if(enemy.gameObject.layer == LayerMask.NameToLayer("Team4"))
                 {
                     kn.force = p.percen4/2;
                     p.dam4 = 2.4f;
@@ -476,6 +485,7 @@ public class AttacksManager : AttributesSync
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[2].position, attackRanges[2], enemyLayers);
             foreach (Collider enemy in hitEnemies)
             {
+                sm.hit = true;
                 HealthManager p = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
                 KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
                 kn.mainx = transform.position.x;
@@ -529,6 +539,7 @@ public class AttacksManager : AttributesSync
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[0].position, attackRanges[0], enemyLayers);
             foreach (Collider enemy in hitEnemies)
             {
+                sm.hit = true;
                 Debug.Log("inforeach");
                 HealthManager p = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
                 KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
@@ -584,6 +595,7 @@ public class AttacksManager : AttributesSync
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[1].position, attackRanges[1], enemyLayers);
             foreach (Collider enemy in hitEnemies)
             {
+                sm.hit = true;
                 HealthManager p = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
                 KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
                 kn.mainx = transform.position.x;
@@ -657,6 +669,7 @@ public class AttacksManager : AttributesSync
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[5].position, attackRanges[5], enemyLayers);
             foreach (Collider enemy in hitEnemies)
             {
+                sm.hit = true;
                 HealthManager p = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
                 KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
                 kn.mainx = transform.position.x;
@@ -708,6 +721,7 @@ public class AttacksManager : AttributesSync
             Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[0].position, 1.5f, enemyLayers);
             foreach (Collider enemy in hitEnemies)
             {
+                sm.hit = true;
                 HealthManager p = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
                 KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
                 kn.mainx = transform.position.x;
@@ -780,6 +794,7 @@ public class AttacksManager : AttributesSync
         Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[0].position, attackRanges[7], enemyLayers);
         foreach (Collider enemy in hitEnemies)
         {
+            sm.hit = true;
             HealthManager p = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
             KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
             kn.mainx = transform.position.x;
@@ -884,6 +899,7 @@ public class AttacksManager : AttributesSync
         Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[0].position, attackRanges[0], enemyLayers);
         foreach (Collider enemy in hitEnemies)
         {
+            sm.hit = true;
             HealthManager p = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
             KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
             kn.mainx = transform.position.x;
@@ -936,6 +952,7 @@ public class AttacksManager : AttributesSync
         Collider[] hitEnemies = Physics.OverlapSphere(attackPoints[1].position, attackRanges[1], enemyLayers);
         foreach (Collider enemy in hitEnemies)
         {
+            sm.hit = true;
             HealthManager p = GameObject.Find("HEALTHMANAGER").GetComponent<HealthManager>();
             KnockbackHandler kn = enemy.GetComponentInParent<KnockbackHandler>();
             kn.mainx = transform.position.x;

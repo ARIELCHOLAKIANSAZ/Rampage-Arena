@@ -14,6 +14,7 @@ public class DeathManager : AttributesSync
     public Text[] lifeDisplay;
     private void OnTriggerExit(Collider other)
     {
+        GameObject.Find("SOUNDMANAGER").GetComponent<SoundManager>().death = true;
         Alteruna.Avatar ava = other.GetComponent<Alteruna.Avatar>();
         if (!ava.IsMe) return;
         ThirdPersonMovement tpm = other.GetComponent<ThirdPersonMovement>();

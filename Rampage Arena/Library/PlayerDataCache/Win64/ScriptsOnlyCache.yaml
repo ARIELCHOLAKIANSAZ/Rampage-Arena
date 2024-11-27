@@ -27,6 +27,7 @@ ScriptsOnlyBuild:
     - PlayerManager
     - PointsManager
     - SceneBus
+    - SoundManager
     - ThirdPersonMovement
     Cinemachine.dll:
     - Cinemachine.CinemachineBrain
@@ -59,7 +60,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateMachineInspector
     - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
@@ -498,12 +498,18 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 1612}
+    - Class: 114
+      Script: {instanceID: 1894}
     - Class: 114
       Script: {instanceID: 2072}
     - Class: 114
@@ -528,6 +534,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5652}
     - Class: 114
       Script: {instanceID: 6100}
+    - Class: 114
+      Script: {instanceID: 23316}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1680,7 +1688,7 @@ ScriptsOnlyBuild:
     className: CinemachineTrackedDolly
   - hash:
       serializedVersion: 2
-      Hash: 66db4888c8c1d1789b444394fb6cbe29
+      Hash: 43fd10c3af36898036b09c4f3710266c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ButtonGameManagerLinker
@@ -1710,7 +1718,7 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
-      Hash: aa732631458d1ca544f9f6a108d4ed56
+      Hash: 1da3a52b2124de63dd38429bfb217e24
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: AttacksManager
@@ -1936,6 +1944,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PercentageDisplayManager
+  - hash:
+      serializedVersion: 2
+      Hash: 5432e75a37286fc698301e8d9ee032ce
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SoundManager
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu.unity
@@ -1946,4 +1960,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/CharSelec.unity
   - Assets/Scenes/Battle.unity
   - Assets/Scenes/Placement.unity
-  playerPath: C:/Users/48464009/Downloads/Rampage Arena.exe
+  playerPath: C:/Users/PC/Downloads/Rampage Build/Rampage Arena.exe
